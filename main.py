@@ -1,5 +1,4 @@
 import logging
-import json
 import re
 import string
 import unicodedata
@@ -18,6 +17,16 @@ class CourseRequest(BaseModel):
     course_name: str = "Default Course"
     course_duration: str = "Default Duration"
     course_level: str = "Default Level"
+
+def save_to_file(filename, response):
+    file = open(filename, "w", encoding='utf-8')
+    try:
+        file.write(response)
+        file.close()
+        return True
+    except Exception as e:
+        logging.error(f"Error writing to file {filename}: {e}", exc_info=True)
+        return False
 
 # --- Gemini API Client Setup ---
 def initialize_gemini_client():
@@ -105,26 +114,6 @@ def generate_course_plan(content, course_duration):
               f"the only formattiong required is each slide info stored each in indivisual line.) : \n {content}"]
     return gen_text_from_gemini(prompt)
 
-def generate_slide_plan(content):
-    """Generate detailed slide plan as JSON."""
-    prompt = ["""**Task:** Generate detailed content for each slide described in the slide plan, based on the full course content provided. \n content: """ + content+""" **Instructions for Output:**
-1. For each slide in the plan, generate detailed textual content relevant to its topic, drawing information *only* from the provided "Input Full Course Content".
-2. Structure the output as a single, valid JSON object.
-3. The JSON object must follow this exact schema:
-   {
-     "course_title": "<Extracted course title, e.g., from Slide 1>",
-     "slides": [
-       {
-         "slide_number": <integer>,
-         "topic": "<The exact topic string from the Input Slide Plan>",
-         "content": "<Generated detailed content for this specific slide>"
-       },
-       // Repeat for all slides
-     ]
-   }
-4. Ensure the "content" field contains substantial information relevant to the slide's topic, synthesized from the full course content.
-5. Output **only** the JSON object. Do not include any text before or after the JSON structure. Start directly with `{` and end with `}`."""]
-    return gen_text_from_gemini(prompt)
 
 # --- API Endpoints ---
 @app.get("/")
@@ -170,22 +159,48 @@ async def generate(item: CourseRequest):
     if not save_to_file(file_name_plan, plan):
         raise HTTPException(status_code=500, detail="Failed to save course plan file.")
 
-    # Generate slide plan
-    logging.info(f"Generating slide plan for: {safe_course_name}")
-    slide_plan = generate_slide_plan(content)
-    if not slide_plan:
-        raise HTTPException(status_code=500, detail="Failed to generate slide plan.")
+    lines=file_name_plan.splitlines()
+    logging.info("File read successfully")
 
-    # Save slide plan
-    file_name_slide_plan = f"{safe_course_name}_SlidePlan.txt"
-    if not save_to_file(file_name_slide_plan, slide_plan):
-        raise HTTPException(status_code=500, detail="Failed to save slide plan file.")
+    for line_no , line in enumerate(lines):
+        logging.info(f"Processing line {line_no + 1}: {line.strip()}")
+        
+        line = line.strip()
+        if line:
+            # Remove any leading/trailing whitespace and newlines
+            slide_content = line.strip()
+            logging.info(f"Generating content for slide {line_no + 1}")
+            # Prepare the prompt for Gemini API
+            prompt = f"make a html program for a slide for a course on AI with content , only return the html program , and no pre or post text .({slide_content})"
+            response = gen_text_from_gemini(prompt)
+            logging.info(f"Response received for slide {line_no + 1}: {response}")
+            if response:
+                logging.info(f"Content generated for slide {line_no + 1}")
+                # Remove markdown code blocks if they exist in the response
+                if response.startswith("```") and response.endswith("```"):
+                    # If it's specifically HTML with language marker
+                    if response.startswith("```html"):
+                        response = response[7:-3].strip()
+                    # General case for any code blocks
+                    else:
+                        response = response[3:-3].strip()
+                logging.info(f"Response cleaned for slide {line_no + 1}")
+
+                # Save the response to a file
+                filename = f"./slides/slide_{line_no + 1}.html"
+                logging.info(f"Saving content to {filename}")
+                if save_to_file(filename, response):
+                    logging.info(f"Content saved successfully to {filename}")
+                else:
+                    logging.error(f"Failed to save content for slide {line_no + 1}")
+                
+            else:
+                print(f"Failed to generate content for prompt: {prompt}")
 
     return {
         "message": f"Successfully generated content and plan for {course_name}.",
         "content_file": file_name_content,
         "plan_file": file_name_plan,
-        "slide_plan_file": file_name_slide_plan
     }
 
 # --- To run the server: uvicorn main:app --reload ---
