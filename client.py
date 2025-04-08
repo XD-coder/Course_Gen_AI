@@ -2,7 +2,7 @@ import requests
 
 # Define the data payload as a dictionary
 payload = {
-    'course_name': 'AI',
+    'course_name': 'AI_with_pyhton',
     'course_duration': '3 months',
     'course_level': 'beginner'
 }

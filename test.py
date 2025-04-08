@@ -5,7 +5,8 @@ from google import genai # Assuming genai is installed
 # --- Configuration --
 # !!! Load API Key Securely (e.g., from environment variable) !!!
 # Replace with your actual key loading method
-api_key = os.getenv("GEMINI_API_KEY", "AIzaSyAjnQ2bFxRIauzEI17YV1MnIvmS8lnI_j0") # Fallback or direct key
+api_key = os.getenv("GEMINI_API_KEY") # Fallback or direct key
+
 if api_key == "YOUR_API_KEY_HERE":
     logging.warning("Using a placeholder API key. Set the GEMINI_API_KEY environment variable.")
 logging.basicConfig(level=logging.INFO)
@@ -40,8 +41,7 @@ def gen_text_from_gemini(prompt_list):
     except Exception as e:
         logging.error(f"Error during Gemini API call for prompt {prompt_list}: {e}", exc_info=True)
         return None
-logging.info("Reading AI_plan.txt")
-file = open("AI_plan.txt", "r", encoding='utf-8')
+
 
 def save_to_file(filename, response):
     file = open(filename, "w", encoding='utf-8')
@@ -53,42 +53,49 @@ def save_to_file(filename, response):
         logging.error(f"Error writing to file {filename}: {e}", exc_info=True)
         return False
 
-lines = file.readlines()
-file.close()
-logging.info("File read successfully")
+#start of function
+def genHTML(filename, course_name):
+    logging.info("Reading AI_plan.txt")
+    file = open("AI_plan.txt", "r", encoding='utf-8')
+    lines = file.readlines()
+    file.close()
+    logging.info("File read successfully")
 
-for line_no , line in enumerate(lines):
-    logging.info(f"Processing line {line_no + 1}: {line.strip()}")
-    
-    line = line.strip()
-    if line:
-        # Remove any leading/trailing whitespace and newlines
-        slide_content = line.strip()
-        logging.info(f"Generating content for slide {line_no + 1}")
-        # Prepare the prompt for Gemini API
-        prompt = f"make a html program for a slide for a course on AI with content , only return the html program , and no pre or post text .({slide_content})"
-        response = gen_text_from_gemini(prompt)
-        logging.info(f"Response received for slide {line_no + 1}: {response}")
-        if response:
-            logging.info(f"Content generated for slide {line_no + 1}")
-            # Remove markdown code blocks if they exist in the response
-            if response.startswith("```") and response.endswith("```"):
-                # If it's specifically HTML with language marker
-                if response.startswith("```html"):
-                    response = response[7:-3].strip()
-                # General case for any code blocks
+    for line_no , line in enumerate(lines):
+        logging.info(f"Processing line {line_no + 1}: {line.strip()}")
+        
+        line = line.strip()
+        if line:
+            slide_content = line.strip()
+            logging.info(f"Generating content for slide {line_no + 1}")
+            prompt = f"make a html program for a slide for a course on {course_name} with content , only return the html program , and no pre or post text .({slide_content})"
+            response = gen_text_from_gemini(prompt)
+            logging.info(f"Response received for slide {line_no + 1}: {response}")
+            if response:
+                logging.info(f"Content generated for slide {line_no + 1}")
+                # Remove markdown code blocks if they exist in the response
+                if response.startswith("```") and response.endswith("```"):
+                    # If it's specifically HTML with language marker
+                    if response.startswith("```html"):
+                        response = response[7:-3].strip()
+                    else:
+                        response = response[3:-3].strip()
+                logging.info(f"Response cleaned for slide {line_no + 1}")
+
+                #save the response to a file
+                os.makedirs(f"./{course_name}/slides", exist_ok=True)
+                filename = f"./{course_name}/slides/slide_{line_no + 1}.html"
+                logging.info(f"Saving content to {filename}")
+                if save_to_file(filename, response):
+                    logging.info(f"Content saved successfully to {filename}")
                 else:
-                    response = response[3:-3].strip()
-            logging.info(f"Response cleaned for slide {line_no + 1}")
-
-            # Save the response to a file
-            filename = f"./slides/slide_{line_no + 1}.html"
-            logging.info(f"Saving content to {filename}")
-            if save_to_file(filename, response):
-                logging.info(f"Content saved successfully to {filename}")
+                    logging.error(f"Failed to save content for slide {line_no + 1}")
+                
             else:
-                logging.error(f"Failed to save content for slide {line_no + 1}")
-            
-        else:
-            print(f"Failed to generate content for prompt: {prompt}")
+                print(f"Failed to generate content for prompt: {prompt}")
 
+
+
+if __name__ == "__main__":
+    # Example usage
+    genHTML("AI_plan.txt")

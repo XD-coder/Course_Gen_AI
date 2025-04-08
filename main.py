@@ -1,16 +1,15 @@
 import logging
-import re
+import test
 import string
 import unicodedata
 import os
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from google import genai
 
 # --- Configuration ---
 logging.basicConfig(level=logging.INFO)
-app = FastAPI()
+app = FastAPI() 
 
 # --- Models ---
 class CourseRequest(BaseModel):
@@ -39,6 +38,7 @@ def initialize_gemini_client():
     except Exception as e:
         logging.error(f"Failed to initialize Gemini client: {e}", exc_info=True)
         return None
+
 
 client = initialize_gemini_client()
 
@@ -111,10 +111,10 @@ def generate_course_plan(content, course_duration):
               f"create a slide plan outlining topics, activities for each indevisual slide "
               f"(like tests, quizzes, projects) return a line of instructions for each indevisual slide "
               f"(you must start directly with describing the slides, and must not add any formating on your own, "
-              f"the only formattiong required is each slide info stored each in indivisual line.) : \n {content}"]
+              f"the only formattiong required is each slide info stored each in indivisual line.with no blank lines in between and no other text in between the slide contents) : \n {content}"]
     return gen_text_from_gemini(prompt)
 
-
+              
 # --- API Endpoints ---
 @app.get("/")
 def read_root():
@@ -125,12 +125,12 @@ def health_check():
     return {"status": "healthy", "gemini_client_initialized": client is not None}
 
 @app.post("/generate")
-async def generate(item: CourseRequest):
+async def generate(item: CourseRequest, save_content: bool = True):
     course_name = item.course_name
     course_duration = item.course_duration
     course_level = item.course_level
     safe_course_name = sanitize_filename(course_name)
-    
+   
     # Generate structure
     logging.info(f"Generating structure for: {safe_course_name}")
     structure = generate_course_structure(course_name, course_duration, course_level)
@@ -144,9 +144,11 @@ async def generate(item: CourseRequest):
         raise HTTPException(status_code=500, detail="Failed to generate course content.")
 
     # Save content
-    file_name_content = f"{safe_course_name}_content.txt"
-    if not save_to_file(file_name_content, content):
-        raise HTTPException(status_code=500, detail="Failed to save course content file.")
+    os.makedirs(f"./{course_name}/", exist_ok=True)
+    if save_content:
+        file_name_content = f"{safe_course_name}/content.txt"
+        if not save_to_file(file_name_content, content):
+            raise HTTPException(status_code=500, detail="Failed to save course content file.")
 
     # Generate plan
     logging.info(f"Generating plan for: {safe_course_name}")
@@ -155,47 +157,20 @@ async def generate(item: CourseRequest):
         raise HTTPException(status_code=500, detail="Failed to generate course plan.")
 
     # Save plan
-    file_name_plan = f"{safe_course_name}_plan.txt"
+
+    os.makedirs(f"./{course_name}/", exist_ok=True)
+    file_name_plan = f"{safe_course_name}/plan.txt"
     if not save_to_file(file_name_plan, plan):
         raise HTTPException(status_code=500, detail="Failed to save course plan file.")
 
-    lines=file_name_plan.splitlines()
-    logging.info("File read successfully")
+    logging.info(f"Generating HTML for: {safe_course_name} with file name {file_name_plan}")
+    test.genHTML(file_name_plan, safe_course_name)
 
-    for line_no , line in enumerate(lines):
-        logging.info(f"Processing line {line_no + 1}: {line.strip()}")
-        
-        line = line.strip()
-        if line:
-            # Remove any leading/trailing whitespace and newlines
-            slide_content = line.strip()
-            logging.info(f"Generating content for slide {line_no + 1}")
-            # Prepare the prompt for Gemini API
-            prompt = f"make a html program for a slide for a course on AI with content , only return the html program , and no pre or post text .({slide_content})"
-            response = gen_text_from_gemini(prompt)
-            logging.info(f"Response received for slide {line_no + 1}: {response}")
-            if response:
-                logging.info(f"Content generated for slide {line_no + 1}")
-                # Remove markdown code blocks if they exist in the response
-                if response.startswith("```") and response.endswith("```"):
-                    # If it's specifically HTML with language marker
-                    if response.startswith("```html"):
-                        response = response[7:-3].strip()
-                    # General case for any code blocks
-                    else:
-                        response = response[3:-3].strip()
-                logging.info(f"Response cleaned for slide {line_no + 1}")
+    # move the course folder to ./my-app/public
+    os.makedirs("./my-app/public", exist_ok=True)
+    os.rename(f"./{course_name}/", f"./my-app/public/{course_name}/")
 
-                # Save the response to a file
-                filename = f"./slides/slide_{line_no + 1}.html"
-                logging.info(f"Saving content to {filename}")
-                if save_to_file(filename, response):
-                    logging.info(f"Content saved successfully to {filename}")
-                else:
-                    logging.error(f"Failed to save content for slide {line_no + 1}")
-                
-            else:
-                print(f"Failed to generate content for prompt: {prompt}")
+
 
     return {
         "message": f"Successfully generated content and plan for {course_name}.",
@@ -203,4 +178,4 @@ async def generate(item: CourseRequest):
         "plan_file": file_name_plan,
     }
 
-# --- To run the server: uvicorn main:app --reload ---
+

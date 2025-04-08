@@ -19,6 +19,7 @@ This API service uses Google's Gemini AI model to automatically generate course 
 - **Uvicorn**: ASGI server for serving the FastAPI application
 - **Google Gemini AI**: Advanced language model for content generation
 - **Python 3.8+**: Core programming language
+- **weasyprint**: converting html to pdf
 
 ## Installation
 

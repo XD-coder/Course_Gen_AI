@@ -1,94 +1,70 @@
-Slide 1: Course Overview - Introduce the course, objectives, and 3-month plan.
-Slide 2: What is AI? - Define AI, discuss its goals, and differentiate it from related fields.
-Slide 3: History of AI - Briefly cover key milestones and periods in AI history.
-Slide 4: Branches of AI - Overview of Machine Learning, Deep Learning, NLP, Computer Vision, etc.
-Slide 5: AI, ML, DL Venn Diagram - Visually represent the relationships between AI, ML, and DL.
-Slide 6: Ethical Considerations - Discuss bias, job displacement, and responsible AI development.
-Slide 7: Interactive Session: AI Brainstorming - Facilitate brainstorming on AI applications in daily life.
-Slide 8: Hands-on Exercise: AI Application Research - Student presents a real-world AI application.
-Slide 9: Quiz: Basic AI Terminology - Assess understanding of fundamental AI concepts.
-Slide 10: Supervised Learning - Define and provide examples of supervised learning.
-Slide 11: Unsupervised Learning - Define and provide examples of unsupervised learning.
-Slide 12: Reinforcement Learning - Define and provide examples of reinforcement learning.
-Slide 13: Linear Regression - Explain the principles of linear regression.
-Slide 14: K-Nearest Neighbors (KNN) - Explain the concept of KNN.
-Slide 15: Data Collection - Discuss sources of data and their characteristics.
-Slide 16: Data Preparation - Explain the steps involved in preparing data for ML.
-Slide 17: Data Cleaning - Discuss handling missing values, outliers, and inconsistencies.
-Slide 18: Interactive Session: Data Cleaning - Perform hands-on data cleaning exercise on a sample dataset.
-Slide 19: Hands-on Exercise: Linear Regression and KNN Implementation - Implement LR and KNN from scratch.
-Slide 20: Test: ML Problem Types - Scenario-based questions on identifying ML problem types.
-Slide 21: Python Basics - Cover variables, data types, operators, and control flow.
-Slide 22: NumPy Introduction - Explain NumPy arrays and array operations.
-Slide 23: Pandas Introduction - Introduce DataFrames, Series, and data reading.
-Slide 24: Pandas Data Manipulation - Cover adding/removing columns, grouping, and merging.
-Slide 25: Pandas Data Analysis - Discuss descriptive statistics and data visualization.
-Slide 26: Interactive Session: Python Data Manipulation - Code simple Python scripts to manipulate data.
-Slide 27: Project: Simple Data Analysis Tool - Build a data analysis tool using Python and Pandas.
-Slide 28: Hands-on Exercise: Statistical Calculations - Write Python code for statistical calculations.
-Slide 29: Evaluation Metrics (Classification) - Explain accuracy, precision, recall, and F1-score.
-Slide 30: Evaluation Metrics (Regression) - Explain MSE, RMSE, and R-squared.
-Slide 31: Bias-Variance Tradeoff - Explain the concepts of bias and variance.
-Slide 32: Overfitting and Underfitting - Discuss techniques to prevent overfitting/underfitting.
-Slide 33: Cross-Validation - Explain K-fold cross-validation.
-Slide 34: Interactive Session: Model Performance Evaluation - Calculate evaluation metrics for sample predictions.
-Slide 35: Hands-on Exercise: K-Fold Cross-Validation - Implement K-fold cross-validation with a pre-built model.
-Slide 36: Quiz: Evaluation Metrics and Model Selection - Assess understanding of model evaluation.
-Slide 37: Logistic Regression - Explain the sigmoid function and its application.
-Slide 38: Support Vector Machines (SVM) - Cover hyperplanes, margins, and kernel trick.
-Slide 39: Decision Trees - Explain tree structure and splitting criteria.
-Slide 40: Random Forests - Discuss ensemble learning and bagging.
-Slide 41: Scikit-Learn Implementation - Implement classification algorithms with scikit-learn.
-Slide 42: Interactive Session: Algorithm Comparison - Implement and compare classification algorithms.
-Slide 43: Hands-on Exercise: Hyperparameter Tuning - Tune hyperparameters for optimal performance.
-Slide 44: Test: Algorithm Selection - Scenario-based questions on choosing classification algorithms.
-Slide 45: K-Means Clustering - Explain the concept of centroids and the algorithm.
-Slide 46: Hierarchical Clustering - Discuss agglomerative and divisive clustering.
-Slide 47: Clustering Performance Evaluation - Cover silhouette score and Davies-Bouldin index.
-Slide 48: Scikit-Learn Clustering Implementation - Implement K-Means and Hierarchical clustering.
-Slide 49: Interactive Session: Clustering Applications - Apply clustering algorithms to real-world datasets.
-Slide 50: Project: Customer Segmentation - Build a customer segmentation model using clustering.
-Slide 51: Hands-on Exercise: Distance Metrics in Hierarchical Clustering - Experiment with different distance metrics.
-Slide 52: Perceptrons - Explain weights, biases, and activation functions.
-Slide 53: Multi-Layer Perceptrons (MLPs) - Cover input, hidden, and output layers.
-Slide 54: Activation Functions - Discuss Sigmoid, ReLU, and tanh.
-Slide 55: Backpropagation - Explain the concept of gradient descent.
-Slide 56: Interactive Session: Neural Network Design - Design a simple neural network conceptually.
-Slide 57: Hands-on Exercise: Neural Network Output Calculation - Calculate output manually for a simple network.
-Slide 58: Quiz: Neural Network Components - Assess understanding of neural network components.
-Slide 59: Introduction to Feature Engineering - Explain why feature engineering is important.
-Slide 60: Feature Engineering Techniques - Polynomial, interaction, binning, and encoding.
-Slide 61: Feature Selection Methods - Filtering, wrapper, and embedded methods.
-Slide 62: Feature Scaling and Normalization - Discuss StandardScaler and MinMaxScaler.
-Slide 63: Interactive Session: Feature Engineering Application - Apply feature engineering techniques.
-Slide 64: Hands-on Exercise: Feature Scaling Implementation - Implement and compare scaling techniques.
-Slide 65: TensorFlow/Keras Setup - Install TensorFlow/Keras in a virtual environment.
-Slide 66: Keras Neural Network Building - Build a simple neural network with Keras.
-Slide 67: Training and Evaluation - Train and evaluate deep learning models using Keras.
-Slide 68: Optimizers - Discuss Stochastic Gradient Descent (SGD), Adam
-Slide 69: Loss Functions - Cover MSE, Binary Crossentropy, and Categorical Crossentropy.
-Slide 70: Interactive Session: TensorFlow/Keras Coding - Build and train a neural network for MNIST.
-Slide 71: Hands-on Exercise: Optimizer and Loss Function Experimentation - Experiment with optimizers and loss functions.
-Slide 72: CNN Architecture - Convolutional, pooling, and fully connected layers.
-Slide 73: Convolutional Layers - Discuss filters, stride, and padding.
-Slide 74: Pooling Layers - Explain max pooling and average pooling.
-Slide 75: Image Classification with CNNs - Build a CNN for image classification.
-Slide 76: Transfer Learning - Use pre-trained models for image classification.
-Slide 77: Interactive Session: CNN Training for Image Recognition - Build and train a CNN for image classification.
-Slide 78: Hands-on Exercise: Fine-tuning Pre-trained Model - Fine-tune a pre-trained model on a new dataset.
-Slide 79: RNN Architecture - Explain recurrent connections and hidden states.
-Slide 80: Sequential Data - Text and time series data representation.
-Slide 81: RNN Applications - Text classification, generation, and time series prediction.
-Slide 82: LSTMs and GRUs - Address vanishing gradient problem.
-Slide 83: RNN Implementation - Build and train an RNN for text data.
-Slide 84: Interactive Session: RNN for Text Processing - Build an RNN for text classification or generation.
-Slide 85: Hands-on Exercise: RNN Architecture Comparison - Experiment with LSTMs and GRUs.
-Slide 86: Test: CNN vs RNN - Compare CNNs and RNNs and their applications.
-Slide 87: Final Project Introduction - Introduce the final project and its objectives.
-Slide 88: Project Selection - Student selects a real-world problem.
-Slide 89: Data Collection and Preprocessing - Collect and prepare the data.
-Slide 90: Model Building and Evaluation - Build and evaluate the chosen model.
-Slide 91: Presentation Preparation - Prepare a presentation of the project.
-Slide 92: Final Presentation - Student presents their project.
-Slide 93: Project Evaluation - Evaluation criteria: Problem definition, methodology, results, and presentation.
-Slide 94: Course Conclusion - Summarize the course and future learning recommendations.
+Slide 1: Course Overview - Title: AI for Beginners: A 3-Month Journey; Briefly introduce the course goal, target audience, and structure.
+Slide 2: What is AI? - Define AI, ML, and DL; Use visuals to show the relationship between them.
+Slide 3: History of AI - Key milestones; Show a timeline with key events and figures in AI history.
+Slide 4: AI Applications - Examples across industries; Show diverse AI applications with visuals for each industry.
+Slide 5: Ethical Considerations in AI - Discuss bias, job displacement, privacy, and misuse; Use bullet points to list ethical issues.
+Slide 6: Activity - Brainstorming AI applications; Engage the student in brainstorming AI solutions for specific problems.
+Slide 7: Research Assignment - Find a real-world AI example; Explain the assignment and expected presentation length.
+Slide 8: Week 1 Assessment - Test: Understanding Key Definitions and Concepts; Explain the format and types of questions in the test.
+Slide 9: Setting up Python Environment - Anaconda and Jupyter Notebook; Provide step-by-step instructions and screenshots.
+Slide 10: Python Syntax, Data Types, and Operators; Explain basic Python syntax, data types, and operators with examples.
+Slide 11: Control Flow - if/else statements, loops; Explain control flow concepts with code examples.
+Slide 12: Lists, Dictionaries, and Functions; Explain how to work with lists, dictionaries, and functions with code examples.
+Slide 13: Activity - Coding simple Python programs; Guide the student in coding simple programs and provide example problems.
+Slide 14: Coding Challenges - Reinforce learning; Present coding challenges to reinforce the learned concepts.
+Slide 15: Week 2 Assessment - Quiz: Python Fundamentals; Explain the quiz format and topics covered.
+Slide 16: Introduction to NumPy Arrays - Purpose and benefits; Explain NumPy arrays with examples of creation and indexing.
+Slide 17: Basic Array Operations - Mathematical functions, reshaping; Demonstrate basic array operations with code examples.
+Slide 18: Introduction to Pandas DataFrames - Purpose and benefits; Explain Pandas DataFrames and how to create them from various sources.
+Slide 19: Data Exploration and Cleaning Techniques; Demonstrate data exploration and cleaning techniques with Pandas code examples.
+Slide 20: Activity - Analyzing a sample dataset; Guide the student through data analysis using NumPy and Pandas on a sample dataset.
+Slide 21: Real-World Example - How NumPy and Pandas are used; Showcase a real-world data science application using NumPy and Pandas.
+Slide 22: Week 3 Assessment - Project 1: Data Analysis with Pandas; Explain the project details, dataset provided, and evaluation criteria.
+Slide 23: Supervised vs. Unsupervised Learning; Define and differentiate supervised and unsupervised learning with examples.
+Slide 24: Regression - Linear Regression Algorithm; Explain Linear Regression, its mathematical formulation, and implementation with scikit-learn.
+Slide 25: Classification: Introduction to Classification Problems and algorithms; Introduce the classification concept and logistic regression.
+Slide 26: Model Evaluation Metrics - Accuracy, Precision, Recall, F1-score; Explain each metric and when to use them.
+Slide 27: Activity - Implementing Linear Regression in Python; Guide the student in implementing Linear Regression using scikit-learn.
+Slide 28: Week 4 Assessment - Quiz: Understanding Supervised Learning Algorithms; Explain the quiz format and topics covered.
+Slide 29: Decision Trees; Explain the concept and construction of Decision Trees with scikit-learn implementation.
+Slide 30: Introduction to Support Vector Machines (SVM); Introduce the basic concepts of SVM with scikit-learn implementation.
+Slide 31: Model Selection and Hyperparameter Tuning; Explain the importance and techniques for model selection and hyperparameter tuning.
+Slide 32: Classification Evaluation Metrics; Explain confusion matrices and evaluation based on business criteria.
+Slide 33: Activity - Comparing performance of different classification algorithms; Guide the student in comparing the performance of Decision Trees and SVM models.
+Slide 34: Week 5 Assessment - Test: Evaluating Classification Techniques; Explain the test format and topics covered.
+Slide 35: Clustering - K-Means Algorithm; Explain clustering and the K-Means algorithm with scikit-learn implementation.
+Slide 36: Dimensionality Reduction - Introduction to PCA; Explain dimensionality reduction and PCA with scikit-learn implementation.
+Slide 37: Applications of Unsupervised Learning; Show examples of using clustering and PCA in real-world applications.
+Slide 38: Activity - Implementing K-Means clustering on a dataset; Guide the student in implementing K-Means clustering.
+Slide 39: Week 6 Assessment - Quiz: Unsupervised Learning Concepts; Explain the quiz format and topics covered.
+Slide 40: Cross-Validation Techniques; Explain cross-validation techniques with scikit-learn implementation.
+Slide 41: Bias-Variance Tradeoff; Explain the bias-variance tradeoff.
+Slide 42: Regularization Techniques (L1, L2); Introduce regularization techniques (L1, L2) with scikit-learn implementation.
+Slide 43: Activity - Evaluating model performance using cross-validation; Guide the student in evaluating model performance using cross-validation.
+Slide 44: Week 7 Assessment - Project 2: Building a Classification Model; Explain the project details and evaluation criteria.
+Slide 45: Perceptron Model; Explain the Perceptron as a simple linear classifier.
+Slide 46: Feedforward Neural Networks; Explain the architecture of feedforward neural networks and activation functions.
+Slide 47: Introduction to Backpropagation; Explain backpropagation as the algorithm for training neural networks.
+Slide 48: Activity - Understanding the structure of a neural network; Guide the student in understanding the structure of a neural network.
+Slide 49: Week 8 Assessment - Quiz: Neural Networks Fundamentals; Explain the quiz format and topics covered.
+Slide 50: Introduction to TensorFlow and Keras; Introduce TensorFlow and Keras.
+Slide 51: Building Simple Neural Networks with Keras; Guide to building simple neural networks using Keras.
+Slide 52: Training and Evaluating Deep Learning Models; Explain how to train and evaluate deep learning models.
+Slide 53: Activity - Building a simple image classifier with Keras; Guide the student in building a simple CNN for image classification.
+Slide 54: Week 9 Assessment - Test: Deep Learning Frameworks; Explain the test format and topics covered.
+Slide 55: Introduction to CNNs for Image Recognition; Introduce CNNs for image recognition.
+Slide 56: Building CNN Models with Keras; Guide to building CNN models using Keras.
+Slide 57: Image Data Augmentation Techniques; Explain image data augmentation techniques.
+Slide 58: Activity - Building a CNN for a specific image classification task; Guide the student in building a CNN for image classification.
+Slide 59: Week 10 Assessment - Quiz: Understanding CNNs; Explain the quiz format and topics covered.
+Slide 60: Introduction to RNNs for Sequential Data; Introduce RNNs for sequential data.
+Slide 61: Understanding LSTM and GRU Networks; Explain LSTM and GRU networks.
+Slide 62: Building RNN Models with Keras; Guide to building RNN models using Keras.
+Slide 63: Activity - Building a simple text classification model with RNNs; Guide the student in building a text classification model with RNNs.
+Slide 64: Week 11 Assessment - No formal assessment, focus on preparing for the final project.
+Slide 65: Final Project - Project Selection; Guide the student in selecting a project based on their interests.
+Slide 66: Final Project - Project Development; Provide guidance and support for project development.
+Slide 67: Final Project - Project Presentation; Explain the project presentation requirements.
+Slide 68: Comprehensive Course Review and Q&A; Review key concepts and address any remaining questions.
+Slide 69: Final Project Presentation and Review; Evaluation of the project based on specified criteria.
+Slide 70: Course Summary - Recap of topics covered, skills acquired, and future learning paths.
