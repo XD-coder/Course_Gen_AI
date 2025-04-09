@@ -124,6 +124,9 @@ node_modules/
 .DS_Store
 *.pem
 
+#content in public folder
+./my-app/public/*
+
 # debug
 npm-debug.log*
 yarn-debug.log*

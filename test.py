@@ -52,14 +52,39 @@ def save_to_file(filename, response):
     except Exception as e:
         logging.error(f"Error writing to file {filename}: {e}", exc_info=True)
         return False
+    
+
+def genInfo(filename, course_name):
+    logging.info("Reading content.txt")
+    file = open(f"{filename}.txt", "r", encoding='utf-8')
+    content = file.read()
+    file.close()
+    logging.info("generating a INFO HTML file for the course")
+    prompt = f"make a info slide for a course on {course_name} by giving me code in html for it, only return the html program and no pre or post text .(course content :{content}) \n  also add course index to the file."
+    
+    response = gen_text_from_gemini(prompt)
+   
+    
+    if response:
+        logging.info(f"Content generated for info slide ")
+        # Remove markdown code blocks if they exist in the response
+        if response.startswith("```") and response.endswith("```"):
+            # If it's specifically HTML with language marker
+            if response.startswith("```html"):
+                response = response[7:-3].strip()
+            else:
+                response = response[3:-3].strip()
+        logging.info(f"Response cleaned for info slide ")
+
 
 #start of function
 def genHTML(filename, course_name):
-    logging.info("Reading AI_plan.txt")
-    file = open("AI_plan.txt", "r", encoding='utf-8')
-    lines = file.readlines()
-    file.close()
+    logging.info(f"Reading {filename}")
+    with open(filename, "r", encoding='utf-8') as file:
+        lines = file.readlines()
+        
     logging.info("File read successfully")
+    
 
     for line_no , line in enumerate(lines):
         logging.info(f"Processing line {line_no + 1}: {line.strip()}")
@@ -68,7 +93,7 @@ def genHTML(filename, course_name):
         if line:
             slide_content = line.strip()
             logging.info(f"Generating content for slide {line_no + 1}")
-            prompt = f"make a html program for a slide for a course on {course_name} with content , only return the html program , and no pre or post text .({slide_content})"
+            prompt = f"make a html program for a slide for a course on {course_name} with content ,if a slide contains a quiz or a test , include the questions and add a button to reveal all answers at the end when user submits their response, only return the html program , and no pre or post text .({slide_content})"
             response = gen_text_from_gemini(prompt)
             logging.info(f"Response received for slide {line_no + 1}: {response}")
             if response:

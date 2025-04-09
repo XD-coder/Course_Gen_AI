@@ -94,24 +94,25 @@ def save_to_file(filename, content):
 # --- Course Generation Functions ---
 def generate_course_structure(course_name, course_duration, course_level):
     """Generate course structure using Gemini."""
-    prompt = [f"generate a one on one course structure for a course on {course_name} "
+    prompt = [f"generate a self teaching course structure for a course on {course_name} "
               f"for {course_duration} of time and {course_level} level "
               f"(do not include markdown or any styling elements)"
-              f"(make the course interactive by adding in tests, quizzes, and projects)"]
+              f"(make the course interactive by adding in tests, quizzes and projects)"]
     return gen_text_from_gemini(prompt)
 
 def generate_course_content(structure):
     """Generate detailed course content based on structure."""
-    prompt = [f"generate detailed one on one course content for the following course structure: {structure}"]
+    prompt = [f"generate detailed self teaching course content for the following course structure: {structure}"]
     return gen_text_from_gemini(prompt)
 
 def generate_course_plan(content, course_duration):
     """Generate slide-by-slide course plan."""
-    prompt = [f"Based on the following course content and plan, create a one on one course for duration of {course_duration}."
+    prompt = [f"Based on the following course content and plan, create a self teaching course for duration of {course_duration}."
               f"create a slide plan outlining topics, activities for each indevisual slide "
-              f"(like tests, quizzes, projects) return a line of instructions for each indevisual slide "
+              f"(like tests, quizzes, projects) return a line of instructions for each indivisual slide "
+              f"and do not include any pre or post text in your response, "
               f"(you must start directly with describing the slides, and must not add any formating on your own, "
-              f"the only formattiong required is each slide info stored each in indivisual line.with no blank lines in between and no other text in between the slide contents) : \n {content}"]
+              f"the only formatting required is each slide info stored each in indivisual line.with no blank lines in between and no other text in between the slide contents) : \n {content}"]
     return gen_text_from_gemini(prompt)
 
               
