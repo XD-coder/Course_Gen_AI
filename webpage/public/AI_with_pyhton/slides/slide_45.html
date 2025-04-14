@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 45: Virtual Environments</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.quiz {
+  margin-top: 30px;
+  border: 1px solid #eee;
+  padding: 15px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+#results {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 45: Virtual Environments with venv/virtualenv</h1>
+
+  <h2>Why Use Virtual Environments?</h2>
+  <p>Virtual environments provide isolated spaces for Python projects.  This means:</p>
+  <ul>
+    <li><b>Dependency Management:</b> Different projects can use different versions of the same package without conflicts.</li>
+    <li><b>Project Isolation:</b>  Keeps your project's dependencies separate from the global Python installation, preventing accidental modification of system-wide packages.</li>
+    <li><b>Reproducibility:</b>  Ensures that your project can be easily replicated on different machines with the exact same dependencies.</li>
+    <li><b>Clean Environment:</b>  Allows you to experiment with different packages without cluttering your system's Python environment.</li>
+  </ul>
+
+  <h2>Creating a Virtual Environment with <code>venv</code></h2>
+  <p><code>venv</code> is Python's built-in virtual environment module (available since Python 3.3). Here's how to use it:</p>
+  <ol>
+    <li><b>Navigate to your project directory:</b>
+      <pre><code>cd your_project_directory</code></pre>
+    </li>
+    <li><b>Create the virtual environment:</b>
+      <pre><code>python3 -m venv .venv</code></pre>
+      <p>This creates a directory named <code>.venv</code> (or any name you choose) to hold the environment.</p>
+    </li>
+    <li><b>Activate the environment:</b>
+      <ul>
+        <li><b>Linux/macOS:</b>
+          <pre><code>source .venv/bin/activate</code></pre>
+        </li>
+        <li><b>Windows:</b>
+          <pre><code>.venv\Scripts\activate</code></pre>
+        </li>
+      </ul>
+      <p>Your shell prompt should now be prefixed with the environment name (e.g., <code>(.venv)</code>).</p>
+    </li>
+    <li><b>Install packages:</b>
+      <pre><code>pip install requests</code></pre>
+    </li>
+    <li><b>Deactivate the environment:</b>
+      <pre><code>deactivate</code></pre>
+    </li>
+  </ol>
+
+  <h2>Creating a Virtual Environment with <code>virtualenv</code></h2>
+  <p><code>virtualenv</code> is an older, third-party virtual environment tool.  While <code>venv</code> is generally preferred, <code>virtualenv</code> might be necessary in some legacy situations or if you need to support older Python versions.</p>
+
+<ol>
+    <li><b>Install virtualenv:</b>
+      <pre><code>pip install virtualenv</code></pre>
+    </li>
+    <li><b>Navigate to your project directory:</b>
+      <pre><code>cd your_project_directory</code></pre>
+    </li>
+    <li><b>Create the virtual environment:</b>
+      <pre><code>virtualenv venv</code></pre>
+      <p>This creates a directory named <code>venv</code> (or any name you choose) to hold the environment.</p>
+    </li>
+    <li><b>Activate the environment:</b>
+      <ul>
+        <li><b>Linux/macOS:</b>
+          <pre><code>source venv/bin/activate</code></pre>
+        </li>
+        <li><b>Windows:</b>
+          <pre><code>venv\Scripts\activate</code></pre>
+        </li>
+      </ul>
+      <p>Your shell prompt should now be prefixed with the environment name (e.g., <code>(venv)</code>).</p>
+    </li>
+    <li><b>Install packages:</b>
+      <pre><code>pip install requests</code></pre>
+    </li>
+    <li><b>Deactivate the environment:</b>
+      <pre><code>deactivate</code></pre>
+    </li>
+  </ol>
+    <div class="quiz">
+        <h2>Quiz: Virtual Environments</h2>
+
+        <div class="question">
+            <p>1. What is the primary benefit of using virtual environments in Python development?</p>
+            <label class="answer"><input type="radio" name="q1" value="a"> a) Increased code execution speed.</label><br>
+            <label class="answer"><input type="radio" name="q1" value="b"> b) Isolation of project dependencies.</label><br>
+            <label class="answer"><input type="radio" name="q1" value="c"> c) Automatic code documentation generation.</label><br>
+            <label class="answer"><input type="radio" name="q1" value="d"> d) Improved syntax highlighting in code editors.</label><br>
+        </div>
+
+        <div class="question">
+            <p>2. Which command is used to create a virtual environment using the <code>venv</code> module?</p>
+            <label class="answer"><input type="radio" name="q2" value="a"> a) <code>python -m virtualenv myenv</code></label><br>
+            <label class="answer"><input type="radio" name="q2" value="b"> b) <code>python -m venv myenv</code></label><br>
+            <label class="answer"><input type="radio" name="q2" value="c"> c) <code>createvirtualenv myenv</code></label><br>
+            <label class="answer"><input type="radio" name="q2" value="d"> d) <code>virtualenv myenv</code></label><br>
+        </div>
+
+        <div class="question">
+            <p>3. After activating a virtual environment, where are packages installed?</p>
+            <label class="answer"><input type="radio" name="q3" value="a"> a) The global Python installation.</label><br>
+            <label class="answer"><input type="radio" name="q3" value="b"> b) The system's root directory.</label><br>
+            <label class="answer"><input type="radio" name="q3" value="c"> c) The virtual environment's directory.</label><br>
+            <label class="answer"><input type="radio" name="q3" value="d"> d) A temporary folder that is automatically deleted.</label><br>
+        </div>
+
+        <button onclick="showAnswers()">Submit & Reveal Answers</button>
+
+        <div id="results" class="hidden">
+            <h3>Answers:</h3>
+            <p><strong>Question 1:</strong> <span id="q1_result"></span> b) Isolation of project dependencies. </p>
+            <p><strong>Question 2:</strong> <span id="q2_result"></span> b) <code>python -m venv myenv</code></p>
+            <p><strong>Question 3:</strong> <span id="q3_result"></span> c) The virtual environment's directory.</p>
+        </div>
+    </div>
+
+
+</div>
+<script>
+function showAnswers() {
+    document.getElementById("results").classList.remove("hidden");
+
+    let q1_answer = document.querySelector('input[name="q1"]:checked').value;
+    let q2_answer = document.querySelector('input[name="q2"]:checked').value;
+    let q3_answer = document.querySelector('input[name="q3"]:checked').value;
+
+    if (q1_answer === 'b') {
+      document.getElementById("q1_result").classList.add("correct");
+      document.getElementById("q1_result").textContent = "Correct!";
+    } else {
+      document.getElementById("q1_result").classList.add("incorrect");
+       document.getElementById("q1_result").textContent = "Incorrect.";
+    }
+
+     if (q2_answer === 'b') {
+      document.getElementById("q2_result").classList.add("correct");
+      document.getElementById("q2_result").textContent = "Correct!";
+    } else {
+      document.getElementById("q2_result").classList.add("incorrect");
+      document.getElementById("q2_result").textContent = "Incorrect.";
+    }
+
+    if (q3_answer === 'c') {
+      document.getElementById("q3_result").classList.add("correct");
+      document.getElementById("q3_result").textContent = "Correct!";
+    } else {
+      document.getElementById("q3_result").classList.add("incorrect");
+      document.getElementById("q3_result").textContent = "Incorrect.";
+    }
+
+}
+</script>
+
+</body>
+</html>

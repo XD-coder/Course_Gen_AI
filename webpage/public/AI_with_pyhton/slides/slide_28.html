@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 28: Dictionary Exercise</title>
+<style>
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.slide-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.exercise-instructions {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.answer {
+    margin-top: 5px;
+}
+
+.submission-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.reveal-answers-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+            display: none;
+        }
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+    <h1>Slide 28: Exercise: Dictionary Example - Store and Access Data</h1>
+
+    <div class="exercise-instructions">
+        <p><strong>Instructions:</strong></p>
+        <p>In this exercise, you will create and manipulate a Python dictionary to store and access data. Follow the steps below:</p>
+        <ol>
+            <li>Create an empty dictionary called <code>student</code>.</li>
+            <li>Add the following key-value pairs to the <code>student</code> dictionary:
+                <ul>
+                    <li><code>"name"</code>: "Alice"</li>
+                    <li><code>"age"</code>: 20</li>
+                    <li><code>"major"</code>: "Computer Science"</li>
+                </ul>
+            </li>
+            <li>Print the value associated with the key <code>"name"</code>.</li>
+            <li>Update the value associated with the key <code>"age"</code> to 21.</li>
+            <li>Add a new key-value pair to the <code>student</code> dictionary: <code>"courses"</code>: <code>["AI", "Python", "Data Structures"]</code></li>
+            <li>Print the entire <code>student</code> dictionary.</li>
+        </ol>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 1:</strong> What is the data type of the value associated with the key "age" after the update?</p>
+        <input type="radio" id="q1_a" name="q1" value="string">
+        <label for="q1_a">String</label><br>
+        <input type="radio" id="q1_b" name="q1" value="integer">
+        <label for="q1_b">Integer</label><br>
+        <input type="radio" id="q1_c" name="q1" value="float">
+        <label for="q1_c">Float</label>
+        <p class="answer hidden" id="answer1">Correct Answer: Integer</p>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 2:</strong>  How do you access the first course in the 'courses' list within the dictionary?</p>
+        <input type="radio" id="q2_a" name="q2" value="student['courses']">
+        <label for="q2_a">student['courses']</label><br>
+        <input type="radio" id="q2_b" name="q2" value="student['courses'][0]">
+        <label for="q2_b">student['courses'][0]</label><br>
+        <input type="radio" id="q2_c" name="q2" value="student.courses[0]">
+        <label for="q2_c">student.courses[0]</label>
+        <p class="answer hidden" id="answer2">Correct Answer: student['courses'][0]</p>
+    </div>
+
+    <div class="submission-container">
+        <button class="reveal-answers-button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+    </div>
+
+</div>
+
+<script>
+    function revealAnswers() {
+        document.getElementById("answer1").classList.remove("hidden");
+        document.getElementById("answer2").classList.remove("hidden");
+    }
+</script>
+
+</body>
+</html>

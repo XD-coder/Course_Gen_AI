@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 30: Modules and Packages</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+.slide {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.quiz-container {
+  margin-top: 20px;
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+#answers {
+  display: none; /* Initially hide the answers */
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+#submitButton {
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 30: Modules and Packages</h1>
+  <h2>Modules and Packages: Introduction</h2>
+
+  <h3>Instructions:</h3>
+  <p>Explain what modules and packages are, and why they are used.</p>
+
+  <p><strong>Modules:</strong></p>
+  <p>A module is a file containing Python definitions and statements. Think of it as a building block or a self-contained unit of code. Modules allow you to organize your code logically.  They provide reusability and help prevent naming conflicts.</p>
+
+  <p><strong>Packages:</strong></p>
+  <p>A package is a way of organizing related modules into a directory hierarchy. It essentially encapsulates modules under a common namespace.  A package contains a special file called <code>__init__.py</code> (which can be empty in Python 3.3+) that tells Python that a directory is a package.</p>
+
+  <p><strong>Why are they used?</strong></p>
+  <ul>
+    <li><strong>Organization:</strong> Modules and packages help structure large projects into smaller, manageable parts.</li>
+    <li><strong>Reusability:</strong> You can reuse modules in different parts of your project or in other projects entirely.</li>
+    <li><strong>Namespace Management:</strong> They prevent naming collisions by creating separate namespaces for each module and package.</li>
+    <li><strong>Abstraction:</strong> They hide complex implementation details and expose only the necessary functions and classes.</li>
+  </ul>
+
+  <div class="quiz-container">
+    <h3>Quiz</h3>
+    <form id="quizForm">
+      <div class="question">
+        <p><strong>Question 1:</strong> What is a module in Python?</p>
+        <div class="answer">
+          <input type="radio" id="q1a" name="q1" value="a">
+          <label for="q1a">A function that performs a specific task.</label><br>
+        </div>
+        <div class="answer">
+          <input type="radio" id="q1b" name="q1" value="b">
+          <label for="q1b">A file containing Python definitions and statements.</label><br>
+        </div>
+        <div class="answer">
+          <input type="radio" id="q1c" name="q1" value="c">
+          <label for="q1c">A variable that stores a value.</label><br>
+        </div>
+      </div>
+
+      <div class="question">
+        <p><strong>Question 2:</strong> What is the purpose of the <code>__init__.py</code> file in a package?</p>
+        <div class="answer">
+          <input type="radio" id="q2a" name="q2" value="a">
+          <label for="q2a">It contains the main function of the package.</label><br>
+        </div>
+        <div class="answer">
+          <input type="radio" id="q2b" name="q2" value="b">
+          <label for="q2b">It tells Python that a directory is a package.</label><br>
+        </div>
+        <div class="answer">
+          <input type="radio" id="q2c" name="q2" value="c">
+          <label for="q2c">It contains the package's documentation.</label><br>
+        </div>
+      </div>
+
+      <button type="button" id="submitButton">Submit and Reveal Answers</button>
+    </form>
+
+    <div id="answers">
+      <h3>Answers:</h3>
+      <p><strong>Question 1:</strong> b) A file containing Python definitions and statements.</p>
+      <p><strong>Question 2:</strong> b) It tells Python that a directory is a package.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.getElementById("submitButton").addEventListener("click", function() {
+  document.getElementById("answers").style.display = "block";
+  // Optionally, disable the submit button after clicking:
+  this.disabled = true;
+});
+</script>
+
+</body>
+</html>

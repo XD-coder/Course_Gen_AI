@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 83: Interactive Exercises - Understanding the C Parameter</title>
+<style>
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.slide {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.question {
+    margin-bottom: 10px;
+}
+.answer {
+    margin-top: 5px;
+    display: none; /* Initially hide answers */
+}
+.feedback {
+    margin-top: 10px;
+    display: none;
+    color: green; /* Default success color */
+}
+
+.feedback.error {
+    color: red;
+}
+
+#reveal-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h2>Slide 83: Interactive Exercises: Understanding the impact of C parameter</h2>
+    <h3>Instructions: Exercise - Impact of C Parameter</h3>
+
+    <div class="question">
+        <p><strong>Question 1:</strong> In the context of Support Vector Machines (SVMs), what does the 'C' parameter control?</p>
+        <label>
+            <input type="radio" name="q1" value="a"> a) The kernel type used in the SVM.
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="b"> b) The margin of error tolerated by the SVM.
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="c"> c) The degree of polynomial kernel.
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="d"> d) The number of support vectors.
+        </label>
+        <div class="answer" data-correct="b"><strong>Correct Answer:</strong> b) The margin of error tolerated by the SVM. A smaller C value allows larger margin violations (more tolerance for errors) while a larger C value penalizes margin violations heavily.</div>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 2:</strong>  If you increase the value of 'C' in an SVM, what is the likely impact on the model?</p>
+        <label>
+            <input type="radio" name="q2" value="a"> a) The model becomes more prone to underfitting.
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="b"> b) The model becomes more prone to overfitting.
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="c"> c) The model's performance remains unchanged.
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="d"> d) The model runs faster.
+        </label>
+        <div class="answer" data-correct="b"><strong>Correct Answer:</strong> b) The model becomes more prone to overfitting.  A higher C value encourages the model to fit the training data more closely, potentially leading to overfitting.</div>
+    </div>
+
+    <div class="question">
+        <p><strong>Question 3:</strong> Which of the following scenarios might warrant using a small value for 'C' in an SVM?</p>
+        <label>
+            <input type="radio" name="q3" value="a"> a) When the training data is very clean and contains no noise.
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="b"> b) When you want to avoid overfitting and create a more generalized model.
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="c"> c) When computational resources are severely limited.
+        </label><br>
+        <label>
+            <input type="radio" name="q3" value="d"> d) When the training data has a very large number of features.
+        </label>
+        <div class="answer" data-correct="b"><strong>Correct Answer:</strong> b) When you want to avoid overfitting and create a more generalized model. A smaller C allows for a larger margin and can improve generalization by allowing some misclassification.</div>
+    </div>
+
+
+    <button id="reveal-button">Reveal Answers</button>
+
+</div>
+
+<script>
+document.getElementById('reveal-button').addEventListener('click', function() {
+    let answers = document.querySelectorAll('.answer');
+    answers.forEach(answer => {
+        answer.style.display = 'block';
+    });
+    this.style.display = 'none'; // Hide the button after clicking
+});
+</script>
+
+</body>
+</html>

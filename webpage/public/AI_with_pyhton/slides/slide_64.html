@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 64: Interactive Exercises: Missing Value Imputation</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.answer-key {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect {
+  color: red;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h2>Slide 64: Interactive Exercises: Missing Value Imputation</h2>
+
+<p><b>Instructions:</b> Exercise - Impute the missing values using different methods.</p>
+
+<div class="question">
+  <h3>Question 1: Which of the following methods is NOT commonly used for missing value imputation?</h3>
+  <label><input type="radio" name="q1" value="mean"> Mean Imputation</label><br>
+  <label><input type="radio" name="q1" value="median"> Median Imputation</label><br>
+  <label><input type="radio" name="q1" value="mode"> Mode Imputation</label><br>
+  <label><input type="radio" name="q1" value="exponential"> Exponential Smoothing</label><br>
+</div>
+
+<div class="question">
+  <h3>Question 2: When is it most appropriate to use median imputation instead of mean imputation?</h3>
+  <label><input type="radio" name="q2" value="symmetric"> When the data is symmetrically distributed.</label><br>
+  <label><input type="radio" name="q2" value="skewed"> When the data is heavily skewed.</label><br>
+  <label><input type="radio" name="q2" value="categorical"> When dealing with categorical data.</label><br>
+  <label><input type="radio" name="q2" value="missing"> When there are very few missing values.</label><br>
+</div>
+
+<div class="question">
+  <h3>Question 3: Which imputation method can introduce bias if the missing data is not Missing Completely At Random (MCAR)?</h3>
+  <label><input type="radio" name="q3" value="mcar"> All imputation methods.</label><br>
+  <label><input type="radio" name="q3" value="knn"> K-Nearest Neighbors imputation.</label><br>
+  <label><input type="radio" name="q3" value="listwise"> Listwise deletion.</label><br>
+    <label><input type="radio" name="q3" value="simple"> Simple Imputation (mean, median, mode)</label><br>
+</div>
+
+<button id="submitBtn">Submit and Show Answers</button>
+
+<div class="answer-key" id="answers">
+  <h3>Answer Key:</h3>
+  <p><b>Question 1:</b> Exponential Smoothing <span id="q1-result"></span></p>
+  <p><b>Question 2:</b> When the data is heavily skewed. <span id="q2-result"></span></p>
+  <p><b>Question 3:</b> Simple Imputation (mean, median, mode) <span id="q3-result"></span></p>
+</div>
+
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {
+  document.getElementById('answers').style.display = 'block';
+
+    // Q1 validation
+    const q1Answer = document.querySelector('input[name="q1"]:checked');
+    if (q1Answer && q1Answer.value === 'exponential') {
+        document.getElementById('q1-result').innerHTML = '<span class="correct">Correct!</span>';
+    } else {
+        document.getElementById('q1-result').innerHTML = '<span class="incorrect">Incorrect.</span>';
+    }
+
+    // Q2 validation
+    const q2Answer = document.querySelector('input[name="q2"]:checked');
+    if (q2Answer && q2Answer.value === 'skewed') {
+        document.getElementById('q2-result').innerHTML = '<span class="correct">Correct!</span>';
+    } else {
+        document.getElementById('q2-result').innerHTML = '<span class="incorrect">Incorrect.</span>';
+    }
+
+    // Q3 validation
+    const q3Answer = document.querySelector('input[name="q3"]:checked');
+    if (q3Answer && q3Answer.value === 'simple') {
+        document.getElementById('q3-result').innerHTML = '<span class="correct">Correct!</span>';
+    } else {
+        document.getElementById('q3-result').innerHTML = '<span class="incorrect">Incorrect.</span>';
+    }
+});
+</script>
+
+</body>
+</html>

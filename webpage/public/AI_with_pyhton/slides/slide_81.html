@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 81: Evaluating Classification Models</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.answer {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  display: none; /* Initially hidden */
+}
+
+#revealAnswers {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#revealAnswers:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 81: Evaluating Classification Models</h1>
+
+  <h2>Introduction</h2>
+  <p>In classification, we aim to predict the category to which a data point belongs.  Evaluating how well our model performs is crucial.  Several metrics help us understand the strengths and weaknesses of our classifier.</p>
+
+  <h2>Evaluation Metrics</h2>
+  <ul>
+    <li><strong>Accuracy:</strong> The proportion of correctly classified instances out of the total instances.  (TP + TN) / (TP + TN + FP + FN)</li>
+    <li><strong>Precision:</strong> The proportion of true positives among the instances predicted as positive. TP / (TP + FP)</li>
+    <li><strong>Recall:</strong> The proportion of true positives among the actual positive instances. TP / (TP + FN)</li>
+    <li><strong>F1-score:</strong> The harmonic mean of precision and recall, providing a balanced measure. 2 * (Precision * Recall) / (Precision + Recall)</li>
+    <li><strong>Confusion Matrix:</strong> A table that summarizes the performance of a classification model, showing the counts of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN).</li>
+  </ul>
+
+  <h2>Instructions</h2>
+  <p>Explain each of the classification evaluation metrics (Accuracy, Precision, Recall, F1-score, and Confusion Matrix) in your own words. Also, briefly describe a scenario where one metric might be more important than another.</p>
+
+  <h2>Quiz</h2>
+
+  <div class="question">
+    <p>Question 1: Which metric is most sensitive to false positives?</p>
+    <div class="options">
+      <label><input type="radio" name="q1" value="accuracy"> Accuracy</label>
+      <label><input type="radio" name="q1" value="precision"> Precision</label>
+      <label><input type="radio" name="q1" value="recall"> Recall</label>
+      <label><input type="radio" name="q1" value="f1"> F1-score</label>
+    </div>
+    <div class="answer" data-question="q1">The correct answer is Precision.</div>
+  </div>
+
+  <div class="question">
+    <p>Question 2:  In a medical diagnosis scenario where missing a disease is critical, which metric would you prioritize?</p>
+    <div class="options">
+      <label><input type="radio" name="q2" value="accuracy"> Accuracy</label>
+      <label><input type="radio" name="q2" value="precision"> Precision</label>
+      <label><input type="radio" name="q2" value="recall"> Recall</label>
+      <label><input type="radio" name="q2" value="f1"> F1-score</label>
+    </div>
+    <div class="answer" data-question="q2">The correct answer is Recall.</div>
+  </div>
+
+  <div class="question">
+    <p>Question 3: Which metric is a balanced measure of Precision and Recall?</p>
+    <div class="options">
+      <label><input type="radio" name="q3" value="accuracy"> Accuracy</label>
+      <label><input type="radio" name="q3" value="precision"> Precision</label>
+      <label><input type="radio" name="q3" value="recall"> Recall</label>
+      <label><input type="radio" name="q3" value="f1"> F1-score</label>
+    </div>
+    <div class="answer" data-question="q3">The correct answer is F1-score.</div>
+  </div>
+
+  <button id="revealAnswers">Reveal Answers</button>
+
+</div>
+
+<script>
+document.getElementById('revealAnswers').addEventListener('click', function() {
+  const answers = document.querySelectorAll('.answer');
+  answers.forEach(answer => {
+    answer.style.display = 'block';
+  });
+});
+</script>
+
+</body>
+</html>

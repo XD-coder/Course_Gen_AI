@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 6: Resources</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+.slide {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #666;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.quiz-question {
+    margin-bottom: 10px;
+}
+
+.quiz-options {
+    margin-left: 20px;
+}
+
+.answer-section {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+.answer {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.reveal-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.instructions{
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>AI with Python - Slide 6: Resources</h1>
+
+    <div class="instructions">
+        <h2>Instructions:</h2>
+        <p>Explore the following resources to deepen your understanding of Python fundamentals.  Focus on the initial chapters to build a solid foundation.</p>
+    </div>
+
+    <h2>Resources:</h2>
+    <ul>
+        <li>
+            <strong>Official Python Tutorial:</strong>
+            <a href="https://docs.python.org/3/tutorial/" target="_blank">Python 3.x Tutorial</a>
+            (Suggested initial chapters: 1-5)
+        </li>
+        <li>
+            <strong>Real Python:</strong>
+            <a href="https://realpython.com/" target="_blank">Real Python</a>
+            (Suggested initial topics: Python Basics, Data Types)
+        </li>
+    </ul>
+
+    <h2>Quiz: Test Your Knowledge</h2>
+
+    <div class="quiz-question">
+        <p><strong>Question 1:</strong> Which of the following is NOT a built-in data type in Python?</p>
+        <div class="quiz-options">
+            <label><input type="radio" name="q1" value="int"> int</label><br>
+            <label><input type="radio" name="q1" value="string"> string</label><br>
+            <label><input type="radio" name="q1" value="boolean"> boolean</label><br>
+            <label><input type="radio" name="q1" value="float"> float</label>
+        </div>
+    </div>
+
+    <div class="quiz-question">
+        <p><strong>Question 2:</strong> Which keyword is used to define a function in Python?</p>
+        <div class="quiz-options">
+            <label><input type="radio" name="q2" value="define"> define</label><br>
+            <label><input type="radio" name="q2" value="function"> function</label><br>
+            <label><input type="radio" name="q2" value="def"> def</label><br>
+            <label><input type="radio" name="q2" value="fun"> fun</label>
+        </div>
+    </div>
+
+    <div class="quiz-question">
+        <p><strong>Question 3:</strong> What is the output of <code>print(2 + 2 * 2)</code>?</p>
+        <div class="quiz-options">
+            <label><input type="radio" name="q3" value="4"> 4</label><br>
+            <label><input type="radio" name="q3" value="6"> 6</label><br>
+            <label><input type="radio" name="q3" value="8"> 8</label><br>
+            <label><input type="radio" name="q3" value="10"> 10</label>
+        </div>
+    </div>
+
+    <button class="reveal-button" onclick="revealAnswers()">Reveal Answers</button>
+
+    <div class="answer-section" id="answerSection">
+      <h2>Answers:</h2>
+        <div class="answer"><strong>Question 1:</strong> string</div>
+        <div class="answer"><strong>Question 2:</strong> def</div>
+        <div class="answer"><strong>Question 3:</strong> 6</div>
+    </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerSection").style.display = "block";
+}
+</script>
+
+</body>
+</html>

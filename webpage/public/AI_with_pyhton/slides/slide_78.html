@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 78: Introduction to Logistic Regression</title>
+<style>
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+.slide {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+.answer {
+    display: none;
+    margin-top: 5px;
+    color: green;
+}
+
+.answer-revealed {
+    display: block; /* Show the answer */
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>Slide 78: Introduction to Logistic Regression</h1>
+
+    <h2>Instructions:</h2>
+    <p>Explain the goal of logistic regression: to predict the probability of a binary outcome.</p>
+
+    <div class="question">
+        <p><b>Question 1:</b> What type of outcome does logistic regression primarily predict?</p>
+        <label><input type="radio" name="q1" value="continuous"> Continuous numerical values</label><br>
+        <label><input type="radio" name="q1" value="categorical"> Categorical (binary) values</label><br>
+        <label><input type="radio" name="q1" value="multiclass"> Multi-class categorical values</label>
+        <div class="answer" id="answer1">Correct Answer: Categorical (binary) values</div>
+    </div>
+
+    <div class="question">
+        <p><b>Question 2:</b> Logistic regression uses which function to map inputs to probabilities?</p>
+        <label><input type="radio" name="q2" value="linear"> Linear Function</label><br>
+        <label><input type="radio" name="q2" value="sigmoid"> Sigmoid Function</label><br>
+        <label><input type="radio" name="q2" value="relu"> ReLU Function</label>
+        <div class="answer" id="answer2">Correct Answer: Sigmoid Function</div>
+    </div>
+
+    <div class="question">
+        <p><b>Question 3:</b>  True or False: Logistic regression can be used for multi-class classification without modification.</p>
+        <label><input type="radio" name="q3" value="true"> True</label><br>
+        <label><input type="radio" name="q3" value="false"> False</label>
+        <div class="answer" id="answer3">Correct Answer: False</div>
+    </div>
+
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById("answer1").classList.add("answer-revealed");
+    document.getElementById("answer2").classList.add("answer-revealed");
+    document.getElementById("answer3").classList.add("answer-revealed");
+    // You could also disable the radio buttons here if needed
+    let radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => radio.disabled = true);
+}
+</script>
+
+</body>
+</html>

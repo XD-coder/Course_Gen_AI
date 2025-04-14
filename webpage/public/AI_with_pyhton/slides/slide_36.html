@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python: Pandas - Introduction to Series and DataFrames</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.quiz-question {
+  margin-bottom: 10px;
+}
+.answer-options {
+  margin-left: 20px;
+}
+.answer-key {
+  display: none; /* Initially hide answers */
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+#reveal-answers {
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Pandas: Introduction to Series and DataFrames</h1>
+
+  <h2>What is Pandas?</h2>
+  <ul>
+    <li>A powerful Python library for data manipulation and analysis.</li>
+    <li>Provides data structures like Series and DataFrames.</li>
+    <li>Built on top of NumPy.</li>
+  </ul>
+
+  <h2>Pandas Series</h2>
+  <p>A one-dimensional labeled array capable of holding any data type.</p>
+  <pre><code>
+  import pandas as pd
+
+  # Creating a Series from a list
+  data = [10, 20, 30, 40, 50]
+  s = pd.Series(data)
+  print(s)
+  </code></pre>
+
+  <h2>Pandas DataFrame</h2>
+  <p>A two-dimensional labeled data structure with columns of potentially different types.</p>
+  <pre><code>
+  # Creating a DataFrame from a dictionary
+  data = {'Name': ['Alice', 'Bob', 'Charlie'],
+          'Age': [25, 30, 28],
+          'City': ['New York', 'London', 'Paris']}
+  df = pd.DataFrame(data)
+  print(df)
+  </code></pre>
+
+  <h2>Quiz Time!</h2>
+
+  <div class="quiz-question">
+    <p><strong>Question 1:</strong> Which Pandas data structure is one-dimensional?</p>
+    <div class="answer-options">
+      <label><input type="radio" name="q1" value="a"> A) DataFrame</label><br>
+      <label><input type="radio" name="q1" value="b"> B) Series</label><br>
+      <label><input type="radio" name="q1" value="c"> C) Panel</label><br>
+      <label><input type="radio" name="q1" value="d"> D) Index</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <p><strong>Question 2:</strong> What is the primary purpose of Pandas?</p>
+    <div class="answer-options">
+      <label><input type="radio" name="q2" value="a"> A) Web Development</label><br>
+      <label><input type="radio" name="q2" value="b"> B) Data Manipulation and Analysis</label><br>
+      <label><input type="radio" name="q2" value="c"> C) Game Development</label><br>
+      <label><input type="radio" name="q2" value="d"> D) Machine Learning Model Training (only)</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <p><strong>Question 3:</strong> Which of the following is NOT typically found in a DataFrame?</p>
+    <div class="answer-options">
+      <label><input type="radio" name="q3" value="a"> A) Columns</label><br>
+      <label><input type="radio" name="q3" value="b"> B) Rows</label><br>
+      <label><input type="radio" name="q3" value="c"> C) Cells</label><br>
+      <label><input type="radio" name="q3" value="d"> D) Edges</label>
+    </div>
+  </div>
+
+  <button id="reveal-answers" onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+  <div id="answer-key" class="answer-key">
+    <h3>Answer Key:</h3>
+    <p><strong>Question 1:</strong> B) Series</p>
+    <p><strong>Question 2:</strong> B) Data Manipulation and Analysis</p>
+    <p><strong>Question 3:</strong> D) Edges</p>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer-key").style.display = "block";
+  document.getElementById("reveal-answers").style.display = "none";
+}
+</script>
+
+</body>
+</html>

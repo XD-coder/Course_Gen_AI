@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 38: Pandas - Descriptive Statistics</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  display: none; /* Initially hide answers */
+  margin-top: 5px;
+  color: green;
+}
+
+.reveal-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 38: Pandas - Descriptive Statistics</h1>
+
+  <h2>Instructions: Explain how to calculate descriptive statistics using Pandas</h2>
+
+  <p>Pandas provides powerful functions for calculating descriptive statistics on DataFrames and Series.  Here's a breakdown:</p>
+
+  <h3>Key Functions:</h3>
+  <ul>
+    <li><code>.describe()</code>:  Generates a summary of descriptive statistics including mean, standard deviation, min, max, quartiles (25%, 50%, 75%) for numerical columns.</li>
+    <li><code>.mean()</code>: Calculates the mean (average) of a column or Series.</li>
+    <li><code>.median()</code>: Calculates the median (middle value) of a column or Series.</li>
+    <li><code>.std()</code>: Calculates the standard deviation of a column or Series.</li>
+    <li><code>.min()</code>:  Finds the minimum value in a column or Series.</li>
+    <li><code>.max()</code>:  Finds the maximum value in a column or Series.</li>
+    <li><code>.count()</code>: Counts the number of non-null values in a column or Series.</li>
+    <li><code>.value_counts()</code>:  Counts the frequency of each unique value in a Series.</li>
+    <li><code>.corr()</code>: Calculates the correlation matrix between numerical columns in a DataFrame.</li>
+  </ul>
+
+  <h3>Example:</h3>
+  <pre><code>
+  import pandas as pd
+
+  # Sample DataFrame
+  data = {'col1': [1, 2, 3, 4, 5],
+          'col2': [6, 7, 8, 9, 10]}
+  df = pd.DataFrame(data)
+
+  # Descriptive Statistics
+  print(df.describe())
+
+  # Mean of col1
+  print("Mean of col1:", df['col1'].mean())
+
+  # Median of col2
+  print("Median of col2:", df['col2'].median())
+  </code></pre>
+
+  <p><code>.describe()</code> provides a quick overview. Individual functions let you calculate specific statistics as needed.</p>
+
+  <h2>Quiz:</h2>
+
+  <div class="question">
+    <p>1. Which Pandas function is used to get a summary of common descriptive statistics like mean, std, min, and max?</p>
+    <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a) .summary()</label><br>
+    <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b) .describe()</label><br>
+    <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c) .stats()</label><br>
+    <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">d) .calculate()</label><br>
+    <div class="answer" id="answer1">Correct Answer: b) .describe()</div>
+  </div>
+
+  <div class="question">
+    <p>2.  What does the <code>.value_counts()</code> function do?</p>
+    <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a) Calculates the mean of each column.</label><br>
+    <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b) Counts the number of non-null values.</label><br>
+    <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c) Counts the frequency of each unique value in a Series.</label><br>
+    <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">d) Calculates the variance of each column.</label><br>
+    <div class="answer" id="answer2">Correct Answer: c) Counts the frequency of each unique value in a Series.</div>
+  </div>
+
+   <div class="question">
+    <p>3.  Given a Pandas Series `s = pd.Series([1, 2, 2, 3, 3, 3])`, what will `s.mode()` return?</p>
+    <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a) 1</label><br>
+    <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b) 2</label><br>
+    <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c) 3</label><br>
+    <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">d) A Series containing [3]</label><br>
+    <input type="radio" name="q3" value="e" id="q3e"> <label for="q3e">e) A Series containing [1, 2, 3]</label><br>
+
+    <div class="answer" id="answer3">Correct Answer: d) A Series containing [3]</div>
+  </div>
+
+  <button class="reveal-button" onclick="revealAnswers()">Reveal Answers</button>
+</div>
+
+<script>
+function revealAnswers() {
+  const answers = document.querySelectorAll('.answer');
+  answers.forEach(answer => {
+    answer.style.display = 'block';
+  });
+
+  // Disable the button after clicking
+  const button = document.querySelector('.reveal-button');
+  button.disabled = true;
+  button.innerText = "Answers Revealed";
+}
+</script>
+
+</body>
+</html>

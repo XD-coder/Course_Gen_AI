@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 25: Even/Odd Checker</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.slide {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+    text-align: center;
+}
+
+.instructions {
+    margin-top: 20px;
+}
+
+.question {
+    margin-top: 20px;
+}
+
+.answer-container {
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#answer-section {
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>Slide 25: Exercise: Even/Odd Checker</h1>
+
+    <div class="instructions">
+        <h2>Instructions:</h2>
+        <p>Guide the learner to write a program that checks if a number is even or odd.</p>
+        <p>Consider these questions while building the program:</p>
+    </div>
+
+    <div class="question">
+        <h3>Quiz Time!</h3>
+
+        <p>1. What operator is used to find the remainder of a division?</p>
+        <input type="text" id="q1-answer" name="q1-answer"><br>
+
+        <p>2.  What is the condition to check if a number `n` is even in Python?</p>
+        <input type="text" id="q2-answer" name="q2-answer"><br>
+
+        <p>3.  If a number is not even, what is it?</p>
+        <input type="text" id="q3-answer" name="q3-answer"><br>
+    </div>
+
+    <div class="button-container">
+        <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+    </div>
+
+    <div id="answer-section">
+        <h3>Answers:</h3>
+        <p>1. Modulo operator (%)</p>
+        <p>2. n % 2 == 0</p>
+        <p>3. Odd</p>
+    </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById('answer-section').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

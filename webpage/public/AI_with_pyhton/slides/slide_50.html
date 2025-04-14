@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python: Project 1</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #666;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 10px;
+}
+
+.answer-section {
+  margin-top: 20px;
+  display: none; /* Initially hide answers */
+}
+
+.reveal-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function revealAnswers() {
+  var answerSections = document.querySelectorAll('.answer-section');
+  for (var i = 0; i < answerSections.length; i++) {
+    answerSections[i].style.display = 'block';
+  }
+  document.getElementById("revealButton").style.display = "none"; // Hide the button after click
+}
+</script>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 50: Project 1: Data Exploration using Pandas and Matplotlib</h1>
+
+  <h2>Project Overview</h2>
+  <p>This project allows you to practice data exploration using Pandas and Matplotlib. You will choose a dataset, load it, explore it, visualize the data, and write a report summarizing your findings.</p>
+
+  <h2>Instructions</h2>
+  <ul>
+    <li><b>Choose a Dataset:</b> Select a dataset that interests you. Public datasets are readily available on sites like Kaggle, UCI Machine Learning Repository, or data.gov.</li>
+    <li><b>Load the Data:</b> Use Pandas to load the dataset into a DataFrame.</li>
+    <li><b>Explore the Data:</b>
+      <ul>
+        <li>Examine the data types of each column.</li>
+        <li>Calculate descriptive statistics (mean, median, standard deviation, etc.).</li>
+        <li>Identify missing values and handle them appropriately.</li>
+      </ul>
+    </li>
+    <li><b>Visualize the Data:</b> Use Matplotlib to create informative visualizations, such as:
+      <ul>
+        <li>Histograms</li>
+        <li>Scatter plots</li>
+        <li>Bar charts</li>
+        <li>Box plots</li>
+      </ul>
+    </li>
+    <li><b>Write a Report:</b> Summarize your findings in a concise report. Include:
+      <ul>
+        <li>A description of the dataset.</li>
+        <li>Key insights gained from your exploration and visualizations.</li>
+        <li>Any challenges you encountered.</li>
+        </ul>
+    </li>
+  </ul>
+
+  <h2>Quiz Time!</h2>
+
+  <div class="quiz-question">
+    <p>1. Which Pandas function is used to read a CSV file into a DataFrame?</p>
+    <input type="radio" id="q1a" name="q1" value="a">
+    <label for="q1a">a) read_csv()</label><br>
+    <input type="radio" id="q1b" name="q1" value="b">
+    <label for="q1b">b) load_csv()</label><br>
+    <input type="radio" id="q1c" name="q1" value="c">
+    <label for="q1c">c) open_csv()</label>
+  </div>
+  <div class="answer-section">
+        <b>Answer:</b> a) read_csv()
+    </div>
+
+  <div class="quiz-question">
+    <p>2.  Which Matplotlib function is used to create a scatter plot?</p>
+    <input type="radio" id="q2a" name="q2" value="a">
+    <label for="q2a">a) plt.bar()</label><br>
+    <input type="radio" id="q2b" name="q2" value="b">
+    <label for="q2b">b) plt.scatter()</label><br>
+    <input type="radio" id="q2c" name="q2" value="c">
+    <label for="q2c">c) plt.hist()</label>
+  </div>
+  <div class="answer-section">
+        <b>Answer:</b> b) plt.scatter()
+    </div>
+
+
+  <div class="quiz-question">
+    <p>3. What Pandas function is used to calculate summary statistics of a DataFrame?</p>
+    <input type="radio" id="q3a" name="q3" value="a">
+    <label for="q3a">a) df.describe()</label><br>
+    <input type="radio" id="q3b" name="q3" value="b">
+    <label for="q3b">b) df.summary()</label><br>
+    <input type="radio" id="q3c" name="q3" value="c">
+    <label for="q3c">c) df.stats()</label>
+  </div>
+  <div class="answer-section">
+        <b>Answer:</b> a) df.describe()
+    </div>
+  <button class="reveal-button" id="revealButton" onclick="revealAnswers()">Reveal Answers</button>
+
+</div>
+
+</body>
+</html>

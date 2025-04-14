@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 59: Data Transformation: Scaling</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #888888;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+p {
+  margin-bottom: 15px;
+}
+code {
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+  border: 1px solid #ddd;
+  font-family: monospace;
+}
+.quiz-question {
+  margin-bottom: 10px;
+}
+.quiz-answers {
+  margin-left: 20px;
+}
+.quiz-answers input[type="radio"] {
+  margin-right: 5px;
+}
+#results {
+    margin-top: 20px;
+    display: none;
+}
+#submitButton{
+    margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Data Transformation: Scaling</h1>
+
+  <p>Data scaling is a crucial preprocessing step in many machine learning algorithms. It involves transforming the range of features to a common scale. This is important because algorithms like gradient descent are sensitive to the scale of the input features.  Features with larger values can dominate the learning process.</p>
+
+  <h2>Common Scaling Methods</h2>
+
+  <h3>1. Min-Max Scaling</h3>
+  <p>Min-Max scaling scales the features to a range between 0 and 1. The formula is:</p>
+  <p><code>X_scaled = (X - X_min) / (X_max - X_min)</code></p>
+  <p><b>Example:</b></p>
+  <p><code>
+  from sklearn.preprocessing import MinMaxScaler<br>
+  import numpy as np<br><br>
+
+  data = np.array([[1, 10], [2, 20], [3, 30]])<br>
+  scaler = MinMaxScaler()<br>
+  scaled_data = scaler.fit_transform(data)<br>
+  print(scaled_data)
+  </code></p>
+
+  <h3>2. Standard Scaler (Z-score Normalization)</h3>
+  <p>Standard scaler standardizes features by removing the mean and scaling to unit variance. The formula is:</p>
+  <p><code>X_scaled = (X - mean) / standard_deviation</code></p>
+  <p><b>Example:</b></p>
+  <p><code>
+  from sklearn.preprocessing import StandardScaler<br>
+  import numpy as np<br><br>
+
+  data = np.array([[1, 10], [2, 20], [3, 30]])<br>
+  scaler = StandardScaler()<br>
+  scaled_data = scaler.fit_transform(data)<br>
+  print(scaled_data)
+  </code></p>
+
+    <h3>Quiz</h3>
+    <form id="quizForm">
+        <div class="quiz-question">
+            <p>1. Which scaling method is sensitive to outliers?</p>
+            <div class="quiz-answers">
+                <label><input type="radio" name="q1" value="minmax"> Min-Max Scaling</label><br>
+                <label><input type="radio" name="q1" value="standard"> Standard Scaler</label><br>
+                <label><input type="radio" name="q1" value="none"> Neither</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <p>2. What is the typical range of values after applying Min-Max scaling?</p>
+            <div class="quiz-answers">
+                <label><input type="radio" name="q2" value="01"> 0 to 1</label><br>
+                <label><input type="radio" name="q2" value="minus11"> -1 to 1</label><br>
+                <label><input type="radio" name="q2" value="any"> Any range, depending on the data</label>
+            </div>
+        </div>
+        <button type="button" id="submitButton" onclick="showResults()">Submit</button>
+    </form>
+
+    <div id="results">
+        <h3>Answers:</h3>
+        <p>1. <b>Min-Max Scaling</b></p>
+        <p>2. <b>0 to 1</b></p>
+    </div>
+</div>
+
+<script>
+function showResults() {
+    document.getElementById("results").style.display = "block";
+    document.getElementById("submitButton").style.display = "none";
+}
+</script>
+</body>
+</html>

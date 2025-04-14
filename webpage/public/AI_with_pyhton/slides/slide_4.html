@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 4: Installing Python and pip on macOS</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+  text-align: center;
+}
+
+ol {
+  margin-left: 20px;
+}
+
+.quiz-section {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.quiz-question {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+#answer-button {
+  display: none; /* Initially hidden */
+  margin-top: 10px;
+}
+
+.correct-answer {
+   color: green;
+   font-weight: bold;
+}
+
+.incorrect-answer {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 4: Installing Python and pip on macOS</h1>
+
+  <h2>Instructions:</h2>
+  <p>Follow these step-by-step instructions to install Python on macOS, using Homebrew for easier updates:</p>
+
+  <ol>
+    <li><b>Install Homebrew (if you don't have it already):</b>
+      <p>Open Terminal (Applications &gt; Utilities &gt; Terminal).</p>
+      <p>Run the following command:</p>
+      <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+      <p>Follow the prompts during the installation process. You may be asked for your administrator password.</p>
+    </li>
+
+    <li><b>Update Homebrew:</b>
+      <p>In Terminal, run:</p>
+      <pre><code>brew update</code></pre>
+    </li>
+
+    <li><b>Install Python using Homebrew:</b>
+      <p>In Terminal, run:</p>
+      <pre><code>brew install python</code></pre>
+      <p>This will install the latest version of Python 3.</p>
+    </li>
+
+    <li><b>Verify the Installation:</b>
+      <p>After the installation is complete, verify that Python is installed correctly by running:</p>
+      <pre><code>python3 --version</code></pre>
+      <p>You should see the version of Python that was installed.</p>
+
+       <p>You can also check the location of the python executable</p>
+      <pre><code>which python3</code></pre>
+
+    </li>
+
+    <li><b>Verify pip (Python Package Installer):</b>
+         <p>pip should be installed automatically with Python.  Verify pip is installed by running:</p>
+         <pre><code>pip3 --version</code></pre>
+    </li>
+  </ol>
+
+  <div class="quiz-section">
+    <h2>Quick Quiz:</h2>
+
+    <div class="quiz-question">
+      <p><b>Question 1:</b> What command is used to install Python using Homebrew?</p>
+      <label><input type="radio" name="q1" value="a"> brew install python</label>
+      <label><input type="radio" name="q1" value="b"> brew install python3</label>
+      <label><input type="radio" name="q1" value="c"> sudo apt-get install python3</label>
+      <label><input type="radio" name="q1" value="d"> install python</label>
+    </div>
+
+    <div class="quiz-question">
+      <p><b>Question 2:</b> Which command is used to verify the version of Python installed?</p>
+      <label><input type="radio" name="q2" value="a"> python --version</label>
+      <label><input type="radio" name="q2" value="b"> python3 --version</label>
+      <label><input type="radio" name="q2" value="c"> version python</label>
+      <label><input type="radio" name="q2" value="d"> check python</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <button id="answer-button">Show Answers</button>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('submit-button').addEventListener('click', function() {
+  document.getElementById('answer-button').style.display = 'block'; // Show the answer button when the submit button is clicked
+
+  // Highlight Correct Answers
+   let q1_options = document.querySelectorAll('input[name="q1"]');
+   q1_options.forEach(function(option){
+        if(option.value === 'a'){
+            option.parentElement.classList.add('correct-answer');
+        } else {
+          if(option.checked && option.value !== 'a'){
+            option.parentElement.classList.add('incorrect-answer');
+          }
+        }
+
+   });
+
+   let q2_options = document.querySelectorAll('input[name="q2"]');
+   q2_options.forEach(function(option){
+        if(option.value === 'b'){
+            option.parentElement.classList.add('correct-answer');
+        } else {
+          if(option.checked && option.value !== 'b'){
+            option.parentElement.classList.add('incorrect-answer');
+          }
+        }
+
+   });
+
+  //Disable further changes after Submission
+
+   q1_options.forEach(function(option){
+       option.disabled = true;
+   })
+
+   q2_options.forEach(function(option){
+       option.disabled = true;
+   })
+
+   document.getElementById('submit-button').disabled = true;
+
+});
+
+
+
+document.getElementById('answer-button').addEventListener('click', function() {
+
+     // Reveal the answers inline (this is a simplified approach)
+     // More robust solution would involve showing a separate answer key.
+
+    let answers = {
+        q1: "a",
+        q2: "b"
+    };
+
+
+   let q1_options = document.querySelectorAll('input[name="q1"]');
+   q1_options.forEach(function(option){
+        if(option.value === 'a'){
+            option.parentElement.classList.add('correct-answer');
+        }
+   });
+
+   let q2_options = document.querySelectorAll('input[name="q2"]');
+   q2_options.forEach(function(option){
+        if(option.value === 'b'){
+            option.parentElement.classList.add('correct-answer');
+        }
+   });
+
+   document.getElementById('answer-button').disabled = true;
+});
+
+
+</script>
+
+</body>
+</html>

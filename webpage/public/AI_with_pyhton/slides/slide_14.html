@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 14</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+h1 {
+  text-align: center;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#answer-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#answer-button:hover {
+  background-color: #3e8e41;
+}
+
+#answers-section {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none; /* Initially hidden */
+}
+
+.correct-answer {
+    font-weight: bold;
+    color: green;
+}
+
+.incorrect-answer {
+    color: red;
+}
+
+.resources {
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 14: Control Flow - Quiz</h1>
+
+  <p>Test your understanding of conditional statements and loops in Python!</p>
+
+  <div class="quiz-question">
+    <h3>Question 1: What is the output of the following code?</h3>
+    <pre><code>x = 5
+if x > 10:
+  print("x is greater than 10")
+elif x > 5:
+  print("x is greater than 5")
+else:
+  print("x is not greater than 5")
+</code></pre>
+    <div class="quiz-options">
+      <label><input type="radio" name="q1" value="a"> x is greater than 10</label>
+      <label><input type="radio" name="q1" value="b"> x is greater than 5</label>
+      <label><input type="radio" name="q1" value="c"> x is not greater than 5</label>
+      <label><input type="radio" name="q1" value="d"> Error</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <h3>Question 2: Which loop is best suited for iterating a known number of times?</h3>
+    <div class="quiz-options">
+      <label><input type="radio" name="q2" value="a"> while loop</label>
+      <label><input type="radio" name="q2" value="b"> for loop</label>
+      <label><input type="radio" name="q2" value="c"> if statement</label>
+      <label><input type="radio" name="q2" value="d"> try-except block</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <h3>Question 3: What is the purpose of the <code>break</code> statement in a loop?</h3>
+    <div class="quiz-options">
+      <label><input type="radio" name="q3" value="a"> To skip the next iteration</label>
+      <label><input type="radio" name="q3" value="b"> To exit the loop immediately</label>
+      <label><input type="radio" name="q3" value="c"> To execute the next iteration</label>
+      <label><input type="radio" name="q3" value="d"> To define the loop condition</label>
+    </div>
+  </div>
+
+  <button id="answer-button" onclick="showAnswers()">Submit & Reveal Answers</button>
+
+  <div id="answers-section">
+    <h3>Answers:</h3>
+    <p><strong>Question 1:</strong>  <span id="answer1"></span> <span class="correct-answer">x is not greater than 5 (c)</span></p>
+    <p><strong>Question 2:</strong> <span id="answer2"></span>  <span class="correct-answer">for loop (b)</span></p>
+    <p><strong>Question 3:</strong> <span id="answer3"></span>  <span class="correct-answer">To exit the loop immediately (b)</span></p>
+  </div>
+
+    <div class="resources">
+        <h3>Resources:</h3>
+        <p>Real Python - Conditional, While, and For Loops</p>
+        <p>Instructions: Link to relevant Real Python tutorials on control flow:</p>
+        <ul>
+            <li><a href="https://realpython.com/python-conditional-statements/" target="_blank">Conditional Statements in Python</a></li>
+            <li><a href="https://realpython.com/python-while-loop/" target="_blank">Python "While" Loops (Indefinite Iteration)</a></li>
+            <li><a href="https://realpython.com/python-for-loop/" target="_blank">Python "For" Loops (Definite Iteration)</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers-section").style.display = "block";
+
+    // Get user answers
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let q3Answer = document.querySelector('input[name="q3"]:checked');
+
+    // Display user answers
+    document.getElementById("answer1").textContent = q1Answer ? "Your answer: " + getLabelText(q1Answer) + " - " : "You did not answer.";
+    document.getElementById("answer2").textContent = q2Answer ? "Your answer: " + getLabelText(q2Answer) + " - " : "You did not answer.";
+    document.getElementById("answer3").textContent = q3Answer ? "Your answer: " + getLabelText(q3Answer) + " - " : "You did not answer.";
+
+}
+
+function getLabelText(radio) {
+    return radio.parentNode.textContent.trim();
+}
+</script>
+
+</body>
+</html>

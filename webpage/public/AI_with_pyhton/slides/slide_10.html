@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 10: Resources & Quiz</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 30px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.quiz {
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+#answers {
+  margin-top: 20px;
+  display: none; /* Initially hide the answers */
+}
+
+#submitButton {
+  margin-top: 10px;
+}
+
+#answersList {
+ list-style-type: none;
+ padding: 0;
+}
+
+#answersList li {
+ margin-bottom: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>AI with Python</h1>
+  <h2>Slide 10: Resources & Quiz</h2>
+
+  <section>
+    <h3>Resources</h3>
+    <ul>
+      <li><strong>Variables:</strong> <a href="https://realpython.com/python-variables/" target="_blank">Real Python - Variables</a></li>
+      <li><strong>Data Types:</strong> <a href="https://docs.python.org/3/library/datatypes.html" target="_blank">Python Documentation - Data Types</a></li>
+    </ul>
+  </section>
+
+  <section class="quiz">
+    <h3>Quiz: Variables and Data Types</h3>
+
+    <div class="question">
+      <p>1. Which of the following is a valid variable name in Python?</p>
+      <label><input type="radio" name="q1" value="1_my_variable"> 1_my_variable</label><br>
+      <label><input type="radio" name="q1" value="my-variable"> my-variable</label><br>
+      <label><input type="radio" name="q1" value="myVariable"> myVariable</label><br>
+      <label><input type="radio" name="q1" value="2nd_variable"> 2nd_variable</label>
+    </div>
+
+    <div class="question">
+      <p>2. What data type is used to store whole numbers in Python?</p>
+      <label><input type="radio" name="q2" value="float"> float</label><br>
+      <label><input type="radio" name="q2" value="string"> string</label><br>
+      <label><input type="radio" name="q2" value="integer"> integer</label><br>
+      <label><input type="radio" name="q2" value="boolean"> boolean</label>
+    </div>
+
+    <div class="question">
+      <p>3. Which of the following is a boolean value?</p>
+      <label><input type="radio" name="q3" value="10"> 10</label><br>
+      <label><input type="radio" name="q3" value="'True'"> 'True'</label><br>
+      <label><input type="radio" name="q3" value="True"> True</label><br>
+      <label><input type="radio" name="q3" value="true"> true</label>
+    </div>
+
+
+    <button id="submitButton">Submit Quiz</button>
+
+    <div id="answers">
+      <h3>Answers:</h3>
+      <ul id="answersList">
+          <li>1. myVariable</li>
+          <li>2. integer</li>
+          <li>3. True</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  document.getElementById('submitButton').addEventListener('click', function() {
+    document.getElementById('answers').style.display = 'block'; // Show answers
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 44: Development Environment - IDEs</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.quiz-container {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer-options {
+  margin-left: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.hidden {
+  display: none;
+}
+
+.answer-key {
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+  <h1>Slide 44: Setting up a Development Environment - IDEs</h1>
+
+  <div class="content">
+    <p><strong>IDEs (Integrated Development Environments)</strong> are essential tools for efficient Python development. They provide features like code completion, debugging, and version control integration.</p>
+
+    <p><strong>Popular IDEs for Python:</strong></p>
+    <ul>
+      <li><strong>VS Code (Visual Studio Code):</strong> A lightweight and highly customizable editor with excellent Python support through extensions. It's free and cross-platform.</li>
+      <li><strong>PyCharm:</strong> A dedicated Python IDE with advanced features like code analysis, refactoring, and testing tools. Offers both a free Community Edition and a paid Professional Edition.</li>
+    </ul>
+
+    <p>Choosing the right IDE depends on your preferences and project requirements. Both VS Code and PyCharm are excellent choices for AI with Python development.</p>
+  </div>
+
+
+  <div class="quiz-container">
+    <h2>Quick Quiz</h2>
+
+    <div class="question">
+      <p>1. Which of the following is a popular IDE for Python development?</p>
+      <div class="answer-options">
+        <label><input type="radio" name="q1" value="a"> a) Notepad</label><br>
+        <label><input type="radio" name="q1" value="b"> b) VS Code</label><br>
+        <label><input type="radio" name="q1" value="c"> c) TextEdit</label><br>
+        <label><input type="radio" name="q1" value="d"> d) All of the above</label><br>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Which PyCharm edition is free to use?</p>
+      <div class="answer-options">
+        <label><input type="radio" name="q2" value="a"> a) Professional Edition</label><br>
+        <label><input type="radio" name="q2" value="b"> b) Community Edition</label><br>
+        <label><input type="radio" name="q2" value="c"> c) Enterprise Edition</label><br>
+        <label><input type="radio" name="q2" value="d"> d) There is no free edition</label><br>
+      </div>
+    </div>
+
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+    <div class="answer-key hidden">
+      <h3>Answer Key:</h3>
+      <p>1. b) VS Code</p>
+      <p>2. b) Community Edition</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+  document.querySelector('.answer-key').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>

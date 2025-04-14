@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 39: Resources: Pandas Documentation</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.slide-content {
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.answer-key {
+  display: none; /* Initially hide the answer key */
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.answer-key h3 {
+  margin-top: 0;
+}
+
+.reveal-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h2>Slide 39: Resources: Pandas Documentation</h2>
+  <p><strong>Instructions:</strong> Link to the "10 Minutes to Pandas" tutorial.</p>
+  <p>Access the "10 Minutes to Pandas" tutorial here: <a href="https://pandas.pydata.org/docs/user_guide/10min.html" target="_blank">Pandas - 10 Minutes to Pandas</a></p>
+
+</div>
+
+<div class="quiz-question">
+  <h3>Quiz: Pandas Basics</h3>
+
+  <p>1. What is Pandas primarily used for?</p>
+  <label><input type="radio" name="q1" value="a"> a) Machine learning algorithms</label><br>
+  <label><input type="radio" name="q1" value="b"> b) Data manipulation and analysis</label><br>
+  <label><input type="radio" name="q1" value="c"> c) Web development</label><br>
+
+  <p>2. Which Pandas object is a one-dimensional labeled array?</p>
+  <label><input type="radio" name="q2" value="a"> a) DataFrame</label><br>
+  <label><input type="radio" name="q2" value="b"> b) Series</label><br>
+  <label><input type="radio" name="q2" value="c"> c) Panel</label><br>
+
+    <p>3. What function is used to read a CSV file into a Pandas DataFrame?</p>
+    <label><input type="radio" name="q3" value="a"> a) pd.read_excel()</label><br>
+    <label><input type="radio" name="q3" value="b"> b) pd.read_csv()</label><br>
+    <label><input type="radio" name="q3" value="c"> c) pd.read_json()</label><br>
+</div>
+
+<button class="reveal-button" onclick="revealAnswers()">Reveal Answers</button>
+
+<div class="answer-key" id="answerKey">
+  <h3>Answer Key</h3>
+  <p>1. b) Data manipulation and analysis</p>
+  <p>2. b) Series</p>
+    <p>3. b) pd.read_csv()</p>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerKey").style.display = "block";
+}
+</script>
+
+</body>
+</html>

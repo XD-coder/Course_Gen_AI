@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 19</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 10px;
+}
+
+.answer-key {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+.answer-key h3 {
+  margin-bottom: 10px;
+}
+
+.hidden-answer {
+  color: darkgreen; /* Change to your preferred style */
+}
+
+.button-container {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 19: Resources</h2>
+  <p><strong>Topic:</strong> Lists, Tuples, Dictionaries, and Sets</p>
+  <h3>Instructions:</h3>
+  <p>Access the following Real Python tutorials to learn more about data structures in Python:</p>
+  <ul>
+    <li><a href="https://realpython.com/python-lists-tuples/" target="_blank">Real Python - Lists and Tuples</a></li>
+    <li><a href="https://realpython.com/python-dicts/" target="_blank">Real Python - Dictionaries</a></li>
+    <li><a href="https://realpython.com/python-sets/" target="_blank">Real Python - Sets</a></li>
+  </ul>
+
+  <h3>Quick Quiz:</h3>
+
+  <div class="quiz-question">
+    <p><strong>Question 1:</strong> Which data structure is immutable?</p>
+    <input type="radio" id="q1a" name="q1" value="list">
+    <label for="q1a">List</label><br>
+    <input type="radio" id="q1b" name="q1" value="tuple">
+    <label for="q1b">Tuple</label><br>
+    <input type="radio" id="q1c" name="q1" value="dictionary">
+    <label for="q1c">Dictionary</label><br>
+    <input type="radio" id="q1d" name="q1" value="set">
+    <label for="q1d">Set</label><br>
+  </div>
+
+  <div class="quiz-question">
+    <p><strong>Question 2:</strong> Which data structure uses key-value pairs?</p>
+    <input type="radio" id="q2a" name="q2" value="list">
+    <label for="q2a">List</label><br>
+    <input type="radio" id="q2b" name="q2" value="tuple">
+    <label for="q2b">Tuple</label><br>
+    <input type="radio" id="q2c" name="q2" value="dictionary">
+    <label for="q2c">Dictionary</label><br>
+    <input type="radio" id="q2d" name="q2" value="set">
+    <label for="q2d">Set</label><br>
+  </div>
+
+  <div class="quiz-question">
+    <p><strong>Question 3:</strong> How do you add an element to a set?</p>
+    <input type="radio" id="q3a" name="q3" value="append()">
+    <label for="q3a">append()</label><br>
+    <input type="radio" id="q3b" name="q3" value="add()">
+    <label for="q3b">add()</label><br>
+    <input type="radio" id="q3c" name="q3" value="insert()">
+    <label for="q3c">insert()</label><br>
+    <input type="radio" id="q3d" name="q3" value="update()">
+    <label for="q3d">update()</label><br>
+  </div>
+
+  <div class="button-container">
+    <button id="submit-button">Submit Answers</button>
+  </div>
+
+
+  <div class="answer-key" id="answer-key">
+    <h3>Answer Key:</h3>
+    <p><strong>Question 1:</strong> The correct answer is <span class="hidden-answer">Tuple</span>.</p>
+    <p><strong>Question 2:</strong> The correct answer is <span class="hidden-answer">Dictionary</span>.</p>
+    <p><strong>Question 3:</strong> The correct answer is <span class="hidden-answer">add()</span>.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("submit-button").addEventListener("click", function() {
+    document.getElementById("answer-key").style.display = "block";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 58: Data Cleaning - Outlier Detection and Removal</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.quiz-container {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer-options {
+  margin-left: 20px;
+}
+
+.answer-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#answer-section {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#answer-section h3 {
+    margin-bottom: 10px;
+}
+
+#answer-section p {
+    margin-bottom: 5px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+  <h1>Slide 58: Data Cleaning - Outlier Detection and Removal</h1>
+
+  <h2>Instructions: Explain methods for identifying and handling outliers</h2>
+
+  <p>Outliers are data points that deviate significantly from the other data points in a dataset. They can arise due to various reasons, such as measurement errors, data corruption, or genuinely anomalous events. Identifying and handling outliers is crucial for ensuring the accuracy and reliability of data analysis and machine learning models.</p>
+
+  <h2>Methods for Identifying Outliers:</h2>
+
+  <ul>
+    <li><b>Visual Inspection:</b> Histograms, box plots, scatter plots</li>
+    <li><b>Statistical Methods:</b>
+      <ul>
+        <li>Z-score: Measures how many standard deviations a data point is from the mean.</li>
+        <li>IQR (Interquartile Range): Defines outliers as data points below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR.</li>
+      </ul>
+    </li>
+    <li><b>Machine Learning-Based Methods:</b>
+      <ul>
+        <li>Isolation Forest: Isolates outliers by randomly partitioning the data space.</li>
+        <li>One-Class SVM:  Learns a boundary around the normal data points and identifies outliers as data points outside this boundary.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Methods for Handling Outliers:</h2>
+
+  <ul>
+    <li><b>Removal:</b>  Deleting the outlier data points (use with caution).</li>
+    <li><b>Transformation:</b> Applying transformations like log or winsorization to reduce the impact of outliers.</li>
+    <li><b>Imputation:</b> Replacing outliers with more reasonable values (e.g., mean, median).</li>
+    <li><b>Treat as Missing Values:</b> Treat outliers as missing data and use missing data imputation techniques.</li>
+  </ul>
+
+  <div class="quiz-container">
+    <h2>Quiz</h2>
+
+    <div class="question">
+      <p><b>Question 1:</b> Which of the following is NOT a common method for identifying outliers?</p>
+      <div class="answer-options">
+        <label><input type="radio" name="q1" value="a"> A) Z-score</label>
+        <label><input type="radio" name="q1" value="b"> B) IQR (Interquartile Range)</label>
+        <label><input type="radio" name="q1" value="c"> C) Feature Engineering</label>
+        <label><input type="radio" name="q1" value="d"> D) Visual Inspection</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>Question 2:</b> What is Winsorization?</p>
+      <div class="answer-options">
+        <label><input type="radio" name="q2" value="a"> A) A method for calculating the mean.</label>
+        <label><input type="radio" name="q2" value="b"> B) Replacing extreme values with less extreme values.</label>
+        <label><input type="radio" name="q2" value="c"> C) A type of data visualization.</label>
+        <label><input type="radio" name="q2" value="d"> D) A technique for data encryption.</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><b>Question 3:</b> When is it generally appropriate to completely remove outliers from a dataset?</p>
+      <div class="answer-options">
+        <label><input type="radio" name="q3" value="a"> A) Always, to improve model performance.</label>
+        <label><input type="radio" name="q3" value="b"> B) When the outliers are due to known errors or measurement issues.</label>
+        <label><input type="radio" name="q3" value="c"> C) When the outliers are very close to the mean.</label>
+        <label><input type="radio" name="q3" value="d"> D) When using machine learning algorithms.</label>
+      </div>
+    </div>
+
+    <button onclick="revealAnswers()">Submit and Reveal Answers</button>
+
+    <div id="answer-section">
+        <h3>Answers:</h3>
+        <p><b>Question 1:</b> C) Feature Engineering</p>
+        <p><b>Question 2:</b> B) Replacing extreme values with less extreme values.</p>
+        <p><b>Question 3:</b> B) When the outliers are due to known errors or measurement issues.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer-section").style.display = "block";
+}
+</script>
+
+</body>
+</html>

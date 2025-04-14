@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 53: Introduction to Machine Learning</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.example {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #aaa;
+  background-color: #f9f9f9;
+}
+
+.quiz-container {
+  margin-top: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+#answer-reveal {
+  display: none; /* Initially hide the answer reveal section */
+  margin-top: 20px;
+  border: 1px solid green;
+  padding: 10px;
+  background-color: #eaffea;
+}
+
+#answer-reveal h3 {
+  color: green;
+}
+
+.correct-answer {
+  font-weight: bold;
+  color: green;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Introduction to Machine Learning: Supervised, Unsupervised, Reinforcement</h1>
+
+  <h2>Supervised Learning</h2>
+  <p>
+    Supervised learning involves training a model on labeled data. The model learns to map input features to corresponding output labels.
+  </p>
+  <div class="example">
+    <strong>Example:</strong> Spam detection. The model is trained on emails labeled as "spam" or "not spam" and learns to classify new emails.
+  </div>
+
+  <h2>Unsupervised Learning</h2>
+  <p>
+    Unsupervised learning involves training a model on unlabeled data. The model learns to discover patterns and structures in the data.
+  </p>
+  <div class="example">
+    <strong>Example:</strong> Customer segmentation. The model groups customers based on their purchasing behavior without any predefined labels.
+  </div>
+
+  <h2>Reinforcement Learning</h2>
+  <p>
+    Reinforcement learning involves training an agent to make decisions in an environment to maximize a reward. The agent learns through trial and error.
+  </p>
+  <div class="example">
+    <strong>Example:</strong> Training a robot to navigate a maze. The robot receives rewards for moving closer to the goal and penalties for hitting obstacles.
+  </div>
+
+  <div class="quiz-container">
+    <h2>Quick Quiz</h2>
+
+    <div class="question">
+      <p>1. Which type of machine learning involves labeled data for training?</p>
+      <label><input type="radio" name="q1" value="supervised"> Supervised Learning</label><br>
+      <label><input type="radio" name="q1" value="unsupervised"> Unsupervised Learning</label><br>
+      <label><input type="radio" name="q1" value="reinforcement"> Reinforcement Learning</label>
+    </div>
+
+    <div class="question">
+      <p>2. Which type of machine learning is used for grouping customers based on their purchasing behavior?</p>
+      <label><input type="radio" name="q2" value="supervised"> Supervised Learning</label><br>
+      <label><input type="radio" name="q2" value="unsupervised"> Unsupervised Learning</label><br>
+      <label><input type="radio" name="q2" value="reinforcement"> Reinforcement Learning</label>
+    </div>
+
+    <div class="question">
+      <p>3.  Training an agent to play a game like chess best describes what kind of machine learning?</p>
+      <label><input type="radio" name="q3" value="supervised"> Supervised Learning</label><br>
+      <label><input type="radio" name="q3" value="unsupervised"> Unsupervised Learning</label><br>
+      <label><input type="radio" name="q3" value="reinforcement"> Reinforcement Learning</label>
+    </div>
+
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+    <div id="answer-reveal">
+      <h3>Answer Key:</h3>
+      <p>1.  Which type of machine learning involves labeled data for training? <span class="correct-answer">Supervised Learning</span></p>
+      <p>2. Which type of machine learning is used for grouping customers based on their purchasing behavior? <span class="correct-answer">Unsupervised Learning</span></p>
+      <p>3. Training an agent to play a game like chess best describes what kind of machine learning? <span class="correct-answer">Reinforcement Learning</span></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer-reveal").style.display = "block";
+}
+</script>
+
+</body>
+</html>

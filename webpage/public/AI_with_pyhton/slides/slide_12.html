@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 12: Loops: for and while</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 15px;
+}
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+}
+.quiz {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.question {
+  margin-bottom: 15px;
+}
+.answer-reveal {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e6ffe6;
+  border: 1px solid #b3ffb3;
+}
+
+#revealAnswersButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#revealAnswersButton:hover {
+    background-color: #3e8e41;
+}
+
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1>Slide 12: Loops: for and while</h1>
+
+  <h2>For Loop</h2>
+  <p>The <code>for</code> loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).</p>
+  <pre>
+  fruits = ["apple", "banana", "cherry"]
+  for fruit in fruits:
+    print(fruit)
+  </pre>
+  <p>Output:</p>
+  <pre>
+  apple
+  banana
+  cherry
+  </pre>
+
+  <h2>While Loop</h2>
+  <p>With the <code>while</code> loop we can execute a set of statements as long as a condition is true.</p>
+  <pre>
+  i = 1
+  while i < 6:
+    print(i)
+    i += 1
+  </pre>
+  <p>Output:</p>
+  <pre>
+  1
+  2
+  3
+  4
+  5
+  </pre>
+
+  <h2>The <code>range()</code> Function</h2>
+  <p>The <code>range()</code> function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.</p>
+  <pre>
+  for x in range(6):
+    print(x)
+  </pre>
+  <p>Output:</p>
+  <pre>
+  0
+  1
+  2
+  3
+  4
+  5
+  </pre>
+  <pre>
+  for x in range(2, 6):
+    print(x)
+  </pre>
+  <p>Output:</p>
+  <pre>
+  2
+  3
+  4
+  5
+  </pre>
+
+  <div class="quiz">
+    <h2>Quiz: Loops in Python</h2>
+
+    <div class="question">
+      <p>1. What will the following code output?</p>
+      <pre>
+      for i in range(3):
+        print(i)
+      </pre>
+      <label><input type="radio" name="q1" value="a1"> a) 1 2 3</label><br>
+      <label><input type="radio" name="q1" value="a2"> b) 0 1 2</label><br>
+      <label><input type="radio" name="q1" value="a3"> c) 0 1 2 3</label>
+    </div>
+
+    <div class="question">
+      <p>2. Which loop type is best for iterating over a list of items?</p>
+      <label><input type="radio" name="q2" value="b1"> a) while loop</label><br>
+      <label><input type="radio" name="q2" value="b2"> b) for loop</label><br>
+      <label><input type="radio" name="q2" value="b3"> c) if statement</label>
+    </div>
+
+    <div class="question">
+      <p>3. What is the output of the following code?</p>
+      <pre>
+      i = 0
+      while i < 5:
+        print(i)
+        i = i + 1
+      </pre>
+      <label><input type="radio" name="q3" value="c1"> a) 1 2 3 4 5</label><br>
+      <label><input type="radio" name="q3" value="c2"> b) 0 1 2 3 4 5</label><br>
+      <label><input type="radio" name="q3" value="c3"> c) 0 1 2 3 4</label>
+    </div>
+
+    <button id="revealAnswersButton" onclick="revealAnswers()">Reveal Answers</button>
+
+    <div class="answer-reveal" id="answers">
+      <h3>Answers:</h3>
+      <p>1. b) 0 1 2</p>
+      <p>2. b) for loop</p>
+      <p>3. c) 0 1 2 3 4</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById("answers").style.display = "block";
+    document.getElementById("revealAnswersButton").style.display = "none";
+}
+</script>
+</body>
+</html>

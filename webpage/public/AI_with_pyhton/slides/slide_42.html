@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 42</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.quiz-options {
+  margin-top: 5px;
+}
+
+.quiz-answer {
+  display: none; /* Initially hide answers */
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+#answers-container {
+    margin-top: 20px;
+}
+
+.reveal-button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 42: Resources - Matplotlib</h1>
+
+  <h2>Resources:</h2>
+  <ul>
+    <li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html" target="_blank">Matplotlib Documentation - pyplot tutorial</a></li>
+  </ul>
+
+  <h2>Instructions:</h2>
+  <p>Click the link above to access the matplotlib.pyplot tutorial.</p>
+
+    <h2>Quiz: Matplotlib Basics</h2>
+
+    <form id="quiz-form">
+
+      <div class="quiz-question">
+        <p><strong>Question 1:</strong> Which matplotlib module is commonly used for creating plots?</p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q1" value="numpy"> numpy</label><br>
+          <label><input type="radio" name="q1" value="pyplot"> pyplot</label><br>
+          <label><input type="radio" name="q1" value="pandas"> pandas</label>
+        </div>
+        <div class="quiz-answer" id="answer1"><strong>Answer:</strong> pyplot</div>
+      </div>
+
+      <div class="quiz-question">
+        <p><strong>Question 2:</strong> What function is used to display a plot in matplotlib?</p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q2" value="show"> show()</label><br>
+          <label><input type="radio" name="q2" value="display"> display()</label><br>
+          <label><input type="radio" name="q2" value="plot"> plot()</label>
+        </div>
+        <div class="quiz-answer" id="answer2"><strong>Answer:</strong> show()</div>
+      </div>
+
+      <div class="quiz-question">
+        <p><strong>Question 3:</strong> Which function is used to label the x-axis in matplotlib?</p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q3" value="ylabel"> ylabel()</label><br>
+          <label><input type="radio" name="q3" value="xlabel"> xlabel()</label><br>
+          <label><input type="radio" name="q3" value="title"> title()</label>
+        </div>
+        <div class="quiz-answer" id="answer3"><strong>Answer:</strong> xlabel()</div>
+      </div>
+
+
+    </form>
+
+    <div class="reveal-button-container">
+        <button onclick="revealAnswers()">Reveal Answers</button>
+    </div>
+
+    <div id="answers-container">
+
+    </div>
+
+
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById("answer1").style.display = "block";
+    document.getElementById("answer2").style.display = "block";
+    document.getElementById("answer3").style.display = "block";
+}
+</script>
+
+</body>
+</html>

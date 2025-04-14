@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 88: SVM Kernels Exercise</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide-content {
+  max-width: 800px;
+  margin: auto;
+}
+.question {
+  margin-bottom: 20px;
+}
+.answer-options {
+  margin-top: 10px;
+}
+.answer-option {
+  margin-bottom: 5px;
+}
+.answer-key {
+  display: none; /* Initially hide the answer key */
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.reveal-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 88: Interactive Exercises: Building SVM Models with Different Kernels</h1>
+  <p><b>Instructions:</b> Exercise - Train SVM models with different kernels.</p>
+
+  <div class="question">
+    <h3>Question 1: Which kernel is suitable for linearly separable data?</h3>
+    <div class="answer-options">
+      <label class="answer-option">
+        <input type="radio" name="q1" value="linear"> Linear
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q1" value="rbf"> RBF
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q1" value="poly"> Polynomial
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q1" value="sigmoid"> Sigmoid
+      </label>
+    </div>
+  </div>
+
+  <div class="question">
+    <h3>Question 2: Which kernel is most versatile and commonly used for non-linear data?</h3>
+    <div class="answer-options">
+      <label class="answer-option">
+        <input type="radio" name="q2" value="linear"> Linear
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q2" value="rbf"> RBF
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q2" value="poly"> Polynomial
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q2" value="sigmoid"> Sigmoid
+      </label>
+    </div>
+  </div>
+
+  <div class="question">
+    <h3>Question 3: What parameter controls the influence of a single training example in the RBF kernel?</h3>
+    <div class="answer-options">
+      <label class="answer-option">
+        <input type="radio" name="q3" value="gamma"> Gamma
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q3" value="degree"> Degree
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q3" value="C"> C
+      </label><br>
+      <label class="answer-option">
+        <input type="radio" name="q3" value="coef0"> coef0
+      </label>
+    </div>
+  </div>
+
+  <button class="reveal-button" onclick="revealAnswers()">Reveal Answers</button>
+
+  <div class="answer-key" id="answerKey">
+    <h3>Answer Key:</h3>
+    <p><b>Question 1:</b> Linear</p>
+    <p><b>Question 2:</b> RBF</p>
+    <p><b>Question 3:</b> Gamma</p>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerKey").style.display = "block";
+}
+</script>
+
+</body>
+</html>

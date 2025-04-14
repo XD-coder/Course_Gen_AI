@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 32: Resources</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #555;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Quiz/Test Styles */
+.quiz-section {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.options {
+  margin-left: 20px;
+}
+
+.answer-reveal {
+  display: none; /* Hidden by default */
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e0f7fa;
+  border: 1px solid #b2ebf2;
+}
+
+.answer-reveal h3 {
+  margin-top: 0;
+  color: #263238;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>AI with Python</h1>
+  <h2>Slide 32: Resources</h2>
+
+  <h3>Python Documentation</h3>
+  <ul>
+    <li><a href="https://docs.python.org/3/" target="_blank">Official Python Documentation</a>: Comprehensive documentation for all Python versions.</li>
+    <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Python Tutorial</a>: A great starting point for learning Python.</li>
+    <li><a href="https://docs.python.org/3/library/index.html" target="_blank">Python Standard Library</a>: Documentation for built-in modules and functions.</li>
+  </ul>
+
+  <h3>Modules and pip Documentation</h3>
+  <ul>
+    <li><a href="https://packaging.python.org/en/latest/tutorials/installing-packages/" target="_blank">Installing Packages with pip</a>: Tutorial on installing Python packages using pip.</li>
+    <li><a href="https://pip.pypa.io/en/stable/" target="_blank">pip Documentation</a>: Comprehensive documentation for pip.</li>
+    <li><a href="https://docs.python.org/3/tutorial/modules.html" target="_blank">Python Modules</a>:  Information on using and creating Python modules.</li>
+  </ul>
+
+  <div class="quiz-section">
+    <h2>Quick Test</h2>
+
+    <div class="question">
+      1. Where can you find information on all python versions?
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> A. StackOverflow</label><br>
+        <label><input type="radio" name="q1" value="b"> B. Official Python Documentation</label><br>
+        <label><input type="radio" name="q1" value="c"> C. Github</label>
+      </div>
+    </div>
+
+    <div class="question">
+      2. What is `pip` used for?
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> A. Installing Python</label><br>
+        <label><input type="radio" name="q2" value="b"> B. Managing Python packages</label><br>
+        <label><input type="radio" name="q2" value="c"> C. Running Python scripts</label>
+      </div>
+    </div>
+
+    <button onclick="revealAnswers()">Submit and Reveal Answers</button>
+
+    <div class="answer-reveal" id="answerReveal">
+      <h3>Answers:</h3>
+      <p>1. B. Official Python Documentation</p>
+      <p>2. B. Managing Python packages</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerReveal").style.display = "block";
+}
+</script>
+
+</body>
+</html>

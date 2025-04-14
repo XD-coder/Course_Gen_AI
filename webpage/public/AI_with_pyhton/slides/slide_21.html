@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 21: Docstrings and Variable Scope</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.explanation {
+  line-height: 1.6;
+}
+
+.quiz-container {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.answer-options {
+  margin-left: 20px;
+}
+
+.answer-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #3e8e41;
+}
+
+.answers-revealed {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide-title">Slide 21: Docstrings and Variable Scope</div>
+
+<div class="section-title">Docstrings</div>
+<div class="explanation">
+  <p>Docstrings (documentation strings) are multiline strings used to document Python code. They are written as the first statement in a module, class, function, or method.  They are accessed using the <code>__doc__</code> attribute or the <code>help()</code> function.</p>
+  <p>Example:</p>
+  <pre>
+  def my_function(arg1, arg2):
+      """
+      This is a docstring for my_function.
+
+      It explains what the function does, its arguments,
+      and what it returns.
+      """
+      return arg1 + arg2
+  </pre>
+</div>
+
+<div class="section-title">Variable Scope (Local vs. Global)</div>
+<div class="explanation">
+  <p><b>Local Scope:</b> Variables defined inside a function have local scope. They are only accessible within that function.</p>
+  <p><b>Global Scope:</b> Variables defined outside of any function have global scope. They are accessible from anywhere in the program, including inside functions.  However, to modify a global variable inside a function, you must use the <code>global</code> keyword.</p>
+    <p>Example:</p>
+  <pre>
+  global_var = 10  # Global variable
+
+  def my_function():
+      local_var = 5  # Local variable
+      global global_var #indicate that we want to use the global var
+
+      global_var = global_var + 5 # modify global var
+
+      print("Inside function:", local_var)
+      print("Inside function, global_var:", global_var)
+
+
+  my_function()
+  print("Outside function, global_var:", global_var) #the global var is updated
+  #print("Outside function:", local_var) # This will raise an error
+
+  </pre>
+</div>
+
+
+<div class="quiz-container">
+  <div class="section-title">Quick Quiz</div>
+
+  <div class="question">
+    <p>1. What is the purpose of a docstring?</p>
+    <div class="answer-options">
+      <label><input type="radio" name="q1" value="a"> a) To define the type of a variable.</label>
+      <label><input type="radio" name="q1" value="b"> b) To document the code and explain what it does.</label>
+      <label><input type="radio" name="q1" value="c"> c) To optimize the code's performance.</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>2. Where are local variables accessible?</p>
+    <div class="answer-options">
+      <label><input type="radio" name="q2" value="a"> a) From anywhere in the program.</label>
+      <label><input type="radio" name="q2" value="b"> b) Only within the function where they are defined.</label>
+      <label><input type="radio" name="q2" value="c"> c) Only in the module where they are defined.</label>
+    </div>
+  </div>
+
+    <div class="question">
+    <p>3. How can you modify a global variable inside a function?</p>
+    <div class="answer-options">
+      <label><input type="radio" name="q3" value="a"> a) By simply assigning a new value to it.</label>
+      <label><input type="radio" name="q3" value="b"> b) By using the <code>global</code> keyword before the variable name.</label>
+      <label><input type="radio" name="q3" value="c"> c) Global variables cannot be modified inside a function.</label>
+    </div>
+  </div>
+
+  <button class="submit-button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+  <div class="answers-revealed" id="answers">
+    <div class="section-title">Answers:</div>
+    <p>1. What is the purpose of a docstring? <span class="correct-answer">b) To document the code and explain what it does.</span></p>
+    <p>2. Where are local variables accessible? <span class="correct-answer">b) Only within the function where they are defined.</span></p>
+    <p>3. How can you modify a global variable inside a function? <span class="correct-answer">b) By using the <code>global</code> keyword before the variable name.</span></p>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 29: Quiz 1: Basic Python Syntax</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+.question {
+  margin-bottom: 20px;
+}
+.options {
+  margin-top: 10px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+#results {
+  margin-top: 20px;
+  display: none;
+}
+#revealButton {
+  margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Quiz 1: Basic Python Syntax - Multiple Choice</h2>
+<p><b>Instructions:</b> Choose the best answer for each question.</p>
+
+<div class="question">
+  <p>1. Which of the following is a valid variable name in Python?</p>
+  <div class="options">
+    <label><input type="radio" name="q1" value="a"> a) 1variable</label>
+    <label><input type="radio" name="q1" value="b"> b) my-variable</label>
+    <label><input type="radio" name="q1" value="c"> c) my_variable</label>
+    <label><input type="radio" name="q1" value="d"> d) my variable</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>2. What data type is used to store whole numbers in Python?</p>
+  <div class="options">
+    <label><input type="radio" name="q2" value="a"> a) float</label>
+    <label><input type="radio" name="q2" value="b"> b) string</label>
+    <label><input type="radio" name="q2" value="c"> c) boolean</label>
+    <label><input type="radio" name="q2" value="d"> d) int</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>3. Which operator is used for exponentiation in Python?</p>
+  <div class="options">
+    <label><input type="radio" name="q3" value="a"> a) ^</label>
+    <label><input type="radio" name="q3" value="b"> b) **</label>
+    <label><input type="radio" name="q3" value="c"> c) *</label>
+    <label><input type="radio" name="q3" value="d"> d) //</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>4. What keyword is used to define a function in Python?</p>
+  <div class="options">
+    <label><input type="radio" name="q4" value="a"> a) function</label>
+    <label><input type="radio" name="q4" value="b"> b) define</label>
+    <label><input type="radio" name="q4" value="c"> c) def</label>
+    <label><input type="radio" name="q4" value="d"> d) fun</label>
+  </div>
+</div>
+
+<div class="question">
+  <p>5. Which of the following is an example of a list in Python?</p>
+  <div class="options">
+    <label><input type="radio" name="q5" value="a"> a) (1, 2, 3)</label>
+    <label><input type="radio" name="q5" value="b"> b) {1, 2, 3}</label>
+    <label><input type="radio" name="q5" value="c"> c) "1, 2, 3"</label>
+    <label><input type="radio" name="q5" value="d"> d) [1, 2, 3]</label>
+  </div>
+</div>
+
+<button id="submitButton">Submit Quiz</button>
+<button id="revealButton" style="display:none;">Reveal Answers</button>
+
+<div id="results">
+  <h3>Answers:</h3>
+  <p><b>Question 1:</b> c) my_variable</p>
+  <p><b>Question 2:</b> d) int</p>
+  <p><b>Question 3:</b> b) **</p>
+  <p><b>Question 4:</b> c) def</p>
+  <p><b>Question 5:</b> d) [1, 2, 3]</p>
+</div>
+
+<script>
+document.getElementById("submitButton").addEventListener("click", function() {
+  //Basic input checking
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let q3Answer = document.querySelector('input[name="q3"]:checked');
+    let q4Answer = document.querySelector('input[name="q4"]:checked');
+    let q5Answer = document.querySelector('input[name="q5"]:checked');
+
+  if (!q1Answer || !q2Answer || !q3Answer || !q4Answer || !q5Answer) {
+    alert("Please answer all questions before submitting.");
+    return;
+  }
+
+  document.getElementById("revealButton").style.display = "block";
+  });
+
+document.getElementById("revealButton").addEventListener("click", function() {
+  document.getElementById("results").style.display = "block";
+  document.getElementById("revealButton").style.display = "none";
+  document.getElementById("submitButton").style.display = "none";
+});
+
+</script>
+
+</body>
+</html>

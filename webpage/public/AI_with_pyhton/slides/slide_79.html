@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 79: Cost Function - Cross-entropy Loss</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.quiz-container {
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.options {
+  margin-left: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+#answer-container {
+  margin-top: 20px;
+  display: none; /* Initially hide the answer section */
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #e9e9e9;
+}
+
+#submit-button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #3e8e41;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 79: Cost Function - Cross-entropy Loss</h1>
+
+  <h2>Instructions: Explain the concept of cross-entropy loss</h2>
+
+  <p>Cross-entropy loss, also known as log loss, is a loss function used in classification problems, especially when dealing with probabilities. It measures the difference between the predicted probability distribution and the actual distribution. In simpler terms, it quantifies how well the model's predicted probabilities align with the true labels.</p>
+
+  <p>Here's a breakdown:</p>
+
+  <ul>
+    <li><b>Binary Classification:</b>  When there are two classes (e.g., cat or dog), cross-entropy is often called binary cross-entropy.  It calculates the loss based on the predicted probability of the positive class.</li>
+    <li><b>Multi-class Classification:</b> For more than two classes (e.g., cat, dog, bird), categorical cross-entropy is used.  It calculates the loss for each class and sums them up.</li>
+    <li><b>Intuition:</b>  Cross-entropy loss penalizes wrong predictions heavily. The further the predicted probability is from the actual label (0 or 1), the larger the loss.  A perfect prediction (e.g., predicting 1.0 when the label is 1) results in a loss of 0.</li>
+    <li><b>Formula (Binary Cross-entropy):</b>  `Loss = -[y * log(p) + (1-y) * log(1-p)]`, where 'y' is the true label (0 or 1) and 'p' is the predicted probability.</li>
+  </ul>
+
+  <div class="quiz-container">
+    <h2>Quiz</h2>
+
+    <div class="question">
+      1. Which type of problem is cross-entropy loss primarily used for?
+    </div>
+    <div class="options">
+      <input type="radio" id="q1a" name="q1" value="regression">
+      <label for="q1a">Regression</label><br>
+      <input type="radio" id="q1b" name="q1" value="classification">
+      <label for="q1b">Classification</label><br>
+      <input type="radio" id="q1c" name="q1" value="clustering">
+      <label for="q1c">Clustering</label>
+    </div>
+
+    <div class="question">
+      2. What is another common name for cross-entropy loss?
+    </div>
+    <div class="options">
+      <input type="radio" id="q2a" name="q2" value="mean_squared_error">
+      <label for="q2a">Mean Squared Error</label><br>
+      <input type="radio" id="q2b" name="q2" value="log_loss">
+      <label for="q2b">Log Loss</label><br>
+      <input type="radio" id="q2c" name="q2" value="hinge_loss">
+      <label for="q2c">Hinge Loss</label>
+    </div>
+
+    <div class="question">
+      3. In binary cross-entropy, what does 'y' represent in the formula  `Loss = -[y * log(p) + (1-y) * log(1-p)]`?
+    </div>
+    <div class="options">
+      <input type="radio" id="q3a" name="q3" value="predicted_probability">
+      <label for="q3a">Predicted Probability</label><br>
+      <input type="radio" id="q3b" name="q3" value="true_label">
+      <label for="q3b">True Label</label><br>
+      <input type="radio" id="q3c" name="q3" value="learning_rate">
+      <label for="q3c">Learning Rate</label>
+    </div>
+
+    <button id="submit-button" onclick="revealAnswers()">Submit</button>
+
+    <div id="answer-container">
+      <h2>Answers</h2>
+      <p>1. <b>Classification</b></p>
+      <p>2. <b>Log Loss</b></p>
+      <p>3. <b>True Label</b></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  // Simple check to prevent revealing answers without attempting
+  if (document.querySelector('input[name="q1"]:checked') &&
+      document.querySelector('input[name="q2"]:checked') &&
+      document.querySelector('input[name="q3"]:checked')) {
+
+        document.getElementById("answer-container").style.display = "block";
+  }
+  else {
+    alert("Please answer all questions before submitting.");
+  }
+
+
+}
+</script>
+
+</body>
+</html>

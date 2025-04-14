@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 31: Using pip</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.quiz {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+
+#answers {
+  margin-top: 20px;
+  display: none;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+#answers h3 {
+  color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 31: Using pip</h1>
+
+<div class="content">
+  <h2>Installing Packages</h2>
+  <p>To install a package using pip, use the following command in your terminal:</p>
+  <pre><code>pip install package_name</code></pre>
+  <p>Replace <code>package_name</code> with the name of the package you want to install (e.g., <code>pip install numpy</code>).</p>
+
+  <h2>Upgrading Packages</h2>
+  <p>To upgrade a package to the latest version, use the following command:</p>
+  <pre><code>pip install --upgrade package_name</code></pre>
+  <p>This will update the specified package to its newest available release.</p>
+
+  <h2>Uninstalling Packages</h2>
+  <p>To uninstall a package, use the following command:</p>
+  <pre><code>pip uninstall package_name</code></pre>
+  <p>This will remove the package from your Python environment.</p>
+
+  <h2>Additional Notes:</h2>
+  <ul>
+    <li>Use <code>pip list</code> to see all installed packages.</li>
+    <li>Use <code>pip show package_name</code> to get information about a specific package.</li>
+    <li>Consider using virtual environments to manage dependencies for different projects.</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h2>Quiz: pip Commands</h2>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Which command is used to install a package named 'requests'?</p>
+      <div class="answer">
+        <input type="radio" id="q1a" name="q1" value="a">
+        <label for="q1a">pip install requests</label><br>
+        <input type="radio" id="q1b" name="q1" value="b">
+        <label for="q1b">install pip requests</label><br>
+        <input type="radio" id="q1c" name="q1" value="c">
+        <label for="q1c">requests install pip</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Which command is used to upgrade a package named 'pandas'?</p>
+      <div class="answer">
+        <input type="radio" id="q2a" name="q2" value="a">
+        <label for="q2a">pip update pandas</label><br>
+        <input type="radio" id="q2b" name="q2" value="b">
+        <label for="q2b">pip upgrade pandas</label><br>
+        <input type="radio" id="q2c" name="q2" value="c">
+        <label for="q2c">pip install --upgrade pandas</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. Which command is used to uninstall a package named 'scikit-learn'?</p>
+      <div class="answer">
+        <input type="radio" id="q3a" name="q3" value="a">
+        <label for="q3a">pip remove scikit-learn</label><br>
+        <input type="radio" id="q3b" name="q3" value="b">
+        <label for="q3b">pip uninstall scikit-learn</label><br>
+        <input type="radio" id="q3c" name="q3" value="c">
+        <label for="q3c">uninstall pip scikit-learn</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="revealAnswers()">Submit & Show Answers</button>
+  </form>
+
+  <div id="answers">
+    <h3>Answers:</h3>
+    <p>1. A: <code>pip install requests</code></p>
+    <p>2. C: <code>pip install --upgrade pandas</code></p>
+    <p>3. B: <code>pip uninstall scikit-learn</code></p>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

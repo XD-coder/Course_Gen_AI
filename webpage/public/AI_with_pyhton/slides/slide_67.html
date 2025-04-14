@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 67: Interactive Exercises - Outlier Removal</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#answers {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#answers h3 {
+  margin-top: 0;
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 67: Interactive Exercises - Outlier Removal</h1>
+
+  <div class="section">
+    <h2>Instructions:</h2>
+    <p>Exercise - Detect and remove outliers using Z-score or IQR methods. Consider the following data:</p>
+    <pre>[10, 12, 15, 11, 13, 100, 14, 12, 11, 16, 10, 12, 14, 13, 11, -5, 15, 12, 13, 14]</pre>
+  </div>
+
+  <div class="section">
+    <h2>Quiz</h2>
+
+    <div class="question">
+      1.  Using the IQR method, what are the lower and upper bounds for outlier detection (approximately)?
+    </div>
+    <div class="options">
+      <label><input type="radio" name="q1" value="a">a) Lower: 5, Upper: 20</label>
+      <label><input type="radio" name="q1" value="b">b) Lower: 8, Upper: 18</label>
+      <label><input type="radio" name="q1" value="c">c) Lower: 9, Upper: 17</label>
+      <label><input type="radio" name="q1" value="d">d) Lower: 7, Upper: 19</label>
+    </div>
+
+    <div class="question">
+      2. Using the Z-score method (threshold of 3), which values are considered outliers?
+    </div>
+    <div class="options">
+      <label><input type="radio" name="q2" value="a">a) 100 and -5</label>
+      <label><input type="radio" name="q2" value="b">b) 100 only</label>
+      <label><input type="radio" name="q2" value="c">c) -5 only</label>
+      <label><input type="radio" name="q2" value="d">d) No outliers</label>
+    </div>
+
+    <div class="question">
+      3. After removing outliers identified by either IQR or Z-score (with the given parameters), what is the new average (approximately)?
+    </div>
+    <div class="options">
+      <label><input type="radio" name="q3" value="a">a) 13.5</label>
+      <label><input type="radio" name="q3" value="b">b) 12.5</label>
+      <label><input type="radio" name="q3" value="c">c) 11.5</label>
+      <label><input type="radio" name="q3" value="d">d) 14.5</label>
+    </div>
+
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+  </div>
+
+  <div id="answers">
+    <h3>Answer Key:</h3>
+    <div class="answer">
+      <strong>Question 1:</strong> b) Lower: 8, Upper: 18
+    </div>
+    <div class="answer">
+      <strong>Question 2:</strong> a) 100 and -5
+    </div>
+    <div class="answer">
+      <strong>Question 3:</strong> b) 12.5
+    </div>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

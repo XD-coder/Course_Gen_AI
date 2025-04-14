@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 27: Exercise - List Operations</title>
+<style>
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+.slide-container {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.answer {
+    margin-top: 5px;
+    font-style: italic;
+    color: green;
+    display: none; /* Initially hidden */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#reveal-answers {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#reveal-answers:hover {
+    background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+    <h2>Slide 27: Exercise - List Operations</h2>
+    <p><b>Instructions:</b> Perform the following operations on a Python list. You can write code snippets to test these operations. After attempting the questions, click the "Reveal Answers" button to see example solutions.</p>
+
+    <div class="question">
+        <p><b>Question 1:</b> Create a list named 'my_list' containing the integers 1, 2, 3, 4, and 5.</p>
+        <div class="answer" id="answer1">
+            <b>Answer:</b> <code>my_list = [1, 2, 3, 4, 5]</code>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><b>Question 2:</b> Add the number 6 to the end of 'my_list'.</p>
+        <div class="answer" id="answer2">
+            <b>Answer:</b> <code>my_list.append(6)</code>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><b>Question 3:</b> Insert the number 0 at the beginning of 'my_list'.</p>
+        <div class="answer" id="answer3">
+            <b>Answer:</b> <code>my_list.insert(0, 0)</code>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><b>Question 4:</b> Remove the number 3 from 'my_list'.</p>
+        <div class="answer" id="answer4">
+            <b>Answer:</b> <code>my_list.remove(3)</code>
+        </div>
+    </div>
+
+    <div class="question">
+        <p><b>Question 5:</b> Modify the element at index 2 to be the number 10.</p>
+        <div class="answer" id="answer5">
+            <b>Answer:</b> <code>my_list[2] = 10</code>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="reveal-answers" onclick="revealAnswers()">Reveal Answers</button>
+    </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById("answer1").style.display = "block";
+    document.getElementById("answer2").style.display = "block";
+    document.getElementById("answer3").style.display = "block";
+    document.getElementById("answer4").style.display = "block";
+    document.getElementById("answer5").style.display = "block";
+}
+</script>
+
+</body>
+</html>

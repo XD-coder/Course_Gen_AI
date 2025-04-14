@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 43: Setting up a Development Environment: Jupyter Notebooks</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+.slide {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.code {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.quiz {
+    margin-top: 20px;
+    border: 1px solid #bbb;
+    padding: 15px;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#answers {
+    margin-top: 20px;
+    border: 1px solid #bbb;
+    padding: 15px;
+    display: none; /* Initially hidden */
+}
+
+.answer {
+    margin-bottom: 5px;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>Setting up a Development Environment: Jupyter Notebooks</h1>
+
+    <h2>Instructions:</h2>
+    <p>This slide explains how to install and use Jupyter Notebooks, an essential tool for AI development with Python.</p>
+
+    <h3>What is Jupyter Notebook?</h3>
+    <p>Jupyter Notebook is an interactive computational environment that lets you combine code, text, images, and visualizations in a single document. It's widely used for data analysis, machine learning, and scientific computing.</p>
+
+    <h3>Installation:</h3>
+    <p>The recommended way to install Jupyter Notebook is using Anaconda, a Python distribution that includes many useful packages.</p>
+    <ul>
+        <li><strong>Anaconda:</strong> Download and install Anaconda from <a href="https://www.anaconda.com/products/distribution" target="_blank">the Anaconda website</a>. Choose the Python 3.x version.</li>
+        <li><strong>Using pip:</strong> If you prefer using pip, you can install Jupyter Notebook with the following command:</li>
+        <div class="code">
+            <code>pip install jupyter</code>
+        </div>
+    </ul>
+
+    <h3>Running Jupyter Notebook:</h3>
+    <p>After installation, you can start Jupyter Notebook from the command line:</p>
+    <div class="code">
+        <code>jupyter notebook</code>
+    </div>
+    <p>This will open a new tab in your web browser with the Jupyter Notebook interface.</p>
+
+    <h3>Creating a New Notebook:</h3>
+    <p>In the Jupyter Notebook interface:</p>
+    <ul>
+        <li>Click the "New" button.</li>
+        <li>Select "Python 3" (or another kernel if you have installed others).</li>
+    </ul>
+    <p>This will create a new notebook file (.ipynb) where you can write and execute Python code.</p>
+
+    <h3>Basic Usage:</h3>
+    <ul>
+        <li><strong>Cells:</strong> Jupyter Notebooks are organized into cells. You can have code cells (for writing Python code) and Markdown cells (for writing text, headings, etc.).</li>
+        <li><strong>Executing Cells:</strong> To execute a cell, press Shift + Enter. The output will be displayed below the cell.</li>
+        <li><strong>Markdown:</strong> You can write formatted text in Markdown cells.</li>
+        <li><strong>Saving:</strong> Jupyter Notebooks are automatically saved, but you can also save manually using the "File" menu.</li>
+    </ul>
+
+      <div class="quiz">
+        <h2>Quiz: Jupyter Notebooks</h2>
+
+        <div class="question">
+            <p>1. Which command is used to install Jupyter Notebook using pip?</p>
+            <input type="radio" id="q1a" name="q1" value="a">
+            <label for="q1a">a) install jupyter-notebook</label><br>
+            <input type="radio" id="q1b" name="q1" value="b">
+            <label for="q1b">b) pip install jupyter</label><br>
+            <input type="radio" id="q1c" name="q1" value="c">
+            <label for="q1c">c) conda install jupyter</label>
+        </div>
+
+        <div class="question">
+            <p>2. How do you execute a cell in Jupyter Notebook?</p>
+            <input type="radio" id="q2a" name="q2" value="a">
+            <label for="q2a">a) Ctrl + Enter</label><br>
+            <input type="radio" id="q2b" name="q2" value="b">
+            <label for="q2b">b) Shift + Enter</label><br>
+            <input type="radio" id="q2c" name="q2" value="c">
+            <label for="q2c">c) Alt + Enter</label>
+        </div>
+
+         <div class="question">
+            <p>3. What type of files are used in Jupyter Notebook?</p>
+            <input type="radio" id="q3a" name="q3" value="a">
+            <label for="q3a">a) .ipynb</label><br>
+            <input type="radio" id="q3b" name="q3" value="b">
+            <label for="q3b">b) .jpynb</label><br>
+            <input type="radio" id="q3c" name="q3" value="c">
+            <label for="q3c">c) .py</label>
+        </div>
+
+
+        <button onclick="showAnswers()">Submit & Reveal Answers</button>
+
+         <div id="answers">
+            <h2>Answers:</h2>
+            <div class="answer">
+                <p>1. Which command is used to install Jupyter Notebook using pip?</p>
+                <p class="correct">b) pip install jupyter</p>
+            </div>
+            <div class="answer">
+                <p>2. How do you execute a cell in Jupyter Notebook?</p>
+                <p class="correct">b) Shift + Enter</p>
+            </div>
+             <div class="answer">
+                <p>3. What type of files are used in Jupyter Notebook?</p>
+                <p class="correct">a) .ipynb</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showAnswers() {
+    document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

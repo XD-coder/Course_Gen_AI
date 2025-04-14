@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 60: Data Transformation - Normalization</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.example {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.quiz-section {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+
+.reveal-answers-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.correct-answer {
+  font-weight: bold;
+  color: green;
+  display: none;
+}
+
+#answers-section {
+  margin-top: 20px;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+  <h1>Slide 60: Data Transformation - Normalization</h1>
+
+  <h2>What is Data Normalization?</h2>
+  <p>Data normalization is a scaling technique applied during data preparation to change the values of numeric columns in the dataset to a common scale, without distorting differences in the ranges of values. Normalization is used to improve the accuracy of, and speed up the training of machine learning models. It is generally required when different features in a dataset have different ranges.</p>
+
+  <h2>Common Normalization Methods</h2>
+
+  <h3>1. Min-Max Scaling</h3>
+  <p>Scales and translates each feature individually such that it is in the given range, usually between zero and one.</p>
+  <p>Formula:  X_scaled = (X - X_min) / (X_max - X_min)</p>
+  <div class="example">
+    <p>Example:</p>
+    <p>Original data: [10, 20, 30, 40, 50]</p>
+    <p>Min-Max scaled data (range 0-1): [0, 0.25, 0.5, 0.75, 1]</p>
+  </div>
+
+  <h3>2. Z-Score Standardization</h3>
+  <p>Transforms the data to have a mean of zero and a standard deviation of one.</p>
+  <p>Formula:  X_scaled = (X - mean) / standard_deviation</p>
+  <div class="example">
+    <p>Example:</p>
+    <p>Original data: [1, 2, 3, 4, 5]</p>
+    <p>Z-Score standardized data (approx.): [-1.41, -0.71, 0, 0.71, 1.41]</p>
+  </div>
+
+  <h3>3. Robust Scaling</h3>
+  <p>Uses the median and interquartile range (IQR) to scale data, making it more robust to outliers.</p>
+  <p>Formula: X_scaled = (X - Median) / IQR</p>
+
+  <div class="quiz-section">
+    <h2>Quick Quiz</h2>
+
+    <div class="question">
+      <p><strong>Question 1:</strong> Which normalization method is most sensitive to outliers?</p>
+      <div class="answer">
+        <input type="radio" id="q1a" name="q1" value="minmax">
+        <label for="q1a">Min-Max Scaling</label><br>
+        <input type="radio" id="q1b" name="q1" value="zscore">
+        <label for="q1b">Z-Score Standardization</label><br>
+        <input type="radio" id="q1c" name="q1" value="robust">
+        <label for="q1c">Robust Scaling</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2:</strong> What is the typical range for data after applying Min-Max scaling (if not specified)?</p>
+      <div class="answer">
+        <input type="radio" id="q2a" name="q2" value="01">
+        <label for="q2a">0 to 1</label><br>
+        <input type="radio" id="q2b" name="q2" value="-11">
+        <label for="q2b">-1 to 1</label><br>
+        <input type="radio" id="q2c" name="q2" value="0100">
+        <label for="q2c">0 to 100</label>
+      </div>
+    </div>
+
+    <button class="reveal-answers-button" onclick="revealAnswers()">Reveal Answers</button>
+
+    <div id="answers-section">
+      <h2>Answers:</h2>
+      <p><strong>Question 1:</strong>
+       <span class="correct-answer" id="answer1">Min-Max Scaling</span>
+       </p>
+      <p><strong>Question 2:</strong>
+      <span class="correct-answer" id="answer2">0 to 1</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById('answers-section').style.display = 'block';
+    document.getElementById('answer1').style.display = 'inline';
+    document.getElementById('answer2').style.display = 'inline';
+}
+</script>
+
+</body>
+</html>

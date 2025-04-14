@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 3: Installing Python and pip on Windows</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+  margin-top: 20px;
+}
+
+ol {
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.quiz-container {
+    margin-top: 30px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+.answer-options {
+    margin-left: 20px;
+}
+
+.answer-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+#reveal-answers-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#answers {
+    margin-top: 20px;
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+#answers h3 {
+    margin-bottom: 10px;
+}
+
+#answers p {
+    margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 3: Installing Python and pip on Windows</h1>
+
+<h2>Instructions:</h2>
+
+<ol>
+  <li>
+    <strong>Download Python:</strong> Go to the official Python website: <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a> and download the latest stable version of Python for Windows.
+    <img src="placeholder_download_python.png" alt="Download Python">
+    <p><em>(Replace placeholder_download_python.png with a screenshot of the Python download page)</em></p>
+  </li>
+
+  <li>
+    <strong>Run the Installer:</strong> Locate the downloaded executable file (e.g., <code>python-3.x.x-amd64.exe</code>) and double-click to run it.
+    <img src="placeholder_run_installer.png" alt="Run the Installer">
+        <p><em>(Replace placeholder_run_installer.png with a screenshot of running the Python installer)</em></p>
+  </li>
+
+  <li>
+    <strong>Important: Check "Add Python x.x to PATH":</strong> In the first window of the installer, <b>ensure you check the box that says "Add Python x.x to PATH".</b> This is crucial for making Python and pip accessible from the command line.  You can also select "Use admin privileges when installing py.exe" if desired.  Then, you can choose "Install Now" for a standard installation or "Customize installation" to modify the installation options. We will continue with "Install Now" in this example.
+    <img src="placeholder_add_to_path.png" alt="Add Python to PATH">
+        <p><em>(Replace placeholder_add_to_path.png with a screenshot of the "Add Python to PATH" checkbox)</em></p>
+  </li>
+
+  <li>
+    <strong>Wait for Installation:</strong> Let the installer complete the installation process.
+    <img src="placeholder_installation_progress.png" alt="Installation Progress">
+        <p><em>(Replace placeholder_installation_progress.png with a screenshot of the Python installation progress)</em></p>
+  </li>
+
+  <li>
+    <strong>Verify Installation:</strong> Open a command prompt (cmd) or PowerShell window. Type <code>python --version</code> and press Enter. If Python is installed correctly, it will display the Python version.
+    <img src="placeholder_verify_python.png" alt="Verify Python Version">
+        <p><em>(Replace placeholder_verify_python.png with a screenshot of the command prompt showing the Python version)</em></p>
+  </li>
+
+  <li>
+    <strong>Verify pip Installation:</strong> In the same command prompt window, type <code>pip --version</code> and press Enter. If pip is installed correctly, it will display the pip version.
+    <img src="placeholder_verify_pip.png" alt="Verify pip Version">
+        <p><em>(Replace placeholder_verify_pip.png with a screenshot of the command prompt showing the pip version)</em></p>
+  </li>
+</ol>
+
+<div class="quiz-container">
+  <h2>Quick Test</h2>
+  <form id="quiz-form">
+      <div class="question">
+          1. Which option during Python installation is crucial for command-line access?
+          <div class="answer-options">
+              <label><input type="radio" name="q1" value="a"> a) Install for all users</label><br>
+              <label><input type="radio" name="q1" value="b"> b) Add Python to PATH</label><br>
+              <label><input type="radio" name="q1" value="c"> c) Disable path length limit</label><br>
+              <label><input type="radio" name="q1" value="d"> d) Customize Installation</label>
+          </div>
+      </div>
+
+      <div class="question">
+          2. What command is used to verify the Python installation in the command prompt?
+          <div class="answer-options">
+              <label><input type="radio" name="q2" value="a"> a) python</label><br>
+              <label><input type="radio" name="q2" value="b"> b) python -v</label><br>
+              <label><input type="radio" name="q2" value="c"> c) python --version</label><br>
+              <label><input type="radio" name="q2" value="d"> d) python version</label>
+          </div>
+      </div>
+
+      <div class="question">
+          3. What tool is used to install and manage Python packages?
+          <div class="answer-options">
+              <label><input type="radio" name="q3" value="a"> a) conda</label><br>
+              <label><input type="radio" name="q3" value="b"> b) setup</label><br>
+              <label><input type="radio" name="q3" value="c"> c) pip</label><br>
+              <label><input type="radio" name="q3" value="d"> d) install</label>
+          </div>
+      </div>
+
+      <button type="button" id="reveal-answers-button">Submit & Reveal Answers</button>
+  </form>
+
+  <div id="answers">
+      <h3>Answers:</h3>
+      <p>1. b) Add Python to PATH</p>
+      <p>2. c) python --version</p>
+      <p>3. c) pip</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('reveal-answers-button').addEventListener('click', function() {
+  document.getElementById('answers').style.display = 'block';
+});
+</script>
+
+</body>
+</html>

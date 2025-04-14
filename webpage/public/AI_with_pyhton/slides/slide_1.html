@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python Course</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  margin-bottom: 30px;
+}
+.quiz-question {
+  margin-bottom: 15px;
+}
+.quiz-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+.hidden {
+  display: none;
+}
+.answer {
+  font-weight: bold;
+  color: green;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Welcome to Python and AI Self-Teaching Course</h1>
+  <h2>Introduction and Course Overview</h2>
+  <p><strong>Instructions:</strong> Introduce yourself and briefly explain the course structure, goals, and learning outcomes.</p>
+  <hr>
+  <h3>Course Structure:</h3>
+  <ul>
+    <li>Module 1: Introduction to Python for AI</li>
+    <li>Module 2: Data Manipulation with Pandas</li>
+    <li>Module 3: Data Visualization with Matplotlib and Seaborn</li>
+    <li>Module 4: Introduction to Machine Learning with Scikit-learn</li>
+    <li>Module 5: Building and Evaluating Models</li>
+  </ul>
+  <h3>Course Goals:</h3>
+  <ul>
+    <li>Learn the fundamentals of Python programming.</li>
+    <li>Master data manipulation and visualization techniques.</li>
+    <li>Understand the basics of machine learning algorithms.</li>
+    <li>Develop practical skills in building and evaluating AI models.</li>
+  </ul>
+  <h3>Learning Outcomes:</h3>
+  <ul>
+    <li>Be able to write Python code for data analysis.</li>
+    <li>Be able to create insightful visualizations.</li>
+    <li>Be able to train and evaluate machine learning models.</li>
+    <li>Be able to apply AI techniques to real-world problems.</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Module 1: Introduction to Python for AI</h2>
+  <p>Overview of Python syntax, data types, control flow, and functions.</p>
+  <hr>
+  <h3>Quiz: Python Basics</h3>
+
+  <form id="quizForm">
+    <div class="quiz-question">
+      <p>1. What is the correct way to print "Hello, World!" in Python?</p>
+      <div class="quiz-options">
+        <label><input type="radio" name="q1" value="a">  print('Hello, World!')</label>
+        <label><input type="radio" name="q1" value="b">  Print('Hello, World!')</label>
+        <label><input type="radio" name="q1" value="c">  echo 'Hello, World!'</label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <p>2. Which data type is used to store text in Python?</p>
+      <div class="quiz-options">
+        <label><input type="radio" name="q2" value="a">  int</label>
+        <label><input type="radio" name="q2" value="b">  float</label>
+        <label><input type="radio" name="q2" value="c">  str</label>
+      </div>
+    </div>
+
+    <div class="quiz-question">
+      <p>3. What does the 'if' statement do in Python?</p>
+      <div class="quiz-options">
+        <label><input type="radio" name="q3" value="a">  Loops through a sequence</label>
+        <label><input type="radio" name="q3" value="b">  Defines a function</label>
+        <label><input type="radio" name="q3" value="c">  Executes code based on a condition</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="revealAnswers()">Submit and Reveal Answers</button>
+  </form>
+
+  <div id="answers" class="hidden">
+    <h3>Answers:</h3>
+    <p>1. <span class="answer">a) print('Hello, World!')</span></p>
+    <p>2. <span class="answer">c) str</span></p>
+    <p>3. <span class="answer">c) Executes code based on a condition</span></p>
+  </div>
+</div>
+
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

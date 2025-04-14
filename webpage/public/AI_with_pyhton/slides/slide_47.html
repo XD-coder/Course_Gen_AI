@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 47: Pandas Exercise</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.slide-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.question {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.question label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.answer {
+  display: none; /* Initially hide answers */
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.answer h3 {
+  margin-top: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 47: Exercise: Pandas Data Analysis - Loading and Calculating Stats</h1>
+
+  <p><strong>Instructions:</strong> Load a CSV file into a Pandas DataFrame and calculate basic statistics.</p>
+
+  <div class="question">
+    <label for="csv_file">1.  Provide the Python code to load a CSV file named 'data.csv' into a Pandas DataFrame called 'df'.</label>
+    <textarea id="csv_file" rows="4"></textarea>
+  </div>
+
+  <div class="question">
+    <label for="describe_stats">2.  After loading the DataFrame, write the Python code to calculate and print the descriptive statistics (mean, median, standard deviation, etc.) of all numerical columns in 'df'.</label>
+    <textarea id="describe_stats" rows="4"></textarea>
+  </div>
+
+  <div class="question">
+     <label for="specific_stat">3. Write the Python code to calculate the mean of a specific column named "Sales" from DataFrame 'df' and print the result.</label>
+     <textarea id="specific_stat" rows="4"></textarea>
+  </div>
+
+  <button onclick="revealAnswers()">Submit and Reveal Answers</button>
+
+  <div class="answer" id="answer1">
+    <h3>Answer 1: Loading the CSV File</h3>
+    <p><code>import pandas as pd<br>df = pd.read_csv('data.csv')</code></p>
+  </div>
+
+  <div class="answer" id="answer2">
+    <h3>Answer 2: Calculating Descriptive Statistics</h3>
+    <p><code>print(df.describe())</code></p>
+  </div>
+
+  <div class="answer" id="answer3">
+      <h3>Answer 3: Calculating the mean of "Sales" column</h3>
+      <p><code>print(df['Sales'].mean())</code></p>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer1").style.display = "block";
+  document.getElementById("answer2").style.display = "block";
+  document.getElementById("answer3").style.display = "block";
+}
+</script>
+
+</body>
+</html>

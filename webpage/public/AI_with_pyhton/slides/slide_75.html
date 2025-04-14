@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 75: Interactive Exercises - Polynomial Regression</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.answer-section {
+  display: none; /* Initially hide the answer section */
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.correct-answer {
+    font-weight: bold;
+    color: green;
+}
+
+.incorrect-answer {
+    color: red;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 75: Interactive Exercises - Polynomial Regression</h2>
+
+  <h3>Instructions:</h3>
+  <p>Exercise - Create polynomial features from a single feature and fit a LinearRegression model on it.</p>
+
+  <p>Before you dive into the code, test your understanding with a quick quiz!</p>
+
+  <div class="quiz-question">
+    <p><b>Question 1:</b> What is the primary purpose of using polynomial features in regression?</p>
+    <input type="radio" id="q1a" name="q1" value="a">
+    <label for="q1a">a) To simplify the model.</label><br>
+    <input type="radio" id="q1b" name="q1" value="b">
+    <label for="q1b">b) To model non-linear relationships between variables.</label><br>
+    <input type="radio" id="q1c" name="q1" value="c">
+    <label for="q1c">c) To reduce the number of features.</label><br>
+    <input type="radio" id="q1d" name="q1" value="d">
+    <label for="q1d">d) To improve model interpretability.</label>
+  </div>
+
+    <div class="quiz-question">
+    <p><b>Question 2:</b> Which scikit-learn class is used to create polynomial features?</p>
+    <input type="radio" id="q2a" name="q2" value="a">
+    <label for="q2a">a) <code>PolynomialLinearRegression</code></label><br>
+    <input type="radio" id="q2b" name="q2" value="b">
+    <label for="q2b">b) <code>PolynomialFeatures</code></label><br>
+    <input type="radio" id="q2c" name="q2" value="c">
+    <label for="q2c">c) <code>LinearPolynomial</code></label><br>
+    <input type="radio" id="q2d" name="q2" value="d">
+    <label for="q2d">d) <code>FeaturePolynomial</code></label>
+  </div>
+
+  <div class="quiz-question">
+    <p><b>Question 3:</b>  After creating polynomial features, what type of regression model is typically used to fit the data?</p>
+    <input type="radio" id="q3a" name="q3" value="a">
+    <label for="q3a">a)  Decision Tree Regression</label><br>
+    <input type="radio" id="q3b" name="q3" value="b">
+    <label for="q3b">b)  Support Vector Regression</label><br>
+    <input type="radio" id="q3c" name="q3" value="c">
+    <label for="q3c">c)  Linear Regression</label><br>
+    <input type="radio" id="q3d" name="q3" value="d">
+    <label for="q3d">d)  Logistic Regression</label>
+  </div>
+
+
+  <button onclick="revealAnswers()">Submit and Show Answers</button>
+
+  <div id="answerSection" class="answer-section">
+    <h3>Answers:</h3>
+    <p><b>Question 1:</b> <span class="correct-answer">b) To model non-linear relationships between variables.</span></p>
+    <p><b>Question 2:</b> <span class="correct-answer">b) <code>PolynomialFeatures</code></span></p>
+    <p><b>Question 3:</b> <span class="correct-answer">c) Linear Regression</span></p>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerSection").style.display = "block";
+
+  // Optional: Add code to check user answers and give feedback.  For example:
+  // let q1Answer = document.querySelector('input[name="q1"]:checked').value;
+  // if (q1Answer === 'b') {
+  //   document.getElementById("answerSection").innerHTML += "<p>Question 1: Correct!</p>";
+  // } else {
+  //   document.getElementById("answerSection").innerHTML += "<p>Question 1: Incorrect.</p>";
+  // }
+  // Similar code for q2 and q3
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 74: Interactive Exercises - Multiple Linear Regression</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-top: 5px;
+  display: none; /* Initially hide the answers */
+}
+
+.answer p {
+  margin: 5px 0;
+}
+
+#revealAnswersButton {
+  display: none; /* Initially hide the reveal button */
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#revealAnswersButton:hover {
+  background-color: #3e8e41;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 74: Interactive Exercises - Multiple Linear Regression</h2>
+  <p><b>Instructions:</b> Exercise - Train a multiple linear regression model.</p>
+
+  <div class="question">
+    <p><b>Question 1:</b> Which of the following is a key assumption of multiple linear regression?</p>
+    <form id="quizForm">
+      <label><input type="radio" name="q1" value="a"> A) Linearity between independent and dependent variables.</label><br>
+      <label><input type="radio" name="q1" value="b"> B) Multicollinearity between independent variables is desirable.</label><br>
+      <label><input type="radio" name="q1" value="c"> C) Non-normality of residuals.</label><br>
+      <label><input type="radio" name="q1" value="d"> D) Heteroscedasticity of residuals.</label><br>
+    </form>
+    <div class="answer" id="answer1">
+      <p><b>Answer:</b> A) Linearity between independent and dependent variables.</p>
+      <p><b>Explanation:</b>  Multiple linear regression assumes a linear relationship between independent and dependent variables.  Multicollinearity should be avoided, and residuals should ideally be normally distributed and homoscedastic.</p>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 2:</b> Which metric is commonly used to evaluate the performance of a multiple linear regression model?</p>
+    <form id="quizForm">
+      <label><input type="radio" name="q2" value="a"> A) Precision</label><br>
+      <label><input type="radio" name="q2" value="b"> B) Recall</label><br>
+      <label><input type="radio" name="q2" value="c"> C) R-squared</label><br>
+      <label><input type="radio" name="q2" value="d"> D) F1-score</label><br>
+    </form>
+    <div class="answer" id="answer2">
+      <p><b>Answer:</b> C) R-squared</p>
+      <p><b>Explanation:</b> R-squared (Coefficient of Determination) is commonly used to evaluate the proportion of variance in the dependent variable that is predictable from the independent variables.</p>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 3:</b> How can you handle multicollinearity in a multiple linear regression model?</p>
+    <form id="quizForm">
+      <label><input type="radio" name="q3" value="a"> A) Remove one of the correlated variables.</label><br>
+      <label><input type="radio" name="q3" value="b"> B) Increase the sample size.</label><br>
+      <label><input type="radio" name="q3" value="c"> C) Use dimensionality reduction techniques (e.g., PCA).</label><br>
+      <label><input type="radio" name="q3" value="d"> D) All of the above.</label><br>
+    </form>
+    <div class="answer" id="answer3">
+      <p><b>Answer:</b> D) All of the above.</p>
+      <p><b>Explanation:</b> All of these options are valid approaches to dealing with multicollinearity.</p>
+    </div>
+  </div>
+
+  <button id="submitButton">Submit Answers</button>
+  <button id="revealAnswersButton">Reveal Answers</button>
+
+</div>
+
+<script>
+document.getElementById('submitButton').addEventListener('click', function() {
+  // Basic validation (check if at least one option is selected for each question)
+  let q1Answered = false;
+  let q2Answered = false;
+  let q3Answered = false;
+
+  const q1Radios = document.querySelectorAll('input[name="q1"]');
+  for (const radio of q1Radios) {
+    if (radio.checked) {
+      q1Answered = true;
+      break;
+    }
+  }
+
+  const q2Radios = document.querySelectorAll('input[name="q2"]');
+  for (const radio of q2Radios) {
+    if (radio.checked) {
+      q2Answered = true;
+      break;
+    }
+  }
+
+  const q3Radios = document.querySelectorAll('input[name="q3"]');
+  for (const radio of q3Radios) {
+    if (radio.checked) {
+      q3Answered = true;
+      break;
+    }
+  }
+
+  if (!q1Answered || !q2Answered || !q3Answered) {
+    alert("Please answer all the questions before submitting.");
+    return; // Stop execution if not all questions answered
+  }
+  document.getElementById('revealAnswersButton').style.display = 'block';
+  document.getElementById('submitButton').style.display = 'none';
+});
+
+document.getElementById('revealAnswersButton').addEventListener('click', function() {
+  document.getElementById('answer1').style.display = 'block';
+  document.getElementById('answer2').style.display = 'block';
+  document.getElementById('answer3').style.display = 'block';
+  document.getElementById('revealAnswersButton').style.display = 'none';
+
+});
+</script>
+
+</body>
+</html>

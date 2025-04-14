@@ -108,7 +108,7 @@ def generate_course_content(structure):
 def generate_course_plan(content, course_duration):
     """Generate slide-by-slide course plan."""
     prompt = [f"Based on the following course content and plan, create a self teaching course for duration of {course_duration}."
-              f"create a slide plan outlining topics, activities for each indevisual slide "
+              f"create a slide plan outlining topics, activities for each indevisual slide , start by 'slide1: ...'"
               f"(like tests, quizzes, projects) return a line of instructions for each indivisual slide "
               f"and do not include any pre or post text in your response, "
               f"(you must start directly with describing the slides, and must not add any formating on your own, "
@@ -169,7 +169,7 @@ async def generate(item: CourseRequest, save_content: bool = True):
 
     # move the course folder to ./my-app/public
     os.makedirs("./my-app/public", exist_ok=True)
-    os.rename(f"./{course_name}/", f"./my-app/public/{course_name}/")
+    os.rename(f"./{course_name}/", f"./webpage/course_data/{course_name}/")
 
 
 

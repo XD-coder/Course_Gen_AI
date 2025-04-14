@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 76: Interactive Exercises</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.slide {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-top: 5px;
+  display: none; /* Initially hide the answers */
+}
+
+#reveal-answers {
+  margin-top: 20px;
+  display: none; /* Initially hide the button */
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Interactive Exercises: Using train_test_split</h2>
+  <p><b>Instructions:</b> Exercise - Train a linear regression model and evaluate its performance.</p>
+
+  <div class="question">
+    <p><b>Question 1:</b> What is the purpose of <code>train_test_split</code>?</p>
+    <input type="radio" id="q1a" name="q1" value="a">
+    <label for="q1a">a) To train a model on the entire dataset.</label><br>
+    <input type="radio" id="q1b" name="q1" value="b">
+    <label for="q1b">b) To split the data into training and testing sets.</label><br>
+    <input type="radio" id="q1c" name="q1" value="c">
+    <label for="q1c">c) To visualize the data.</label><br>
+    <input type="radio" id="q1d" name="q1" value="d">
+    <label for="q1d">d) To perform feature engineering.</label>
+    <div class="answer" id="answer1"><b>Correct Answer:</b> b) To split the data into training and testing sets.</div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 2:</b>  What does the <code>test_size</code> parameter in <code>train_test_split</code> control?</p>
+    <input type="text" id="q2" name="q2">
+    <div class="answer" id="answer2"><b>Correct Answer:</b> The proportion of the dataset to include in the test split.</div>
+  </div>
+
+  <div class="question">
+      <p><b>Question 3:</b>  Why is it important to use a separate test set to evaluate your model?</p>
+      <textarea id="q3" name="q3" rows="4" cols="50"></textarea>
+      <div class="answer" id="answer3"><b>Correct Answer:</b> To get an unbiased estimate of the model's performance on unseen data.  Training on the test data would lead to overfitting and an overly optimistic performance estimate.</div>
+  </div>
+
+  <button id="submit-answers">Submit Answers</button>
+  <button id="reveal-answers">Reveal Answers</button>
+</div>
+
+<script>
+document.getElementById("submit-answers").addEventListener("click", function() {
+  // Basic client-side validation (optional)
+  let q1Answered = false;
+  const q1Radios = document.getElementsByName("q1");
+  for (let i = 0; i < q1Radios.length; i++) {
+      if (q1Radios[i].checked) {
+          q1Answered = true;
+          break;
+      }
+  }
+
+  if (!q1Answered || document.getElementById("q2").value === "" || document.getElementById("q3").value === "") {
+      alert("Please answer all questions before submitting.");
+      return;
+  }
+
+  document.getElementById("reveal-answers").style.display = "block";
+  document.getElementById("submit-answers").style.display = "none";
+
+  // In a real application, you would send the answers to a server for processing
+  // and grading.
+});
+
+document.getElementById("reveal-answers").addEventListener("click", function() {
+    document.getElementById("answer1").style.display = "block";
+    document.getElementById("answer2").style.display = "block";
+    document.getElementById("answer3").style.display = "block";
+});
+</script>
+
+</body>
+</html>

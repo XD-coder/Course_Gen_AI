@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 52: Types of AI</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px #ddd;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.answer {
+  margin-top: 5px;
+  display: none; /* Initially hide answers */
+}
+
+.reveal-answers {
+  display: block;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 52: Types of AI: Narrow, General, Super AI</h2>
+  <p><b>Instructions:</b> Differentiate between Narrow, General, and Super AI by answering the following questions.</p>
+
+  <div class="question">
+    <p>1. Which type of AI is designed and trained for a specific task?</p>
+    <input type="radio" id="narrow1" name="q1" value="narrow">
+    <label for="narrow1">Narrow AI</label><br>
+    <input type="radio" id="general1" name="q1" value="general">
+    <label for="general1">General AI</label><br>
+    <input type="radio" id="super1" name="q1" value="super">
+    <label for="super1">Super AI</label>
+    <div class="answer" id="answer1">Correct answer: Narrow AI</div>
+  </div>
+
+  <div class="question">
+    <p>2. Which type of AI possesses human-level cognitive abilities?</p>
+    <input type="radio" id="narrow2" name="q2" value="narrow">
+    <label for="narrow2">Narrow AI</label><br>
+    <input type="radio" id="general2" name="q2" value="general">
+    <label for="general2">General AI</label><br>
+    <input type="radio" id="super2" name="q2" value="super">
+    <label for="super2">Super AI</label>
+    <div class="answer" id="answer2">Correct answer: General AI</div>
+  </div>
+
+  <div class="question">
+    <p>3. Which type of AI surpasses human intelligence in all aspects?</p>
+    <input type="radio" id="narrow3" name="q3" value="narrow">
+    <label for="narrow3">Narrow AI</label><br>
+    <input type="radio" id="general3" name="q3" value="general">
+    <label for="general3">General AI</label><br>
+    <input type="radio" id="super3" name="q3" value="super">
+    <label for="super3">Super AI</label>
+    <div class="answer" id="answer3">Correct answer: Super AI</div>
+  </div>
+
+  <button class="reveal-answers" onclick="revealAnswers()">Reveal Answers</button>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer1").style.display = "block";
+  document.getElementById("answer2").style.display = "block";
+  document.getElementById("answer3").style.display = "block";
+}
+</script>
+
+</body>
+</html>

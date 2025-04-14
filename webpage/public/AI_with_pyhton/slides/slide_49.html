@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 49: Exercise - Virtual Environment Setup</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.instruction {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.quiz {
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f0f8ff;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer-container {
+  margin-left: 20px;
+}
+
+#answers {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+}
+
+#submitBtn, #showAnswersBtn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+#submitBtn:hover, #showAnswersBtn:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 49: Exercise - Virtual Environment Setup</h1>
+
+  <p><b>Objective:</b>  Learn to create and manage virtual environments for Python projects, specifically installing NumPy and Pandas.</p>
+
+  <div class="instruction">
+    <h3>Instructions:</h3>
+    <ol>
+      <li><b>Create a Virtual Environment:</b> Use the command <code>python -m venv myenv</code> (or <code>python3 -m venv myenv</code> if <code>python</code> defaults to Python 2) to create a virtual environment named "myenv".</li>
+      <li><b>Activate the Virtual Environment:</b>
+        <ul>
+          <li><b>Windows:</b> <code>myenv\Scripts\activate</code></li>
+          <li><b>macOS/Linux:</b> <code>source myenv/bin/activate</code></li>
+        </ul>
+      </li>
+      <li><b>Install NumPy:</b>  Run <code>pip install numpy</code> inside the activated virtual environment.</li>
+      <li><b>Install Pandas:</b> Run <code>pip install pandas</code> inside the activated virtual environment.</li>
+      <li><b>Verify Installation:</b> Open a Python interpreter within the virtual environment and import both NumPy and Pandas to confirm successful installation.</li>
+    </ol>
+  </div>
+
+
+  <div class="quiz">
+    <h3>Quiz: Virtual Environment Basics</h3>
+    <form id="quizForm">
+      <div class="question">
+        1. Which command is used to create a virtual environment?
+        <div class="answer-container">
+          <input type="radio" id="q1a" name="q1" value="a">
+          <label for="q1a">a) pip install venv</label><br>
+          <input type="radio" id="q1b" name="q1" value="b">
+          <label for="q1b">b) python -m venv myenv</label><br>
+          <input type="radio" id="q1c" name="q1" value="c">
+          <label for="q1c">c) virtualenv create myenv</label>
+        </div>
+      </div>
+
+      <div class="question">
+        2. After creating a virtual environment, what do you need to do before installing packages?
+        <div class="answer-container">
+          <input type="radio" id="q2a" name="q2" value="a">
+          <label for="q2a">a) Nothing, packages can be installed directly.</label><br>
+          <input type="radio" id="q2b" name="q2" value="b">
+          <label for="q2b">b) Activate the virtual environment.</label><br>
+          <input type="radio" id="q2c" name="q2" value="c">
+          <label for="q2c">c) Deactivate the global environment.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        3. Which command is typically used to install packages within a virtual environment?
+        <div class="answer-container">
+          <input type="radio" id="q3a" name="q3" value="a">
+          <label for="q3a">a) install</label><br>
+          <input type="radio" id="q3b" name="q3" value="b">
+          <label for="q3b">b) add</label><br>
+          <input type="radio" id="q3c" name="q3" value="c">
+          <label for="q3c">c) pip install</label>
+        </div>
+      </div>
+
+      <button type="button" id="submitBtn">Submit Answers</button>
+    </form>
+
+    <div id="answers">
+      <h3>Answer Key:</h3>
+      <ol>
+        <li>1. b) python -m venv myenv</li>
+        <li>2. b) Activate the virtual environment.</li>
+        <li>3. c) pip install</li>
+      </ol>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+document.getElementById("submitBtn").addEventListener("click", function() {
+  document.getElementById("answers").style.display = "block";
+  this.style.display = 'none'; // Hide the submit button after showing answers
+});
+</script>
+
+</body>
+</html>

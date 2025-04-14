@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 18: Data Structures: Sets</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.quiz-container {
+  margin-top: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+.reveal-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.answers-section {
+  margin-top: 20px;
+  display: none; /* Hidden initially */
+}
+
+.correct-answer {
+  font-weight: bold;
+  color: green;
+}
+
+.incorrect-answer {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 18: Data Structures: Sets</h2>
+  <h3>Instructions: Explain sets, uniqueness, and set operations</h3>
+
+  <p><strong>What is a Set?</strong></p>
+  <p>A set is an unordered collection of <em>unique</em> elements. This means that no element can appear more than once in a set.</p>
+
+  <p><strong>Uniqueness</strong></p>
+  <p>The defining characteristic of a set is that it only contains unique values.  If you try to add a duplicate element, it will simply be ignored.</p>
+
+  <p><strong>Set Operations</strong></p>
+  <p>Sets support various operations:</p>
+  <ul>
+    <li><strong>Union:</strong> Combines elements from two sets.</li>
+    <li><strong>Intersection:</strong> Returns elements present in both sets.</li>
+    <li><strong>Difference:</strong> Returns elements present in the first set but not in the second.</li>
+    <li><strong>Subset/Superset:</strong> Checks if one set is contained within another.</li>
+  </ul>
+</div>
+
+<div class="slide quiz-container">
+  <h3>Quiz: Sets in Python</h3>
+
+  <div class="question">
+    <p><strong>Question 1:</strong> What is the output of <code>set([1, 2, 2, 3, 4, 4, 5])</code>?</p>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q1" value="a"> a) <code>[1, 2, 2, 3, 4, 4, 5]</code>
+      </label>
+    </div>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q1" value="b"> b) <code>{1, 2, 3, 4, 5}</code>
+      </label>
+    </div>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q1" value="c"> c) <code>Error</code>
+      </label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 2:</strong> Which set operation returns elements present in both sets?</p>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q2" value="a"> a) Union
+      </label>
+    </div>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q2" value="b"> b) Intersection
+      </label>
+    </div>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q2" value="c"> c) Difference
+      </label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3:</strong> How do you add an element to a set named <code>my_set</code>?</p>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q3" value="a"> a) <code>my_set.add(element)</code>
+      </label>
+    </div>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q3" value="b"> b) <code>my_set.append(element)</code>
+      </label>
+    </div>
+    <div class="answer">
+      <label>
+        <input type="radio" name="q3" value="c"> c) <code>my_set.insert(element)</code>
+      </label>
+    </div>
+  </div>
+
+  <button class="reveal-button" onclick="revealAnswers()">Show Answers</button>
+
+  <div class="answers-section" id="answers">
+    <h3>Answers:</h3>
+    <p><strong>Question 1:</strong> b) <span class="correct-answer">{1, 2, 3, 4, 5}</span></p>
+    <p><strong>Question 2:</strong> b) <span class="correct-answer">Intersection</span></p>
+    <p><strong>Question 3:</strong> a) <span class="correct-answer"><code>my_set.add(element)</code></span></p>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers").style.display = "block";
+
+    // Check answers and display feedback.  This is basic and can be improved.
+    // You'll likely want to use proper form validation and feedback in a real scenario.
+
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let q3Answer = document.querySelector('input[name="q3"]:checked');
+
+    let feedback = [];
+
+    if (q1Answer && q1Answer.value !== "b") {
+      document.querySelector('input[name="q1"][value="'+ q1Answer.value +'"]').parentElement.classList.add("incorrect-answer");
+    }
+
+    if (q2Answer && q2Answer.value !== "b") {
+        document.querySelector('input[name="q2"][value="'+ q2Answer.value +'"]').parentElement.classList.add("incorrect-answer");
+    }
+      if (q3Answer && q3Answer.value !== "a") {
+        document.querySelector('input[name="q3"][value="'+ q3Answer.value +'"]').parentElement.classList.add("incorrect-answer");
+    }
+
+
+    // Prevent multiple submissions (basic).  You would likely want to handle this more gracefully.
+    document.querySelector('.reveal-button').disabled = true;
+}
+</script>
+
+</body>
+</html>

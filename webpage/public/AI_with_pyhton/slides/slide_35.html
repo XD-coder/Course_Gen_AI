@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 35: NumPy Resources</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.answer-section {
+  margin-top: 10px;
+}
+
+#answers {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 35: Resources: NumPy Documentation - Absolute Beginners Guide</h2>
+  <p><b>Instructions:</b> Link to the NumPy documentation for beginners.</p>
+
+  <div class="quiz-section">
+    <h3>Quick NumPy Quiz</h3>
+
+    <div class="quiz-question">
+      <p><b>Question 1:</b> What is NumPy primarily used for in Python?</p>
+      <input type="radio" id="q1a" name="q1" value="a">
+      <label for="q1a">A) Web development</label><br>
+      <input type="radio" id="q1b" name="q1" value="b">
+      <label for="q1b">B) Numerical computation and array manipulation</label><br>
+      <input type="radio" id="q1c" name="q1" value="c">
+      <label for="q1c">C) Database management</label><br>
+    </div>
+
+    <div class="quiz-question">
+      <p><b>Question 2:</b> Which NumPy function is used to create an array?</p>
+      <input type="radio" id="q2a" name="q2" value="a">
+      <label for="q2a">A) create_array()</label><br>
+      <input type="radio" id="q2b" name="q2" value="b">
+      <label for="q2b">B) array()</label><br>
+      <input type="radio" id="q2c" name="q2" value="c">
+      <label for="q2c">C) make_array()</label><br>
+    </div>
+
+    <div class="quiz-question">
+      <p><b>Question 3:</b>  How do you access the element in the first row and second column of a NumPy array called <code>my_array</code>?</p>
+      <input type="radio" id="q3a" name="q3" value="a">
+      <label for="q3a">A) <code>my_array[1, 2]</code></label><br>
+      <input type="radio" id="q3b" name="q3" value="b">
+      <label for="q3b">B) <code>my_array[0, 1]</code></label><br>
+      <input type="radio" id="q3c" name="q3" value="c">
+      <label for="q3c">C) <code>my_array(1, 2)</code></label><br>
+    </div>
+
+    <button onclick="showAnswers()">Show Answers</button>
+
+    <div id="answers">
+      <h3>Answer Key</h3>
+      <p><b>Question 1:</b> <span class="correct-answer">B) Numerical computation and array manipulation</span></p>
+      <p><b>Question 2:</b> <span class="correct-answer">B) array()</span></p>
+      <p><b>Question 3:</b> <span class="correct-answer">B) <code>my_array[0, 1]</code></span></p>
+      <p><a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank">NumPy Absolute Beginners Guide</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

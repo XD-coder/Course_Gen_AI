@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 91: Introduction to Decision Trees</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.slide-content {
+  margin-bottom: 20px;
+}
+
+.quiz-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+#answers-section {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+#submit-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 91: Introduction to Decision Trees</h1>
+
+<div class="slide-content">
+  <h2>What are Decision Trees?</h2>
+  <p>Decision Trees are a type of supervised learning algorithm used for both classification and regression tasks. They work by recursively partitioning the data based on feature values, creating a tree-like structure.</p>
+
+  <h2>Basic Concept</h2>
+  <ul>
+    <li><b>Nodes:</b> Each node represents a feature or attribute.</li>
+    <li><b>Branches:</b> Each branch represents a decision rule based on the feature value.</li>
+    <li><b>Leaves:</b> Each leaf node represents the final outcome or prediction.</li>
+  </ul>
+  <p>The goal is to create a tree that accurately predicts the target variable by traversing the tree from the root node down to a leaf node, based on the feature values of the input data.</p>
+
+  <p>Decision trees are easy to visualize and interpret, making them a popular choice for explaining complex decision-making processes.</p>
+</div>
+
+<div class="quiz-container">
+  <h2>Quick Quiz</h2>
+
+  <div class="question">
+    <p>1. What type of machine learning algorithm are Decision Trees?</p>
+    <div class="answer">
+      <input type="radio" id="q1a" name="q1" value="supervised">
+      <label for="q1a">Supervised Learning</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1b" name="q1" value="unsupervised">
+      <label for="q1b">Unsupervised Learning</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1c" name="q1" value="reinforcement">
+      <label for="q1c">Reinforcement Learning</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>2. What does each leaf node in a Decision Tree represent?</p>
+    <div class="answer">
+      <input type="radio" id="q2a" name="q2" value="feature">
+      <label for="q2a">A feature or attribute</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2b" name="q2" value="decision">
+      <label for="q2b">A decision rule</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2c" name="q2" value="outcome">
+      <label for="q2c">A final outcome or prediction</label>
+    </div>
+  </div>
+
+  <button id="submit-button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+</div>
+
+<div id="answers-section">
+  <h2>Answers</h2>
+  <ol>
+    <li>1. What type of machine learning algorithm are Decision Trees?
+       <p><b>Answer:</b> Supervised Learning</p></li>
+    <li>2. What does each leaf node in a Decision Tree represent?
+       <p><b>Answer:</b> A final outcome or prediction</p></li>
+  </ol>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById('answers-section').style.display = 'block';
+  // Optionally, you could disable the submit button after it's clicked:
+  document.getElementById('submit-button').disabled = true;
+}
+</script>
+
+</body>
+</html>

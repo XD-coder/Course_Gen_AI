@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 51: What is AI? History and Applications</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.question {
+  margin-bottom: 10px;
+}
+.answer {
+  display: none; /* Hidden by default */
+  margin-top: 5px;
+  color: green;
+}
+.quiz-container {
+  margin-top: 20px;
+}
+#reveal-answers-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#reveal-answers-button:disabled {
+   background-color: #cccccc;
+   cursor: not-allowed;
+}
+</style>
+
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 51: What is AI? History and Applications</h1>
+  <h2>Instructions: Define AI, discuss its history and provide real-world applications.</h2>
+
+  <p><b>What is AI?</b> Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. It encompasses a wide range of technologies that enable machines to perform tasks that typically require human intelligence, such as:</p>
+  <ul>
+    <li>Learning and problem-solving</li>
+    <li>Speech recognition</li>
+    <li>Visual perception</li>
+    <li>Decision-making</li>
+  </ul>
+
+  <p><b>History of AI:</b></p>
+  <ul>
+    <li><b>1950s:</b> The birth of AI with Alan Turing's Turing Test and the Dartmouth Workshop.</li>
+    <li><b>1960s-1970s:</b> Early AI programs focused on symbolic reasoning and problem-solving.</li>
+    <li><b>1980s:</b> Expert systems emerged, but limitations led to an "AI winter."</li>
+    <li><b>1990s-Present:</b> Resurgence of AI driven by advancements in machine learning, big data, and computing power.</li>
+  </ul>
+
+  <p><b>Real-World Applications of AI:</b></p>
+  <ul>
+    <li><b>Healthcare:</b> Diagnosis, drug discovery, personalized medicine.</li>
+    <li><b>Finance:</b> Fraud detection, algorithmic trading, risk management.</li>
+    <li><b>Transportation:</b> Self-driving cars, traffic optimization.</li>
+    <li><b>Education:</b> Personalized learning, automated grading.</li>
+    <li><b>Customer Service:</b> Chatbots, virtual assistants.</li>
+  </ul>
+</div>
+
+<div class="slide quiz-container">
+  <h2>Quiz</h2>
+
+  <div class="question">
+    <p>1. Which of the following is NOT a core capability of AI?</p>
+    <label><input type="radio" name="q1" value="a"> a) Learning</label><br>
+    <label><input type="radio" name="q1" value="b"> b) Problem-solving</label><br>
+    <label><input type="radio" name="q1" value="c"> c) Emotional Intelligence</label><br>
+    <label><input type="radio" name="q1" value="d"> d) Visual perception</label>
+    <div class="answer" data-question="q1" data-correct="c">Correct Answer: c) Emotional Intelligence</div>
+  </div>
+
+  <div class="question">
+    <p>2. What event is often considered the birth of AI?</p>
+    <label><input type="radio" name="q2" value="a"> a) The invention of the computer</label><br>
+    <label><input type="radio" name="q2" value="b"> b) The Dartmouth Workshop</label><br>
+    <label><input type="radio" name="q2" value="c"> c) The development of the internet</label><br>
+    <label><input type="radio" name="q2" value="d"> d) The creation of the first robot</label>
+    <div class="answer" data-question="q2" data-correct="b">Correct Answer: b) The Dartmouth Workshop</div>
+  </div>
+
+  <div class="question">
+    <p>3. Which of the following is an application of AI in healthcare?</p>
+    <label><input type="radio" name="q3" value="a"> a) Fraud Detection</label><br>
+    <label><input type="radio" name="q3" value="b"> b) Self-driving cars</label><br>
+    <label><input type="radio" name="q3" value="c"> c) Algorithmic Trading</label><br>
+    <label><input type="radio" name="q3" value="d"> d) Drug Discovery</label>
+    <div class="answer" data-question="q3" data-correct="d">Correct Answer: d) Drug Discovery</div>
+  </div>
+
+  <button id="reveal-answers-button" onclick="revealAnswers()" disabled>Reveal Answers</button>
+
+</div>
+
+<script>
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  const revealButton = document.getElementById('reveal-answers-button');
+
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+      // Check if all questions are answered
+      let allAnswered = true;
+      for (let i = 1; i <= 3; i++) {
+        const questionRadios = document.querySelectorAll(`input[name="q${i}"]:checked`);
+        if (questionRadios.length === 0) {
+          allAnswered = false;
+          break;
+        }
+      }
+
+      revealButton.disabled = !allAnswered;
+    });
+  });
+
+
+  function revealAnswers() {
+    const answers = document.querySelectorAll('.answer');
+    answers.forEach(answer => {
+      answer.style.display = 'block';
+    });
+    revealButton.disabled = true; // Disable button after revealing
+  }
+</script>
+
+</body>
+</html>

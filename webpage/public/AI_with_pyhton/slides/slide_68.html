@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 68: Project 2 - Preprocessing a Real-World Dataset</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+#answers {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+#answers h3 {
+    margin-top: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Project 2: Preprocessing a Real-World Dataset for Machine Learning</h1>
+  <p><b>Instructions:</b> Load, perform data cleaning, transformation, and feature engineering on a real-world dataset.</p>
+
+  <h2>Quiz:</h2>
+
+  <div class="question">
+    <p>1. Which of the following is NOT a common data cleaning technique?</p>
+    <div class="answer">
+      <label><input type="radio" name="q1" value="a"> a) Handling missing values</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q1" value="b"> b) Removing outliers</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q1" value="c"> c) Feature scaling</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q1" value="d"> d) Correcting inconsistent data</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>2. What is the purpose of feature scaling?</p>
+    <div class="answer">
+      <label><input type="radio" name="q2" value="a"> a) To reduce the number of features</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q2" value="b"> b) To convert categorical data to numerical data</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q2" value="c"> c) To ensure all features have the same range of values</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q2" value="d"> d) To improve model interpretability</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>3.  Which technique is most suitable for handling missing numerical data? </p>
+    <div class="answer">
+      <label><input type="radio" name="q3" value="a"> a) Removing the entire row</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q3" value="b"> b) Imputing with the mean/median</label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q3" value="c"> c) Imputing with a constant value like zero </label>
+    </div>
+    <div class="answer">
+      <label><input type="radio" name="q3" value="d"> d) All of the above, depending on the context</label>
+    </div>
+  </div>
+
+  <button onclick="showAnswers()">Submit & Show Answers</button>
+
+    <div id="answers">
+        <h3>Answer Key:</h3>
+        <p><b>1.</b> c) Feature scaling</p>
+        <p><b>2.</b> c) To ensure all features have the same range of values</p>
+        <p><b>3.</b> d) All of the above, depending on the context</p>
+    </div>
+
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

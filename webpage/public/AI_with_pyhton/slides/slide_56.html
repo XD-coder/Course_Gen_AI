@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 56: Quiz 2</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.answer-options {
+  margin-top: 5px;
+}
+
+.reveal-answers-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hidden initially */
+}
+
+.correct-answer {
+  font-weight: bold;
+  color: green;
+}
+
+.incorrect-answer {
+    font-weight: bold;
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<h2>Slide 56: Quiz 2: Concepts of AI and Machine Learning</h2>
+<p><b>Instructions:</b> Quiz on AI definitions, AI types and ML workflow</p>
+
+<div class="question" id="q1">
+  <p><b>1. What is the primary goal of Artificial Intelligence (AI)?</b></p>
+  <div class="answer-options">
+    <label><input type="radio" name="q1" value="a"> a) To automate tasks that humans can perform.</label><br>
+    <label><input type="radio" name="q1" value="b"> b) To create machines that can think and learn like humans.</label><br>
+    <label><input type="radio" name="q1" value="c"> c) To develop software that can solve complex problems.</label><br>
+    <label><input type="radio" name="q1" value="d"> d) All of the above.</label>
+  </div>
+</div>
+
+<div class="question" id="q2">
+  <p><b>2. Which of the following is an example of Narrow or Weak AI?</b></p>
+  <div class="answer-options">
+    <label><input type="radio" name="q2" value="a"> a) A self-driving car.</label><br>
+    <label><input type="radio" name="q2" value="b"> b) A chess-playing program.</label><br>
+    <label><input type="radio" name="q2" value="c"> c) A robot capable of general problem-solving.</label><br>
+    <label><input type="radio" name="q2" value="d"> d) A system capable of human-level intelligence across all domains.</label>
+  </div>
+</div>
+
+<div class="question" id="q3">
+  <p><b>3.  What is the first step in a typical Machine Learning workflow?</b></p>
+  <div class="answer-options">
+    <label><input type="radio" name="q3" value="a"> a) Model Evaluation</label><br>
+    <label><input type="radio" name="q3" value="b"> b) Data Collection</label><br>
+    <label><input type="radio" name="q3" value="c"> c) Model Training</label><br>
+    <label><input type="radio" name="q3" value="d"> d) Feature Engineering</label>
+  </div>
+</div>
+
+<button class="reveal-answers-button" onclick="revealAnswers()">Reveal Answers</button>
+
+<script>
+function revealAnswers() {
+  let q1Answer = document.querySelector('input[name="q1"]:checked');
+  let q2Answer = document.querySelector('input[name="q2"]:checked');
+  let q3Answer = document.querySelector('input[name="q3"]:checked');
+
+
+  if (!q1Answer || !q2Answer || !q3Answer) {
+    alert("Please answer all the questions before revealing the answers.");
+    return;
+  }
+
+
+  // Question 1
+    if (q1Answer.value === "d") {
+        document.querySelector('#q1 label[for="'+q1Answer.id+'"]').classList.add('correct-answer');
+    }
+    else{
+        document.querySelector('#q1 label[for="'+q1Answer.id+'"]').classList.add('incorrect-answer');
+        document.querySelector('#q1 label:nth-of-type(4)').classList.add('correct-answer');
+
+    }
+
+
+  // Question 2
+    if (q2Answer.value === "b") {
+        document.querySelector('#q2 label[for="'+q2Answer.id+'"]').classList.add('correct-answer');
+    }
+    else{
+        document.querySelector('#q2 label[for="'+q2Answer.id+'"]').classList.add('incorrect-answer');
+        document.querySelector('#q2 label:nth-of-type(2)').classList.add('correct-answer');
+    }
+
+  // Question 3
+  if (q3Answer.value === "b") {
+        document.querySelector('#q3 label[for="'+q3Answer.id+'"]').classList.add('correct-answer');
+    }
+    else{
+        document.querySelector('#q3 label[for="'+q3Answer.id+'"]').classList.add('incorrect-answer');
+        document.querySelector('#q3 label:nth-of-type(2)').classList.add('correct-answer');
+    }
+
+
+
+  let revealButton = document.querySelector('.reveal-answers-button');
+  revealButton.style.display = 'none'; // Hide the button after revealing
+
+}
+
+let radios = document.querySelectorAll('input[type=radio]');
+radios.forEach(radio => radio.addEventListener('change', function(){
+    let revealButton = document.querySelector('.reveal-answers-button');
+    revealButton.style.display = 'block';
+}));
+
+
+</script>
+
+</body>
+</html>

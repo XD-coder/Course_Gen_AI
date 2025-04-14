@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 89: Tuning Gamma and C Parameters</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.instructions {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-question label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.quiz-answer {
+  margin-left: 20px;
+}
+
+#results {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+  display: none; /* Initially hidden */
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect-answer {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 89: Interactive Exercises: Tuning Gamma and C Parameters</h1>
+
+  <div class="instructions">
+    Instructions: Exercise - Tuning the gamma and C parameters.  Answer the following questions based on your understanding of gamma and C in SVM with RBF kernel.
+  </div>
+
+  <div class="quiz-question">
+    <label for="q1">Question 1:  Increasing the 'gamma' parameter in an SVM with an RBF kernel typically leads to:</label>
+    <input type="radio" id="q1a" name="q1" value="a">
+    <label for="q1a" class="quiz-answer">a) A smoother decision boundary</label><br>
+    <input type="radio" id="q1b" name="q1" value="b">
+    <label for="q1b" class="quiz-answer">b) A more complex, wiggly decision boundary</label><br>
+    <input type="radio" id="q1c" name="q1" value="c">
+    <label for="q1c" class="quiz-answer">c) No change in the decision boundary</label><br>
+    <input type="radio" id="q1d" name="q1" value="d">
+    <label for="q1d" class="quiz-answer">d) A completely linear decision boundary</label>
+  </div>
+
+  <div class="quiz-question">
+    <label for="q2">Question 2: The 'C' parameter in SVM controls:</label>
+    <input type="radio" id="q2a" name="q2" value="a">
+    <label for="q2a" class="quiz-answer">a) The influence of each training example</label><br>
+    <input type="radio" id="q2b" name="q2" value="b">
+    <label for="q2b" class="quiz-answer">b) The width of the RBF kernel</label><br>
+    <input type="radio" id="q2c" name="q2" value="c">
+    <label for="q2c" class="quiz-answer">c) The number of support vectors</label><br>
+    <input type="radio" id="q2d" name="q2" value="d">
+    <label for="q2d" class="quiz-answer">d) The regularization strength; a smaller value increases regularization</label>
+  </div>
+
+    <div class="quiz-question">
+    <label for="q3">Question 3:  High values of 'gamma' can lead to:</label>
+    <input type="radio" id="q3a" name="q3" value="a">
+    <label for="q3a" class="quiz-answer">a) Underfitting</label><br>
+    <input type="radio" id="q3b" name="q3" value="b">
+    <label for="q3b" class="quiz-answer">b) Overfitting</label><br>
+    <input type="radio" id="q3c" name="q3" value="c">
+    <label for="q3c" class="quiz-answer">c) Optimal model performance</label><br>
+    <input type="radio" id="q3d" name="q3" value="d">
+    <label for="q3d" class="quiz-answer">d) Faster training times</label>
+  </div>
+
+  <button onclick="showResults()">Submit & Show Answers</button>
+
+  <div id="results">
+    <h2>Answer Key:</h2>
+    <p><strong>Question 1:</strong> b) A more complex, wiggly decision boundary <span id="q1-result"></span></p>
+    <p><strong>Question 2:</strong> d) The regularization strength; a smaller value increases regularization <span id="q2-result"></span></p>
+     <p><strong>Question 3:</strong> b) Overfitting <span id="q3-result"></span></p>
+  </div>
+</div>
+
+<script>
+function showResults() {
+  document.getElementById("results").style.display = "block";
+  //Check answers and display results (This part needs more substantial javascript to accurately grade the quiz)
+
+    //Question 1
+  let q1Answer = document.querySelector('input[name="q1"]:checked');
+  if (q1Answer) {
+      if (q1Answer.value === "b") {
+        document.getElementById("q1-result").innerHTML = "<span class='correct-answer'> - Correct!</span>";
+      } else {
+         document.getElementById("q1-result").innerHTML = "<span class='incorrect-answer'> - Incorrect.</span>";
+      }
+
+  } else {
+       document.getElementById("q1-result").innerHTML = "<span class='incorrect-answer'> - No answer selected.</span>";
+  }
+
+  //Question 2
+  let q2Answer = document.querySelector('input[name="q2"]:checked');
+  if (q2Answer) {
+      if (q2Answer.value === "d") {
+        document.getElementById("q2-result").innerHTML = "<span class='correct-answer'> - Correct!</span>";
+      } else {
+         document.getElementById("q2-result").innerHTML = "<span class='incorrect-answer'> - Incorrect.</span>";
+      }
+
+  } else {
+       document.getElementById("q2-result").innerHTML = "<span class='incorrect-answer'> - No answer selected.</span>";
+  }
+
+   //Question 3
+  let q3Answer = document.querySelector('input[name="q3"]:checked');
+  if (q3Answer) {
+      if (q3Answer.value === "b") {
+        document.getElementById("q3-result").innerHTML = "<span class='correct-answer'> - Correct!</span>";
+      } else {
+         document.getElementById("q3-result").innerHTML = "<span class='incorrect-answer'> - Incorrect.</span>";
+      }
+
+  } else {
+       document.getElementById("q3-result").innerHTML = "<span class='incorrect-answer'> - No answer selected.</span>";
+  }
+
+
+}
+</script>
+
+</body>
+</html>

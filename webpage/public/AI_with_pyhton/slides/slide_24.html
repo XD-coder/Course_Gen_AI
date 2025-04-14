@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 24: Exercise - Temperature Conversion</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.slide {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    display: block;
+    margin: 10px 0;
+    white-space: pre-wrap;
+}
+
+.quiz-question {
+    margin-bottom: 10px;
+}
+
+.answer {
+    margin-top: 5px;
+    display: none; /* Initially hide answers */
+}
+
+#reveal-answers {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none; /* Initially hide the button */
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>Slide 24: Exercise - Temperature Conversion (Celsius to Fahrenheit)</h1>
+
+    <h2>Instructions:</h2>
+    <p>Write a Python program to convert a temperature from Celsius to Fahrenheit.</p>
+
+    <p>Here's a basic structure to get you started:</p>
+
+    <code>
+# Get Celsius temperature from the user
+celsius = float(input("Enter temperature in Celsius: "))
+
+# Calculate Fahrenheit
+fahrenheit = (celsius * 9/5) + 32
+
+# Print the result
+print(f"{celsius} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit")
+    </code>
+
+    <p>Remember to:</p>
+    <ul>
+        <li>Get user input for the Celsius temperature.</li>
+        <li>Perform the correct conversion calculation.</li>
+        <li>Display the Fahrenheit temperature.</li>
+    </ul>
+
+    <h2>Test Your Understanding:</h2>
+
+    <div class="quiz-question">
+        <p>1. What is the correct formula to convert Celsius to Fahrenheit?</p>
+        <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a) (Celsius * 9/5) + 32</label><br>
+        <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b) (Celsius + 32) * 5/9</label><br>
+        <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c) Celsius + 32</label><br>
+        <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">d) Celsius * 9/5</label><br>
+        <div class="answer" id="answer1"><b>Answer:</b> a) (Celsius * 9/5) + 32</div>
+    </div>
+
+    <div class="quiz-question">
+        <p>2. If the Celsius temperature is 0, what is the Fahrenheit temperature?</p>
+        <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a) 0</label><br>
+        <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b) 32</label><br>
+        <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c) 100</label><br>
+        <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">d) 212</label><br>
+        <div class="answer" id="answer2"><b>Answer:</b> b) 32</div>
+    </div>
+
+    <button id="reveal-answers">Reveal Answers</button>
+
+</div>
+
+<script>
+document.getElementById('reveal-answers').addEventListener('click', function() {
+    const answers = document.querySelectorAll('.answer');
+    answers.forEach(answer => {
+        answer.style.display = 'block';
+    });
+    this.style.display = 'none'; // Hide the button after clicking
+});
+
+
+// Function to check if any radio button in a group is selected
+function isAnySelected(groupName) {
+    const radios = document.getElementsByName(groupName);
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Add event listeners to radio buttons to check selection
+const radios1 = document.querySelectorAll('input[name="q1"]');
+const radios2 = document.querySelectorAll('input[name="q2"]');
+
+
+
+// Function to check if all groups are selected and show the button
+function checkAllSelected() {
+    if (isAnySelected('q1') && isAnySelected('q2')) {
+        document.getElementById('reveal-answers').style.display = 'block';
+    }
+}
+
+radios1.forEach(radio => {
+    radio.addEventListener('change', checkAllSelected);
+});
+
+radios2.forEach(radio => {
+    radio.addEventListener('change', checkAllSelected);
+});
+
+
+</script>
+
+</body>
+</html>

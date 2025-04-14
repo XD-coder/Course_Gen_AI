@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 8: Python Data Types</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 10px;
+}
+
+#answers-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 8: Python Data Types</h2>
+  <p><strong>Instructions:</strong> Explain the different data types (int, float, str, bool) with examples.</p>
+
+  <h3>Python Data Types: int, float, str, bool</h3>
+
+  <h4>int (Integer)</h4>
+  <p>Represents whole numbers (positive or negative) without any decimal points.</p>
+  <p><strong>Example:</strong> <code>x = 10</code>, <code>y = -5</code>, <code>z = 0</code></p>
+
+  <h4>float (Floating-Point Number)</h4>
+  <p>Represents numbers with decimal points.</p>
+  <p><strong>Example:</strong> <code>pi = 3.14</code>, <code>price = 99.99</code>, <code>temp = -27.5</code></p>
+
+  <h4>str (String)</h4>
+  <p>Represents a sequence of characters enclosed in single quotes ('...') or double quotes ("...").</p>
+  <p><strong>Example:</strong> <code>name = "Alice"</code>, <code>message = 'Hello, world!'</code></p>
+
+  <h4>bool (Boolean)</h4>
+  <p>Represents either <code>True</code> or <code>False</code>.  Used for logical operations.</p>
+  <p><strong>Example:</strong> <code>is_valid = True</code>, <code>is_finished = False</code></p>
+
+    <hr>
+
+    <h3>Quiz: Python Data Types</h3>
+
+    <div class="quiz-question">
+      <p><strong>Question 1:</strong> What data type is the value <code>"123"</code> in Python?</p>
+      <input type="radio" id="q1a" name="q1" value="int"> <label for="q1a">int</label><br>
+      <input type="radio" id="q1b" name="q1" value="float"> <label for="q1b">float</label><br>
+      <input type="radio" id="q1c" name="q1" value="str"> <label for="q1c">str</label><br>
+      <input type="radio" id="q1d" name="q1" value="bool"> <label for="q1d">bool</label>
+    </div>
+
+    <div class="quiz-question">
+      <p><strong>Question 2:</strong> Which of the following is a valid boolean value?</p>
+      <input type="radio" id="q2a" name="q2" value="TRUE"> <label for="q2a">TRUE</label><br>
+      <input type="radio" id="q2b" name="q2" value="False"> <label for="q2b">False</label><br>
+      <input type="radio" id="q2c" name="q2" value="0"> <label for="q2c">0</label><br>
+      <input type="radio" id="q2d" name="q2" value="None"> <label for="q2d">None</label>
+    </div>
+
+    <div class="quiz-question">
+      <p><strong>Question 3:</strong> What data type would you use to store the price of an item in dollars and cents?</p>
+      <input type="radio" id="q3a" name="q3" value="int"> <label for="q3a">int</label><br>
+      <input type="radio" id="q3b" name="q3" value="float"> <label for="q3b">float</label><br>
+      <input type="radio" id="q3c" name="q3" value="str"> <label for="q3c">str</label><br>
+      <input type="radio" id="q3d" name="q3" value="bool"> <label for="q3d">bool</label>
+    </div>
+
+    <button onclick="revealAnswers()">Submit and Reveal Answers</button>
+
+    <div id="answers-container">
+        <h3>Answer Key:</h3>
+        <p><strong>Question 1:</strong> <span class="correct-answer">str</span></p>
+        <p><strong>Question 2:</strong> <span class="correct-answer">False</span></p>
+        <p><strong>Question 3:</strong> <span class="correct-answer">float</span></p>
+    </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers-container").style.display = "block";
+}
+</script>
+
+</body>
+</html>

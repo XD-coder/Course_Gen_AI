@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 82: Interactive Exercises</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.question {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.question-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.answer-options {
+  margin-top: 10px;
+}
+
+.answer-option {
+  margin-bottom: 5px;
+}
+
+#results {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #4CAF50;
+  background-color: #e8f5e9;
+  display: none; /* Initially hidden */
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect-answer {
+  color: red;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 82: Interactive Exercises: Building Logistic Regression Models</h1>
+  <p><b>Instructions:</b> Exercise - Train a logistic regression model.</p>
+
+  <div class="question" id="question1">
+    <div class="question-title">Question 1:</div>
+    <p>Which of the following is the correct syntax to import the Logistic Regression model from scikit-learn?</p>
+    <div class="answer-options">
+      <label class="answer-option"><input type="radio" name="q1" value="a"> a) from sklearn import LogisticRegression</label><br>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> b) import sklearn.LogisticRegression</label><br>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> c) from sklearn.linear_model import LogisticRegression</label><br>
+      <label class="answer-option"><input type="radio" name="q1" value="d"> d) import LogisticRegression from sklearn</label>
+    </div>
+  </div>
+
+  <div class="question" id="question2">
+    <div class="question-title">Question 2:</div>
+    <p>What is the purpose of the 'fit' method in scikit-learn's Logistic Regression?</p>
+    <div class="answer-options">
+      <label class="answer-option"><input type="radio" name="q2" value="a"> a) To evaluate the model's accuracy.</label><br>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> b) To train the model using the provided data.</label><br>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> c) To predict the output for new data.</label><br>
+      <label class="answer-option"><input type="radio" name="q2" value="d"> d) To import the necessary libraries.</label>
+    </div>
+  </div>
+
+  <div class="question" id="question3">
+    <div class="question-title">Question 3:</div>
+    <p>What type of problem is Logistic Regression typically used for?</p>
+    <div class="answer-options">
+      <label class="answer-option"><input type="radio" name="q3" value="a"> a) Regression</label><br>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> b) Clustering</label><br>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> c) Classification</label><br>
+      <label class="answer-option"><input type="radio" name="q3" value="d"> d) Dimensionality Reduction</label>
+    </div>
+  </div>
+
+  <button onclick="showResults()">Submit Answers</button>
+
+  <div id="results">
+    <h2>Answers:</h2>
+    <p id="answer1"></p>
+    <p id="answer2"></p>
+    <p id="answer3"></p>
+  </div>
+</div>
+
+<script>
+function showResults() {
+  let q1Answer = document.querySelector('input[name="q1"]:checked');
+  let q2Answer = document.querySelector('input[name="q2"]:checked');
+  let q3Answer = document.querySelector('input[name="q3"]:checked');
+
+  let result1 = document.getElementById("answer1");
+  let result2 = document.getElementById("answer2");
+  let result3 = document.getElementById("answer3");
+
+  if (q1Answer) {
+    if (q1Answer.value === "c") {
+      result1.innerHTML = "Question 1: Correct!  The correct answer is: c) from sklearn.linear_model import LogisticRegression";
+      result1.classList.add("correct-answer");
+      result1.classList.remove("incorrect-answer");
+    } else {
+      result1.innerHTML = "Question 1: Incorrect. The correct answer is: c) from sklearn.linear_model import LogisticRegression";
+      result1.classList.add("incorrect-answer");
+      result1.classList.remove("correct-answer");
+    }
+  } else {
+    result1.innerHTML = "Question 1: Not answered. The correct answer is: c) from sklearn.linear_model import LogisticRegression";
+     result1.classList.add("incorrect-answer");
+      result1.classList.remove("correct-answer");
+  }
+
+
+  if (q2Answer) {
+    if (q2Answer.value === "b") {
+      result2.innerHTML = "Question 2: Correct! The correct answer is: b) To train the model using the provided data.";
+       result2.classList.add("correct-answer");
+        result2.classList.remove("incorrect-answer");
+    } else {
+      result2.innerHTML = "Question 2: Incorrect. The correct answer is: b) To train the model using the provided data.";
+        result2.classList.add("incorrect-answer");
+        result2.classList.remove("correct-answer");
+    }
+  } else {
+    result2.innerHTML = "Question 2: Not answered. The correct answer is: b) To train the model using the provided data.";
+     result2.classList.add("incorrect-answer");
+      result2.classList.remove("correct-answer");
+  }
+
+  if (q3Answer) {
+    if (q3Answer.value === "c") {
+      result3.innerHTML = "Question 3: Correct! The correct answer is: c) Classification";
+        result3.classList.add("correct-answer");
+        result3.classList.remove("incorrect-answer");
+    } else {
+      result3.innerHTML = "Question 3: Incorrect. The correct answer is: c) Classification";
+       result3.classList.add("incorrect-answer");
+        result3.classList.remove("correct-answer");
+    }
+  } else {
+    result3.innerHTML = "Question 3: Not answered. The correct answer is: c) Classification";
+       result3.classList.add("incorrect-answer");
+        result3.classList.remove("correct-answer");
+  }
+
+
+  document.getElementById("results").style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python: Python Operators</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+.slide {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.example {
+  background-color: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.quiz {
+  margin-top: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer-key {
+  display: none;
+  margin-top: 20px;
+}
+
+.answer-key h3 {
+  color: #007bff;
+}
+
+.answer-key ol {
+  list-style-type: decimal;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Python Operators</h1>
+  <p>This slide covers various operators in Python: Arithmetic, Comparison, and Assignment.</p>
+
+  <h2>Arithmetic Operators</h2>
+  <p>Arithmetic operators are used to perform mathematical operations.</p>
+  <ul>
+    <li><code>+</code> (Addition): Adds two operands. Example: <code>5 + 3 = 8</code></li>
+    <li><code>-</code> (Subtraction): Subtracts the second operand from the first. Example: <code>5 - 3 = 2</code></li>
+    <li><code>*</code> (Multiplication): Multiplies two operands. Example: <code>5 * 3 = 15</code></li>
+    <li><code>/</code> (Division): Divides the first operand by the second. Example: <code>5 / 3 = 1.666...</code></li>
+    <li><code>%</code> (Modulus): Returns the remainder of the division. Example: <code>5 % 3 = 2</code></li>
+    <li><code>**</code> (Exponentiation): Raises the first operand to the power of the second. Example: <code>5 ** 3 = 125</code></li>
+    <li><code>//</code> (Floor Division): Divides and returns the integer part of the quotient. Example: <code>5 // 3 = 1</code></li>
+  </ul>
+  <div class="example">
+    <code>
+      x = 10<br>
+      y = 3<br>
+      print(x + y)  # Output: 13<br>
+      print(x - y)  # Output: 7<br>
+      print(x * y)  # Output: 30<br>
+      print(x / y)  # Output: 3.333...<br>
+      print(x % y)  # Output: 1<br>
+      print(x ** y) # Output: 1000<br>
+      print(x // y) # Output: 3
+    </code>
+  </div>
+
+  <h2>Comparison Operators</h2>
+  <p>Comparison operators are used to compare two values.</p>
+  <ul>
+    <li><code>==</code> (Equal): Checks if two operands are equal. Example: <code>5 == 3</code> is False</li>
+    <li><code>!=</code> (Not Equal): Checks if two operands are not equal. Example: <code>5 != 3</code> is True</li>
+    <li><code>></code> (Greater Than): Checks if the first operand is greater than the second. Example: <code>5 > 3</code> is True</li>
+    <li><code><</code> (Less Than): Checks if the first operand is less than the second. Example: <code>5 < 3</code> is False</li>
+    <li><code>>=</code> (Greater Than or Equal): Checks if the first operand is greater than or equal to the second. Example: <code>5 >= 3</code> is True</li>
+    <li><code><=</code> (Less Than or Equal): Checks if the first operand is less than or equal to the second. Example: <code>5 <= 3</code> is False</li>
+  </ul>
+   <div class="example">
+    <code>
+      x = 5<br>
+      y = 3<br>
+      print(x == y)  # Output: False<br>
+      print(x != y)  # Output: True<br>
+      print(x > y)   # Output: True<br>
+      print(x < y)   # Output: False<br>
+      print(x >= y)  # Output: True<br>
+      print(x <= y)  # Output: False
+    </code>
+  </div>
+
+  <h2>Assignment Operators</h2>
+  <p>Assignment operators are used to assign values to variables.</p>
+  <ul>
+    <li><code>=</code> (Assignment): Assigns the value of the right operand to the left operand. Example: <code>x = 5</code></li>
+    <li><code>+=</code> (Add and Assign): Adds the right operand to the left operand and assigns the result to the left operand. Example: <code>x += 3</code> (x = x + 3)</li>
+    <li><code>-=</code> (Subtract and Assign): Subtracts the right operand from the left operand and assigns the result to the left operand. Example: <code>x -= 3</code> (x = x - 3)</li>
+    <li><code>*=</code> (Multiply and Assign): Multiplies the left operand by the right operand and assigns the result to the left operand. Example: <code>x *= 3</code> (x = x * 3)</li>
+    <li><code>/=</code> (Divide and Assign): Divides the left operand by the right operand and assigns the result to the left operand. Example: <code>x /= 3</code> (x = x / 3)</li>
+    <li><code>%=</code> (Modulus and Assign): Performs modulus operation and assigns the result to the left operand. Example: <code>x %= 3</code> (x = x % 3)</li>
+    <li><code>**=</code> (Exponentiation and Assign): Raises the left operand to the power of the right operand and assigns the result to the left operand. Example: <code>x **= 3</code> (x = x ** 3)</li>
+    <li><code>//=</code> (Floor Division and Assign): Performs floor division and assigns the result to the left operand. Example: <code>x //= 3</code> (x = x // 3)</li>
+  </ul>
+   <div class="example">
+    <code>
+      x = 5<br>
+      x += 3<br>
+      print(x) #Output 8<br>
+      x -= 2<br>
+      print(x) #Output 6
+    </code>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz</h2>
+
+    <div class="question">
+      <p>1. What is the result of <code>10 % 3</code>?</p>
+      <input type="radio" id="q1a" name="q1" value="a"> <label for="q1a">a) 3</label><br>
+      <input type="radio" id="q1b" name="q1" value="b"> <label for="q1b">b) 1</label><br>
+      <input type="radio" id="q1c" name="q1" value="c"> <label for="q1c">c) 0</label><br>
+      <input type="radio" id="q1d" name="q1" value="d"> <label for="q1d">d) 10</label>
+    </div>
+
+    <div class="question">
+      <p>2. Which operator checks if two operands are equal?</p>
+      <input type="radio" id="q2a" name="q2" value="a"> <label for="q2a">a) =</label><br>
+      <input type="radio" id="q2b" name="q2" value="b"> <label for="q2b">b) ==</label><br>
+      <input type="radio" id="q2c" name="q2" value="c"> <label for="q2c">c) !=</label><br>
+      <input type="radio" id="q2d" name="q2" value="d"> <label for="q2d">d) >=</label>
+    </div>
+
+     <div class="question">
+      <p>3. What is the value of <code>x</code> after the operation <code>x = 7; x //= 2</code>?</p>
+      <input type="radio" id="q3a" name="q3" value="a"> <label for="q3a">a) 3.5</label><br>
+      <input type="radio" id="q3b" name="q3" value="b"> <label for="q3b">b) 3</label><br>
+      <input type="radio" id="q3c" name="q3" value="c"> <label for="q3c">c) 1</label><br>
+      <input type="radio" id="q3d" name="q3" value="d"> <label for="q3d">d) 7</label>
+    </div>
+
+    <button onclick="revealAnswers()">Submit and Reveal Answers</button>
+
+    <div class="answer-key" id="answerKey">
+      <h3>Answer Key:</h3>
+      <ol>
+        <li>b) 1</li>
+        <li>b) ==</li>
+        <li>b) 3</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerKey").style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 20: Functions in Python</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.quiz {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.answers {
+    display: none; /* Initially hide the answers */
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.correct-answer {
+    color: green;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 20: Functions in Python</h1>
+
+<div class="content">
+  <h2>Defining Functions</h2>
+  <p>In Python, functions are defined using the <code>def</code> keyword followed by the function name, parentheses <code>()</code>, and a colon <code>:</code>.</p>
+  <pre><code>
+  def function_name(arguments):
+      # Function body
+      return value
+  </code></pre>
+
+  <h2>Arguments</h2>
+  <p>Functions can accept different types of arguments:</p>
+  <ul>
+    <li><b>Positional Arguments:</b> Passed in the order they are defined.</li>
+    <li><b>Keyword Arguments:</b> Passed with the argument name (e.g., <code>name="Alice"</code>).</li>
+    <li><b>Default Arguments:</b> Arguments with a default value (e.g., <code>def greet(name="Guest")</code>).</li>
+    <li><b>*args:</b> Allows passing a variable number of non-keyword arguments.</li>
+    <li><b>**kwargs:</b> Allows passing a variable number of keyword arguments.</li>
+  </ul>
+
+  <h2>Return Values</h2>
+  <p>Functions can return a value using the <code>return</code> statement. If no <code>return</code> statement is present, the function returns <code>None</code>.</p>
+  <pre><code>
+  def add(a, b):
+      return a + b
+
+  result = add(5, 3) # result will be 8
+  </code></pre>
+
+  <h2>Instructions</h2>
+  <p>Here's how to define functions with different argument types and return values:</p>
+  <ol>
+    <li>Use <code>def</code> to start the function definition.</li>
+    <li>Specify argument names within the parentheses.</li>
+    <li>Use <code>return</code> to send back a value.</li>
+  </ol>
+</div>
+
+<div class="quiz">
+  <h2>Quiz</h2>
+
+  <div class="question">
+    <p>1. Which keyword is used to define a function in Python?</p>
+    <label><input type="radio" name="q1" value="a"> a) function</label>
+    <label><input type="radio" name="q1" value="b"> b) def</label>
+    <label><input type="radio" name="q1" value="c"> c) define</label>
+    <label><input type="radio" name="q1" value="d"> d) func</label>
+  </div>
+
+  <div class="question">
+    <p>2. What does *args allow you to do?</p>
+    <label><input type="radio" name="q2" value="a"> a) Pass only keyword arguments</label>
+    <label><input type="radio" name="q2" value="b"> b) Pass a variable number of non-keyword arguments</label>
+    <label><input type="radio" name="q2" value="c"> c) Define default arguments</label>
+    <label><input type="radio" name="q2" value="d"> d) Pass only positional arguments</label>
+  </div>
+
+  <div class="question">
+    <p>3. What is the return value of a function if it doesn't have a <code>return</code> statement?</p>
+    <label><input type="radio" name="q3" value="a"> a) 0</label>
+    <label><input type="radio" name="q3" value="b"> b) Error</label>
+    <label><input type="radio" name="q3" value="c"> c) None</label>
+    <label><input type="radio" name="q3" value="d"> d) 1</label>
+  </div>
+
+  <button onclick="showAnswers()">Submit & Show Answers</button>
+
+  <div class="answers" id="answers">
+    <h3>Answers:</h3>
+    <p>1. Which keyword is used to define a function in Python? <span class="correct-answer">b) def</span></p>
+    <p>2. What does *args allow you to do? <span class="correct-answer">b) Pass a variable number of non-keyword arguments</span></p>
+    <p>3. What is the return value of a function if it doesn't have a <code>return</code> statement? <span class="correct-answer">c) None</span></p>
+  </div>
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

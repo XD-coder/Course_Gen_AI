@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 34: NumPy: Array Attributes and Basic Operations</title>
+<style>
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.slide {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.quiz-question {
+    margin-bottom: 10px;
+}
+.quiz-options {
+    margin-left: 20px;
+}
+.quiz-answer {
+    display: none; /* Hidden by default */
+    color: green;
+    margin-top: 5px;
+}
+#answers-section {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+.answer {
+    margin-bottom: 10px;
+}
+.code-example {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 34: NumPy: Array Attributes and Basic Operations</h1>
+
+  <h2>Array Attributes</h2>
+
+  <ul>
+    <li><b>Shape:</b> The dimensions of the array (e.g., (3, 4) for a 3x4 matrix).</li>
+    <li><b>Dtype:</b> The data type of the array elements (e.g., int64, float64).</li>
+    <li><b>Size:</b> The total number of elements in the array.</li>
+  </ul>
+
+  <div class="code-example">
+    <code>
+      import numpy as np<br>
+      arr = np.array([[1, 2, 3], [4, 5, 6]])<br>
+      print("Shape:", arr.shape)  # Output: (2, 3)<br>
+      print("Dtype:", arr.dtype)  # Output: int64 (or similar)<br>
+      print("Size:", arr.size)    # Output: 6
+    </code>
+  </div>
+
+
+  <h2>Basic Operations</h2>
+    <ul>
+        <li><b>Arithmetic Operations:</b> Element-wise addition, subtraction, multiplication, division.</li>
+        <li><b>Slicing:</b> Accessing parts of an array using indices.</li>
+        <li><b>Reshaping:</b> Changing the shape of an array without changing its data.</li>
+    </ul>
+
+    <div class="code-example">
+    <code>
+        import numpy as np<br>
+        arr1 = np.array([[1, 2], [3, 4]])<br>
+        arr2 = np.array([[5, 6], [7, 8]])<br>
+        addition = arr1 + arr2<br>
+        print("Addition:\n", addition)
+    </code>
+    </div>
+
+
+    <h2>Quiz Time!</h2>
+
+    <div class="quiz-question">
+        <p>1. What attribute of a NumPy array gives its dimensions?</p>
+        <div class="quiz-options">
+            <label><input type="radio" name="q1" value="shape"> Shape</label><br>
+            <label><input type="radio" name="q1" value="dtype"> Dtype</label><br>
+            <label><input type="radio" name="q1" value="size"> Size</label>
+        </div>
+        <p class="quiz-answer" id="answer1">Correct answer: Shape</p>
+    </div>
+
+    <div class="quiz-question">
+        <p>2. What does the 'dtype' attribute of a NumPy array represent?</p>
+        <div class="quiz-options">
+            <label><input type="radio" name="q2" value="dimensions"> The dimensions of the array.</label><br>
+            <label><input type="radio" name="q2" value="datatype"> The data type of the array elements.</label><br>
+            <label><input type="radio" name="q2" value="number"> The number of elements in the array.</label>
+        </div>
+        <p class="quiz-answer" id="answer2">Correct answer: The data type of the array elements.</p>
+    </div>
+
+    <div class="quiz-question">
+        <p>3. If you have a NumPy array 'arr' with shape (3, 4), what is the output of 'arr.size'?</p>
+        <div class="quiz-options">
+            <label><input type="radio" name="q3" value="3"> 3</label><br>
+            <label><input type="radio" name="q3" value="4"> 4</label><br>
+            <label><input type="radio" name="q3" value="12"> 12</label>
+        </div>
+        <p class="quiz-answer" id="answer3">Correct answer: 12</p>
+    </div>
+
+    <button onclick="revealAnswers()">Submit & Show Answers</button>
+
+    <div id="answers-section">
+        <h3>Answers:</h3>
+        <div class="answer" id="answer-section-1"><b>Question 1:</b> Shape</div>
+        <div class="answer" id="answer-section-2"><b>Question 2:</b> The data type of the array elements.</div>
+        <div class="answer" id="answer-section-3"><b>Question 3:</b> 12</div>
+    </div>
+</div>
+
+
+
+<script>
+function revealAnswers() {
+        document.getElementById('answer1').style.display = 'block';
+        document.getElementById('answer2').style.display = 'block';
+        document.getElementById('answer3').style.display = 'block';
+        document.getElementById('answers-section').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

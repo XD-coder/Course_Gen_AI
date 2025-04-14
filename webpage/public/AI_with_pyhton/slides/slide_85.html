@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 85: Introduction to SVM</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer-container {
+  margin-top: 10px;
+  display: none; /* Initially hidden */
+}
+
+.reveal-button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reveal-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect-answer {
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 85: Introduction to SVM</h1>
+  <p><b>Instructions:</b> Explain the goal of SVM: to find the optimal hyperplane.</p>
+
+  <p>Support Vector Machines (SVMs) are powerful supervised learning algorithms used for classification and regression. The primary goal of an SVM, especially in classification, is to find the <b>optimal hyperplane</b> that separates different classes of data points with the largest possible margin. This margin is the distance between the hyperplane and the nearest data points from each class, called support vectors. By maximizing the margin, SVM aims to achieve better generalization and robustness to unseen data.</p>
+
+  <div class="question">
+    <h3>Quiz:</h3>
+    <p>Which of the following best describes the goal of SVM in classification?</p>
+    <form id="quiz-form">
+      <label>
+        <input type="radio" name="q1" value="a"> a) To find any hyperplane that separates the data.
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="b"> b) To find the hyperplane that maximizes the margin between classes.
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="c"> c) To minimize the number of support vectors.
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="d"> d) To find the hyperplane closest to the origin.
+      </label><br>
+      <button type="button" onclick="revealAnswers()">Submit and Reveal Answers</button>
+    </form>
+  </div>
+
+  <div class="answer-container" id="answer-container">
+    <h3>Answers:</h3>
+    <p>Q1: b) <span class="correct-answer">To find the hyperplane that maximizes the margin between classes.</span></p>
+  </div>
+
+  <div class="reveal-button-container">
+
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer-container").style.display = "block";
+}
+</script>
+
+</body>
+</html>

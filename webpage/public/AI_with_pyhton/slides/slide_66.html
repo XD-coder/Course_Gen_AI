@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 66: Interactive Exercises - Feature Engineering</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-content {
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-answer {
+  margin-bottom: 10px;
+}
+
+#results {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.solution {
+    display:none;
+    padding:5px;
+    margin-top:5px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+
+}
+
+#showAnswersButton {
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 66: Interactive Exercises - Feature Engineering</h1>
+  <h2>Instructions: Exercise - Apply one-hot encoding to the categorical features</h2>
+  <p>Consider the following dataframe with categorical features:</p>
+  <pre>
+  <code>
+    import pandas as pd
+
+    data = {'Color': ['Red', 'Green', 'Blue', 'Red', 'Green'],
+            'Size': ['Small', 'Medium', 'Large', 'Small', 'Medium']}
+
+    df = pd.DataFrame(data)
+  </code>
+  </pre>
+  <p>Use pandas to apply one-hot encoding to the 'Color' and 'Size' columns.</p>
+</div>
+
+<div class="quiz">
+  <div class="quiz-question">
+    <p><b>Question 1:</b>  After one-hot encoding, how many columns will the dataframe have?</p>
+    <div class="quiz-answer">
+      <input type="radio" id="q1a" name="q1" value="3">
+      <label for="q1a">3</label><br>
+      <input type="radio" id="q1b" name="q1" value="5">
+      <label for="q1b">5</label><br>
+      <input type="radio" id="q1c" name="q1" value="6">
+      <label for="q1c">6</label><br>
+      <input type="radio" id="q1d" name="q1" value="8">
+      <label for="q1d">8</label><br>
+      <div class="solution" id="solution1"><b>Correct Answer: </b>6 (Color: Red, Green, Blue; Size: Small, Medium, Large)</div>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <p><b>Question 2:</b> What would be the values in the "Color_Green" column for the first row?</p>
+    <div class="quiz-answer">
+      <input type="radio" id="q2a" name="q2" value="1">
+      <label for="q2a">1</label><br>
+      <input type="radio" id="q2b" name="q2" value="0">
+      <label for="q2b">0</label><br>
+      <div class="solution" id="solution2"><b>Correct Answer: </b> 0 (The first row has "Color:Red")</div>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <p><b>Question 3:</b> What is the code snippet to do one hot encoding in pandas?</p>
+    <div class="quiz-answer">
+      <input type="radio" id="q3a" name="q3" value="pd.get_dummies(df)">
+      <label for="q3a">pd.get_dummies(df)</label><br>
+      <input type="radio" id="q3b" name="q3" value="df.one_hot_encode()">
+      <label for="q3b">df.one_hot_encode()</label><br>
+        <input type="radio" id="q3c" name="q3" value="df.encode()">
+      <label for="q3c">df.encode()</label><br>
+      <div class="solution" id="solution3"><b>Correct Answer: </b> pd.get_dummies(df)</div>
+    </div>
+  </div>
+</div>
+
+<button id="submitButton">Submit</button>
+<button id="showAnswersButton" style="display:none">Show Answers</button>
+
+<div id="results">
+  <h2>Results:</h2>
+  <p id="result1"></p>
+  <p id="result2"></p>
+  <p id="result3"></p>
+</div>
+
+<script>
+document.getElementById("submitButton").addEventListener("click", function() {
+    let score = 0;
+
+    // Question 1
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q1Result = document.getElementById("result1");
+    if (q1Answer) {
+        if (q1Answer.value === "6") {
+            q1Result.innerHTML = "Question 1: Correct";
+            q1Result.classList.add("correct");
+            score++;
+        } else {
+            q1Result.innerHTML = "Question 1: Incorrect";
+            q1Result.classList.add("incorrect");
+        }
+    } else {
+        q1Result.innerHTML = "Question 1: Unanswered";
+        q1Result.classList.add("incorrect");
+    }
+
+    // Question 2
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let q2Result = document.getElementById("result2");
+    if (q2Answer) {
+        if (q2Answer.value === "0") {
+            q2Result.innerHTML = "Question 2: Correct";
+            q2Result.classList.add("correct");
+            score++;
+        } else {
+            q2Result.innerHTML = "Question 2: Incorrect";
+            q2Result.classList.add("incorrect");
+        }
+    } else {
+        q2Result.innerHTML = "Question 2: Unanswered";
+        q2Result.classList.add("incorrect");
+    }
+     // Question 3
+    let q3Answer = document.querySelector('input[name="q3"]:checked');
+    let q3Result = document.getElementById("result3");
+    if (q3Answer) {
+        if (q3Answer.value === "pd.get_dummies(df)") {
+            q3Result.innerHTML = "Question 3: Correct";
+            q3Result.classList.add("correct");
+            score++;
+        } else {
+            q3Result.innerHTML = "Question 3: Incorrect";
+            q3Result.classList.add("incorrect");
+        }
+    } else {
+        q3Result.innerHTML = "Question 3: Unanswered";
+        q3Result.classList.add("incorrect");
+    }
+
+    document.getElementById("results").style.display = "block";
+    document.getElementById("submitButton").style.display = "none";
+    document.getElementById("showAnswersButton").style.display = "block";
+
+});
+
+document.getElementById("showAnswersButton").addEventListener("click", function() {
+        document.getElementById("solution1").style.display = "block";
+        document.getElementById("solution2").style.display = "block";
+        document.getElementById("solution3").style.display = "block";
+        document.getElementById("showAnswersButton").style.display = "none";
+
+});
+
+</script>
+
+</body>
+</html>

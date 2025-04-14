@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 73: Interactive Exercises - Simple Linear Regression</title>
+<style>
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+.question {
+    margin-bottom: 20px;
+}
+.answer {
+    margin-top: 10px;
+    display: none; /* Initially hide answers */
+}
+.reveal-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 73: Interactive Exercises - Simple Linear Regression</h1>
+
+<h2>Instructions: Exercise - Train a simple linear regression model</h2>
+
+<p>Please answer the following questions based on your understanding of simple linear regression in Python.</p>
+
+<div class="question">
+    <h3>Question 1:</h3>
+    <p>Which Python library is commonly used for building linear regression models?</p>
+    <input type="radio" id="q1_a" name="q1" value="numpy">
+    <label for="q1_a">NumPy</label><br>
+    <input type="radio" id="q1_b" name="q1" value="pandas">
+    <label for="q1_b">Pandas</label><br>
+    <input type="radio" id="q1_c" name="q1" value="scikit-learn">
+    <label for="q1_c">Scikit-learn</label><br>
+    <input type="radio" id="q1_d" name="q1" value="matplotlib">
+    <label for="q1_d">Matplotlib</label><br>
+
+    <div class="answer" id="answer1">
+        <strong>Answer:</strong> Scikit-learn
+    </div>
+</div>
+
+<div class="question">
+    <h3>Question 2:</h3>
+    <p>In simple linear regression, what does the equation y = mx + c represent?</p>
+    <textarea id="q2" name="q2" rows="4" cols="50"></textarea>
+
+    <div class="answer" id="answer2">
+        <strong>Answer:</strong> y is the dependent variable, x is the independent variable, m is the slope, and c is the y-intercept.
+    </div>
+</div>
+
+<div class="question">
+    <h3>Question 3:</h3>
+    <p>What method is used to fit the linear regression model to the training data in scikit-learn?</p>
+    <input type="text" id="q3" name="q3">
+
+    <div class="answer" id="answer3">
+        <strong>Answer:</strong> fit()
+    </div>
+</div>
+
+<div class="reveal-button-container">
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+</div>
+
+<script>
+function revealAnswers() {
+    var answers = document.querySelectorAll('.answer');
+    answers.forEach(function(answer) {
+        answer.style.display = 'block';
+    });
+
+    // Disable the submit button
+    document.querySelector('button').disabled = true;
+
+    // Display user feedback for correct/incorrect. This requires more JS to evaluate correctness.
+    // Example:
+    // if (document.querySelector('input[name="q1"]:checked').value === 'scikit-learn') {
+    //     document.getElementById('answer1').innerHTML += " - Correct!";
+    // } else {
+    //      document.getElementById('answer1').innerHTML += " - Incorrect.";
+    // }
+
+}
+</script>
+
+</body>
+</html>

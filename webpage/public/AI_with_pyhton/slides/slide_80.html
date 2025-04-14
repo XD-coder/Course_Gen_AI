@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 80: Logistic Regression in Scikit-learn</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.quiz-container {
+  margin-top: 20px;
+}
+.question {
+  margin-bottom: 10px;
+}
+input[type="radio"] {
+  margin-right: 5px;
+}
+.answer-key {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+.answer-key h3 {
+  margin-top: 0;
+}
+.button-container {
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 80: Implementation in Scikit-learn: Training and Evaluating a Logistic Regression Model</h1>
+  <h2>Instructions: Steps to train a logistic regression model</h2>
+
+  <ol>
+    <li><b>Import necessary libraries:</b> <code>from sklearn.model_selection import train_test_split</code>, <code>from sklearn.linear_model import LogisticRegression</code>, <code>from sklearn.metrics import accuracy_score</code></li>
+    <li><b>Load your data:</b>  Ensure your data is loaded into pandas DataFrames (e.g., <code>X</code> for features, <code>y</code> for target variable).</li>
+    <li><b>Split data into training and testing sets:</b>  <code>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)</code>  (adjust <code>test_size</code> and <code>random_state</code> as needed).</li>
+    <li><b>Create a Logistic Regression model:</b> <code>model = LogisticRegression(solver='liblinear', random_state=42)</code> (choose a suitable solver; <code>liblinear</code> is often good for smaller datasets).</li>
+    <li><b>Train the model:</b> <code>model.fit(X_train, y_train)</code></li>
+    <li><b>Make predictions on the test set:</b> <code>y_pred = model.predict(X_test)</code></li>
+    <li><b>Evaluate the model:</b> <code>accuracy = accuracy_score(y_test, y_pred)</code>.  Print the accuracy score.</li>
+  </ol>
+
+  <div class="quiz-container">
+    <h2>Quiz:</h2>
+
+    <div class="question">
+      <p>1. Which Scikit-learn module is used to create a Logistic Regression model?</p>
+      <label><input type="radio" name="q1" value="linear_model"> sklearn.linear_model</label><br>
+      <label><input type="radio" name="q1" value="svm"> sklearn.svm</label><br>
+      <label><input type="radio" name="q1" value="tree"> sklearn.tree</label><br>
+    </div>
+
+    <div class="question">
+      <p>2. What is the purpose of the <code>train_test_split</code> function?</p>
+      <label><input type="radio" name="q2" value="split_data"> To split the data into training and testing sets.</label><br>
+      <label><input type="radio" name="q2" value="scale_data"> To scale the data.</label><br>
+      <label><input type="radio" name="q2" value="clean_data"> To clean the data.</label><br>
+    </div>
+
+    <div class="question">
+      <p>3. Which method is used to train the Logistic Regression model with training data?</p>
+      <label><input type="radio" name="q3" value="predict"> predict()</label><br>
+      <label><input type="radio" name="q3" value="fit"> fit()</label><br>
+      <label><input type="radio" name="q3" value="transform"> transform()</label><br>
+    </div>
+
+    <div class="button-container">
+      <button id="submitButton">Submit Answers</button>
+    </div>
+
+    <div class="answer-key" id="answerKey">
+      <h3>Answer Key:</h3>
+      <p>1. sklearn.linear_model</p>
+      <p>2. To split the data into training and testing sets.</p>
+      <p>3. fit()</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('submitButton').addEventListener('click', function() {
+  document.getElementById('answerKey').style.display = 'block';
+});
+</script>
+
+</body>
+</html>

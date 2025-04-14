@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 55</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 10px;
+}
+
+.answer-key {
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+
+.correct-answer {
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 55: Reading Assignment</h1>
+
+  <h2>Instructions:</h2>
+  <p>Please complete the following reading assignments before the next session:</p>
+
+  <ul>
+    <li><strong>Brownlee's Introduction:</strong> Read the introductory material on AI from Jason Brownlee's resources (e.g., his blog or book).  Focus on understanding the fundamental concepts and definitions of AI.  Consider searching for "Jason Brownlee Introduction to AI" to find relevant materials.</li>
+    <li><strong>McCarthy's "What is AI":</strong> Read John McCarthy's seminal paper, "What is Artificial Intelligence?".  This provides a historical perspective and foundational definition of the field. You can easily find this paper online.</li>
+  </ul>
+
+  <h2>Quiz (Based on the Readings)</h2>
+
+  <div class="quiz-question">
+    <strong>Question 1:</strong> According to McCarthy, what is the fundamental problem that AI research aims to solve?
+    <br>
+    <label><input type="radio" name="q1" value="a"> a) Building robots that can perform physical tasks.</label><br>
+    <label><input type="radio" name="q1" value="b"> b) Making computers think, in the full literal sense.</label><br>
+    <label><input type="radio" name="q1" value="c"> c) Developing algorithms for image recognition.</label><br>
+    <label><input type="radio" name="q1" value="d"> d) Creating programs that can play chess.</label><br>
+  </div>
+
+  <div class="quiz-question">
+    <strong>Question 2:</strong>  Based on the assigned readings, which of the following is NOT typically considered a subfield of AI?
+    <br>
+    <label><input type="radio" name="q2" value="a"> a) Machine Learning</label><br>
+    <label><input type="radio" name="q2" value="b"> b) Natural Language Processing</label><br>
+    <label><input type="radio" name="q2" value="c"> c) Quantum Computing</label><br>
+    <label><input type="radio" name="q2" value="d"> d) Computer Vision</label><br>
+  </div>
+
+    <div class="quiz-question">
+        <strong>Question 3:</strong> Brownlee's introduction to AI likely highlights which of the following as a key reason for the increased interest in AI in recent years?
+        <br>
+        <label><input type="radio" name="q3" value="a"> a) A decrease in computing power.</label><br>
+        <label><input type="radio" name="q3" value="b"> b) The invention of the internet.</label><br>
+        <label><input type="radio" name="q3" value="c"> c) The availability of large datasets and improved algorithms.</label><br>
+        <label><input type="radio" name="q3" value="d"> d) A renewed interest in philosophy.</label><br>
+    </div>
+  <button id="submit-button">Submit and Reveal Answers</button>
+
+    <div class="answer-key">
+        <h3>Answer Key:</h3>
+        <p><strong>Question 1:</strong> <span class="correct-answer">b) Making computers think, in the full literal sense.</span></p>
+        <p><strong>Question 2:</strong> <span class="correct-answer">c) Quantum Computing</span></p>
+        <p><strong>Question 3:</strong> <span class="correct-answer">c) The availability of large datasets and improved algorithms.</span></p>
+    </div>
+</div>
+
+<script>
+  document.getElementById("submit-button").addEventListener("click", function() {
+        // Basic check to see if all questions have an answer selected
+      let q1Answered = document.querySelector('input[name="q1"]:checked') !== null;
+      let q2Answered = document.querySelector('input[name="q2"]:checked') !== null;
+      let q3Answered = document.querySelector('input[name="q3"]:checked') !== null;
+
+      if (!q1Answered || !q2Answered || !q3Answered) {
+        alert("Please answer all questions before submitting.");
+        return;
+      }
+
+      document.querySelector(".answer-key").style.display = "block"; // Show the answer key
+
+  });
+</script>
+
+</body>
+</html>

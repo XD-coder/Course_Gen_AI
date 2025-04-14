@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 61: Data Transformation - Standardization</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+p {
+  line-height: 1.6;
+}
+.example {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.quiz {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+.question {
+  margin-bottom: 10px;
+}
+.answer {
+  margin-bottom: 5px;
+}
+#answer-key {
+  display: none; /* Initially hide the answer key */
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #e9e9e9;
+}
+
+#answer-key h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Data Transformation: Standardization</h1>
+
+  <p>Standardization is a data scaling technique that transforms data to have a mean of 0 and a standard deviation of 1.  This is also known as Z-score normalization.</p>
+
+  <h2>Why Standardize?</h2>
+  <ul>
+    <li>Brings features to a similar scale, preventing features with larger values from dominating the model.</li>
+    <li>Improves the performance of algorithms sensitive to feature scaling, such as gradient descent-based algorithms (linear regression, logistic regression, neural networks) and distance-based algorithms (k-nearest neighbors, support vector machines).</li>
+    <li>Helps ensure convergence of algorithms.</li>
+  </ul>
+
+  <h2>Formula</h2>
+  <p>Z = (x - μ) / σ</p>
+  <ul>
+    <li>x:  The original data point</li>
+    <li>μ:  The mean of the feature</li>
+    <li>σ:  The standard deviation of the feature</li>
+  </ul>
+
+  <h2>Example</h2>
+  <div class="example">
+    <p>Consider a feature 'Age' with values [20, 30, 40, 50].</p>
+    <p>Mean (μ) = (20 + 30 + 40 + 50) / 4 = 35</p>
+    <p>Standard Deviation (σ) ≈ 12.91</p>
+    <p>Standardized values:</p>
+    <ul>
+      <li>(20 - 35) / 12.91 ≈ -1.16</li>
+      <li>(30 - 35) / 12.91 ≈ -0.39</li>
+      <li>(40 - 35) / 12.91 ≈ 0.39</li>
+      <li>(50 - 35) / 12.91 ≈ 1.16</li>
+    </ul>
+  </div>
+
+    <h2>Python Implementation (Scikit-learn)</h2>
+  <div class="example">
+    <pre>
+      <code>
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+
+data = np.array([[20], [30], [40], [50]])
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(data)
+
+print(scaled_data)
+      </code>
+    </pre>
+  </div>
+
+  <div class="quiz">
+    <h2>Quiz: Standardization</h2>
+
+    <div class="question">
+      <p>1. What are the mean and standard deviation of data after standardization?</p>
+      <div class="answer">
+        <input type="radio" id="q1a" name="q1" value="a">
+        <label for="q1a">a) Mean = 1, Standard Deviation = 0</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q1b" name="q1" value="b">
+        <label for="q1b">b) Mean = 0, Standard Deviation = 1</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q1c" name="q1" value="c">
+        <label for="q1c">c) Mean = 0, Standard Deviation = 0</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q1d" name="q1" value="d">
+        <label for="q1d">d) Mean = 1, Standard Deviation = 1</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Which of the following algorithms benefits the MOST from standardization?</p>
+      <div class="answer">
+        <input type="radio" id="q2a" name="q2" value="a">
+        <label for="q2a">a) Decision Tree</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q2b" name="q2" value="b">
+        <label for="q2b">b) Random Forest</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q2c" name="q2" value="c">
+        <label for="q2c">c) K-Nearest Neighbors</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q2d" name="q2" value="d">
+        <label for="q2d">d) All of the above equally</label>
+      </div>
+    </div>
+
+    <button onclick="revealAnswers()">Show Answers</button>
+
+  </div>
+
+  <div id="answer-key">
+    <h3>Answer Key:</h3>
+    <p>1. b) Mean = 0, Standard Deviation = 1</p>
+    <p>2. c) K-Nearest Neighbors</p>
+  </div>
+
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById('answer-key').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 23: Exercise - Variable Assignment</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.question {
+  margin-bottom: 10px;
+}
+.answer {
+  display: none; /* Initially hide answers */
+  margin-top: 5px;
+  color: green;
+}
+#results {
+  margin-top: 20px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 23: Exercise - Variable Assignment</h2>
+  <p><b>Instructions:</b> Create variables of different data types and print them.</p>
+
+  <div class="question">
+    <p><b>Question 1:</b> Create a variable named `age` and assign it your age as an integer.</p>
+    <input type="text" id="q1_answer">
+    <div class="answer" id="q1_correct">Correct Answer: `age = 30` (replace with your age)</div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 2:</b> Create a variable named `name` and assign it your name as a string.</p>
+    <input type="text" id="q2_answer">
+    <div class="answer" id="q2_correct">Correct Answer: `name = "Your Name"` (replace with your name)</div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 3:</b> Create a variable named `height` and assign it your height in meters as a float.</p>
+    <input type="text" id="q3_answer">
+    <div class="answer" id="q3_correct">Correct Answer: `height = 1.75` (replace with your height)</div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 4:</b> Create a variable named `is_student` and assign it a boolean value indicating whether you are a student or not.</p>
+    <select id="q4_answer">
+      <option value=""></option>
+      <option value="True">True</option>
+      <option value="False">False</option>
+    </select>
+    <div class="answer" id="q4_correct">Correct Answer: `is_student = True` (or `False` depending on if you are a student)</div>
+  </div>
+
+  <button onclick="revealAnswers()">Show Answers</button>
+
+  <div id="results"></div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("q1_correct").style.display = "block";
+  document.getElementById("q2_correct").style.display = "block";
+  document.getElementById("q3_correct").style.display = "block";
+  document.getElementById("q4_correct").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

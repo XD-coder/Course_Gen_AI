@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 69: Introduction to Linear Regression</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.answer-key {
+  display: none; /* Initially hide the answer key */
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 50%;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 69: Introduction to Linear Regression</h1>
+
+  <h2>Instructions:</h2>
+  <p>Explain the goal of linear regression: to find the best-fitting linear relationship between independent and dependent variables.</p>
+
+  <div class="quiz-section">
+    <h2>Quiz Time!</h2>
+
+    <div class="quiz-question">
+      <p>1. What type of relationship does linear regression aim to model?</p>
+      <input type="text" id="q1_answer" placeholder="Enter your answer">
+    </div>
+
+    <div class="quiz-question">
+      <p>2.  In linear regression, what are the independent variables often referred to as?</p>
+      <input type="text" id="q2_answer" placeholder="Enter your answer">
+    </div>
+
+     <div class="quiz-question">
+      <p>3. Linear regression can be used for _____ (fill in the blank)?</p>
+      <input type="text" id="q3_answer" placeholder="Enter your answer">
+    </div>
+
+
+
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+    <div class="answer-key" id="answerKey">
+      <h3>Answer Key:</h3>
+      <p><strong>1.</strong> Linear Relationship</p>
+      <p><strong>2.</strong> Predictors or Features</p>
+      <p><strong>3.</strong> Prediction, Forecasting</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answerKey").style.display = "block";
+
+  // You can add logic here to compare the user's answers with the correct answers
+  // and provide feedback (e.g., "Correct!" or "Incorrect.")
+  // Example (basic comparison):
+  // const q1_user_answer = document.getElementById("q1_answer").value.toLowerCase();
+  // if (q1_user_answer === "linear relationship") {
+  //   alert("Question 1: Correct!");
+  // } else {
+  //   alert("Question 1: Incorrect. The answer is Linear Relationship.");
+  // }
+}
+</script>
+
+</body>
+</html>

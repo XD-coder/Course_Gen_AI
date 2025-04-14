@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 33: NumPy: Introduction to Arrays (ndarray)</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+h1 {
+  color: #333;
+}
+h2 {
+  color: #555;
+}
+.quiz-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+.question {
+  margin-bottom: 10px;
+}
+.answer {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+#results {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+.correct {
+    color: green;
+}
+.incorrect {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 33: NumPy: Introduction to Arrays (ndarray)</h1>
+
+<h2>What is NumPy?</h2>
+<p>NumPy (Numerical Python) is a fundamental package for numerical computation in Python.  It provides:</p>
+<ul>
+  <li>A powerful N-dimensional array object (<code>ndarray</code>)</li>
+  <li>Sophisticated functions for array operations</li>
+  <li>Tools for integrating C/C++ and Fortran code</li>
+  <li>Useful linear algebra, Fourier transform, and random number capabilities</li>
+</ul>
+
+<h2>Why use NumPy arrays?</h2>
+<ul>
+  <li><b>Efficiency:</b> NumPy arrays are more efficient than Python lists for numerical operations, especially for large datasets.</li>
+  <li><b>Functionality:</b> NumPy provides a vast collection of functions for array manipulation, mathematical operations, and more.</li>
+  <li><b>Convenience:</b> Easier syntax for complex operations on arrays.</li>
+</ul>
+
+<h2>Creating NumPy Arrays</h2>
+
+<p>The core of NumPy is the <code>ndarray</code> object. Here's how to create one:</p>
+
+<h3>1. From a Python List</h3>
+<pre><code>
+import numpy as np
+
+# Create a 1D array
+my_list = [1, 2, 3, 4, 5]
+my_array = np.array(my_list)
+print(my_array)  # Output: [1 2 3 4 5]
+
+# Create a 2D array
+my_list_of_lists = [[1, 2, 3], [4, 5, 6]]
+my_array_2d = np.array(my_list_of_lists)
+print(my_array_2d)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+</code></pre>
+
+<h3>2. Using NumPy Functions</h3>
+<pre><code>
+import numpy as np
+
+# Create an array of zeros
+zeros_array = np.zeros((2, 3))  # 2 rows, 3 columns
+print(zeros_array)
+# Output:
+# [[0. 0. 0.]
+#  [0. 0. 0.]]
+
+# Create an array of ones
+ones_array = np.ones((3, 2))  # 3 rows, 2 columns
+print(ones_array)
+# Output:
+# [[1. 1.]
+#  [1. 1.]
+#  [1. 1.]]
+
+# Create an array with a specific range
+range_array = np.arange(0, 10, 2)  # Start, Stop, Step
+print(range_array)  # Output: [0 2 4 6 8]
+
+# Create an array with evenly spaced values
+linspace_array = np.linspace(0, 1, 5)  # Start, Stop, Number of points
+print(linspace_array) # Output: [0.   0.25 0.5  0.75 1.  ]
+</code></pre>
+
+<div class="quiz-container">
+  <h2>Quiz Time!</h2>
+
+  <div class="question">
+    <strong>Question 1:</strong> Which NumPy function creates an array filled with zeros?
+    <div class="answer">
+      <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a) np.empty()</label><br>
+      <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b) np.zeros()</label><br>
+      <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c) np.ones()</label><br>
+      <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">d) np.arange()</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <strong>Question 2:</strong> What is the output of <code>np.arange(2, 10, 3)</code>?
+    <div class="answer">
+      <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a) [2 3 4 5 6 7 8 9]</label><br>
+      <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b) [2 5 8]</label><br>
+      <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c) [2 3 5 8]</label><br>
+      <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">d) [3 6 9]</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <strong>Question 3:</strong>  What does <code>np.linspace(0, 1, 11)</code> do?
+    <div class="answer">
+      <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a) Creates an array with values from 0 to 1 with a step of 11.</label><br>
+      <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b) Creates an array with 11 evenly spaced values from 0 to 1 (inclusive).</label><br>
+      <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c) Creates an array with values between 0 and 1 that have length of 11.</label><br>
+      <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">d) Generates a random array of 11 numbers between 0 and 1.</label>
+    </div>
+  </div>
+
+  <button onclick="showResults()">Submit & Show Answers</button>
+
+  <div id="results">
+    <h2>Answer Key:</h2>
+    <p><strong>Question 1:</strong> <span id="answer1"></span> <span class="correct">b) np.zeros()</span></p>
+    <p><strong>Question 2:</strong> <span id="answer2"></span> <span class="correct">b) [2 5 8]</span></p>
+    <p><strong>Question 3:</strong> <span id="answer3"></span> <span class="correct">b) Creates an array with 11 evenly spaced values from 0 to 1 (inclusive).</span></p>
+  </div>
+</div>
+
+<script>
+function showResults() {
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let q3Answer = document.querySelector('input[name="q3"]:checked');
+
+    let q1UserAnswer = q1Answer ? q1Answer.value : "No answer selected";
+    let q2UserAnswer = q2Answer ? q2Answer.value : "No answer selected";
+    let q3UserAnswer = q3Answer ? q3Answer.value : "No answer selected";
+
+    document.getElementById('answer1').textContent = "Your Answer: " + q1UserAnswer + " ,";
+    document.getElementById('answer2').textContent = "Your Answer: " + q2UserAnswer + " ,";
+    document.getElementById('answer3').textContent = "Your Answer: " + q3UserAnswer + " ,";
+
+
+    if (q1Answer && q1Answer.value !== "b") {
+        document.getElementById('answer1').classList.add('incorrect');
+    } else {
+        document.getElementById('answer1').classList.remove('incorrect');
+    }
+
+    if (q2Answer && q2Answer.value !== "b") {
+        document.getElementById('answer2').classList.add('incorrect');
+    } else {
+        document.getElementById('answer2').classList.remove('incorrect');
+    }
+
+    if (q3Answer && q3Answer.value !== "b") {
+        document.getElementById('answer3').classList.add('incorrect');
+    } else {
+        document.getElementById('answer3').classList.remove('incorrect');
+    }
+
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

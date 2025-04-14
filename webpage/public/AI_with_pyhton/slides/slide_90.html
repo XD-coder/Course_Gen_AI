@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz 4: Logistic Regression and SVM</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+.slide {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #ddd;
+}
+.question {
+  margin-bottom: 15px;
+}
+.answer {
+  margin-left: 20px;
+  display: none; /* Initially hide answers */
+}
+.feedback {
+  margin-top: 10px;
+  font-style: italic;
+}
+#revealButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none; /* Initially hide reveal button */
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Quiz 4: Logistic Regression and SVM</h1>
+  <p><b>Instructions:</b> Answer the following questions related to Logistic Regression and Support Vector Machines (SVM). Choose the best answer for each question. After completing all questions, you can submit and reveal the answers.</p>
+
+  <div class="question">
+    <p><b>1. Which of the following is the primary goal of Logistic Regression?</b></p>
+    <label><input type="radio" name="q1" value="a"> A) Predicting a continuous value.</label><br>
+    <label><input type="radio" name="q1" value="b"> B) Classifying data into discrete categories.</label><br>
+    <label><input type="radio" name="q1" value="c"> C) Finding the optimal hyperplane.</label><br>
+    <label><input type="radio" name="q1" value="d"> D) Reducing dimensionality.</label><br>
+    <p class="answer" data-correct="b"><b>Correct Answer: B</b> - Logistic Regression is used for classification problems.</p>
+  </div>
+
+  <div class="question">
+    <p><b>2. What is the purpose of the kernel trick in SVM?</b></p>
+    <label><input type="radio" name="q2" value="a"> A) To reduce the number of support vectors.</label><br>
+    <label><input type="radio" name="q2" value="b"> B) To map data into a higher-dimensional space to find a linear separator.</label><br>
+    <label><input type="radio" name="q2" value="c"> C) To handle missing values in the dataset.</label><br>
+    <label><input type="radio" name="q2" value="d"> D) To regularize the model and prevent overfitting.</label><br>
+    <p class="answer" data-correct="b"><b>Correct Answer: B</b> - The kernel trick allows SVM to handle non-linear data by mapping it to a higher-dimensional space.</p>
+  </div>
+
+  <div class="question">
+    <p><b>3. What is the role of the sigmoid function in Logistic Regression?</b></p>
+    <label><input type="radio" name="q3" value="a"> A) To normalize the input features.</label><br>
+    <label><input type="radio" name="q3" value="b"> B) To transform the linear combination of features into a probability between 0 and 1.</label><br>
+    <label><input type="radio" name="q3" value="c"> C) To calculate the margin in SVM.</label><br>
+    <label><input type="radio" name="q3" value="d"> D) To perform feature selection.</label><br>
+    <p class="answer" data-correct="b"><b>Correct Answer: B</b> - The sigmoid function outputs a probability value.</p>
+  </div>
+
+  <div class="question">
+    <p><b>4. What does the 'C' parameter in SVM control?</b></p>
+    <label><input type="radio" name="q4" value="a"> A) The learning rate.</label><br>
+    <label><input type="radio" name="q4" value="b"> B) The number of iterations.</label><br>
+    <label><input type="radio" name="q4" value="c"> C) The penalty for misclassifying data points.</label><br>
+    <label><input type="radio" name="q4" value="d"> D) The dimension of the feature space.</label><br>
+    <p class="answer" data-correct="c"><b>Correct Answer: C</b> - 'C' controls the trade-off between maximizing the margin and minimizing classification errors.</p>
+  </div>
+
+  <div class="question">
+    <p><b>5. Which of the following is NOT a commonly used kernel in SVM?</b></p>
+    <label><input type="radio" name="q5" value="a"> A) Linear.</label><br>
+    <label><input type="radio" name="q5" value="b"> B) Polynomial.</label><br>
+    <label><input type="radio" name="q5" value="c"> C) Radial Basis Function (RBF).</label><br>
+    <label><input type="radio" name="q5" value="d"> D) Sigmoid.</label><br>
+	<label><input type="radio" name="q5" value="e"> E) Euclidean.</label><br>
+    <p class="answer" data-correct="e"><b>Correct Answer: E</b> - Euclidean is a distance metric, not a kernel function.</p>
+  </div>
+
+
+  <button id="submitButton">Submit Answers</button>
+  <button id="revealButton">Reveal Answers</button>
+
+  <div id="feedbackArea"></div>
+</div>
+
+<script>
+document.getElementById('submitButton').addEventListener('click', function() {
+	//Disable the submit button
+	document.getElementById('submitButton').disabled = true;
+    let questions = document.querySelectorAll('.question');
+    let correctAnswers = 0;
+
+    questions.forEach(question => {
+        let selectedAnswer = question.querySelector('input[type="radio"]:checked');
+        let correctAnswerElement = question.querySelector('.answer');
+
+        if (selectedAnswer) {
+            correctAnswerElement.style.display = 'block'; // Show the correct answer
+            if (correctAnswerElement.dataset.correct == selectedAnswer.value) {
+                correctAnswers++;
+            }
+        } else {
+            correctAnswerElement.style.display = 'block'; //Show the correct answer anyway if user did not answer
+        }
+    });
+
+    document.getElementById('revealButton').style.display = 'block';
+
+    let feedback = document.getElementById('feedbackArea');
+    feedback.textContent = `You answered ${correctAnswers} out of ${questions.length} questions correctly.`;
+});
+
+document.getElementById('revealButton').addEventListener('click', function() {
+    let answers = document.querySelectorAll('.answer');
+    answers.forEach(answer => {
+        answer.style.display = 'block';
+    });
+	document.getElementById('revealButton').disabled = true; //Disable reveal button
+});
+</script>
+
+</body>
+</html>

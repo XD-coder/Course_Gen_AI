@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 71: Gradient Descent</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-question label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.quiz-answers {
+  margin-top: 20px;
+  display: none; /* Hidden by default */
+}
+
+.quiz-answers h3 {
+  margin-bottom: 10px;
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect-answer {
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 71: Gradient Descent</h1>
+
+  <h2>Instructions: Explain gradient descent as an iterative optimization algorithm.</h2>
+
+  <p>Gradient descent is an iterative optimization algorithm used to find the minimum of a function. In the context of machine learning, this function is typically the cost function, which measures the error between the model's predictions and the actual values.</p>
+
+  <p>Here's how it works:</p>
+  <ol>
+    <li><b>Start with initial parameters:</b>  We begin by initializing the model's parameters (e.g., weights and biases) with some random values.</li>
+    <li><b>Calculate the gradient:</b> The gradient of the cost function represents the direction of the steepest ascent. We calculate the gradient of the cost function with respect to each parameter.</li>
+    <li><b>Update the parameters:</b> We update the parameters by taking a step in the opposite direction of the gradient. The size of the step is determined by the learning rate.  The formula is: <code>parameter = parameter - learning_rate * gradient</code></li>
+    <li><b>Repeat:</b> Steps 2 and 3 are repeated until the cost function converges to a minimum or a maximum number of iterations is reached.</li>
+  </ol>
+
+  <p><b>Learning Rate:</b>  A crucial hyperparameter. A small learning rate can lead to slow convergence, while a large learning rate can cause the algorithm to overshoot the minimum.</p>
+
+    <h2>Quiz</h2>
+
+    <div class="quiz-question">
+      <label for="q1">1. What does gradient descent aim to minimize?</label>
+      <input type="radio" id="q1_a" name="q1" value="a"> <label for="q1_a">A. The learning rate</label><br>
+      <input type="radio" id="q1_b" name="q1" value="b"> <label for="q1_b">B. The cost function</label><br>
+      <input type="radio" id="q1_c" name="q1" value="c"> <label for="q1_c">C. The number of iterations</label><br>
+    </div>
+
+    <div class="quiz-question">
+      <label for="q2">2. What does the gradient represent?</label>
+      <input type="radio" id="q2_a" name="q2" value="a"> <label for="q2_a">A. The direction of the steepest descent</label><br>
+      <input type="radio" id="q2_b" name="q2" value="b"> <label for="q2_b">B. The direction of the steepest ascent</label><br>
+      <input type="radio" id="q2_c" name="q2" value="c"> <label for="q2_c">C. A random direction</label><br>
+    </div>
+
+    <div class="quiz-question">
+      <label for="q3">3. What happens if the learning rate is too large?</label>
+      <input type="radio" id="q3_a" name="q3" value="a"> <label for="q3_a">A. Convergence will be faster</label><br>
+      <input type="radio" id="q3_b" name="q3" value="b"> <label for="q3_b">B. The algorithm might overshoot the minimum</label><br>
+      <input type="radio" id="q3_c" name="q3" value="c"> <label for="q3_c">C. Nothing, the learning rate doesn't matter</label><br>
+    </div>
+
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+    <div class="quiz-answers" id="answers">
+      <h3>Answers:</h3>
+      <p>1. What does gradient descent aim to minimize? <span class="correct-answer">B. The cost function</span></p>
+      <p>2. What does the gradient represent? <span class="correct-answer">B. The direction of the steepest ascent</span></p>
+      <p>3. What happens if the learning rate is too large? <span class="correct-answer">B. The algorithm might overshoot the minimum</span></p>
+    </div>
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

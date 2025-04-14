@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 2</title>
+<style>
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.slide {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+h1 {
+    color: #333;
+}
+p {
+    line-height: 1.6;
+}
+.quiz-question {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="radio"] {
+    margin-right: 5px;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.answer-reveal {
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+}
+
+.answer-reveal p {
+    font-weight: bold;
+    color: green;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+    <h1>Python History and Design Principles - Strengths for AI/ML</h1>
+    <p>
+        Python, conceived in the late 1980s by Guido van Rossum, was designed with readability in mind. Its philosophy emphasizes code clarity and a simple syntax, which makes it incredibly easy to learn and use.  The core tenets of its design, like "There should be one-- and preferably only one --obvious way to do it," and "Readability counts," directly contribute to faster development cycles and easier maintenance of complex AI/ML projects.  Because Python allows rapid prototyping and iteration, it became the preferred language for AI/ML development, further strengthened by an expansive ecosystem of specialized libraries. Python's dynamic typing and automatic memory management contribute to a quicker learning curve for those new to AI/ML programming.
+    </p>
+</div>
+
+<div class="slide">
+    <h2>Quiz: Python Fundamentals for AI/ML</h2>
+
+    <form id="quiz-form">
+        <div class="quiz-question">
+            <p>1. Which of the following is a key design principle of Python that makes it suitable for AI/ML?</p>
+            <label><input type="radio" name="q1" value="a"> A. Complex syntax</label>
+            <label><input type="radio" name="q1" value="b"> B. Code Readability</label>
+            <label><input type="radio" name="q1" value="c"> C. Manual memory management</label>
+            <label><input type="radio" name="q1" value="d"> D. Limited library support</label>
+        </div>
+
+        <div class="quiz-question">
+            <p>2. Who is credited with creating Python?</p>
+            <label><input type="radio" name="q2" value="a"> A. James Gosling</label>
+            <label><input type="radio" name="q2" value="b"> B. Bjarne Stroustrup</label>
+            <label><input type="radio" name="q2" value="c"> C. Guido van Rossum</label>
+            <label><input type="radio" name="q2" value="d"> D. Dennis Ritchie</label>
+        </div>
+
+        <button type="button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+    </form>
+
+    <div class="answer-reveal" id="answers">
+        <p>Answer 1: B. Code Readability</p>
+        <p>Answer 2: C. Guido van Rossum</p>
+    </div>
+</div>
+
+<script>
+function revealAnswers() {
+    document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

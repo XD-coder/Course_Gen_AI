@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 54: The Machine Learning Workflow</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.slide-content {
+  margin-bottom: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-options {
+  margin-left: 20px;
+}
+
+.quiz-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#answer-key {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#answer-key h3 {
+  margin-top: 0;
+}
+.answer-key-content{
+  margin-left: 20px;
+}
+
+#submit-button{
+  margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Slide 54: The Machine Learning Workflow</h1>
+
+<div class="slide-content">
+  <h2>Instructions: Outline the steps involved in a typical machine learning project.</h2>
+  <p>A typical machine learning project involves several key steps.  Let's test your knowledge!</p>
+</div>
+
+<div class="quiz">
+  <div class="quiz-question">
+    <p><strong>Question 1:</strong> Which of the following is typically the <i>first</i> step in a machine learning workflow?</p>
+    <div class="quiz-options">
+      <label><input type="radio" name="q1" value="a"> A. Model Training</label>
+      <label><input type="radio" name="q1" value="b"> B. Data Collection</label>
+      <label><input type="radio" name="q1" value="c"> C. Model Evaluation</label>
+      <label><input type="radio" name="q1" value="d"> D. Deployment</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <p><strong>Question 2:</strong> What is the purpose of feature engineering?</p>
+    <div class="quiz-options">
+      <label><input type="radio" name="q2" value="a"> A. To select the best machine learning algorithm.</label>
+      <label><input type="radio" name="q2" value="b"> B. To improve model performance by transforming raw data.</label>
+      <label><input type="radio" name="q2" value="c"> C. To deploy the model to production.</label>
+      <label><input type="radio" name="q2" value="d"> D. To collect more data.</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <p><strong>Question 3:</strong> Which of the following is a common technique for evaluating a machine learning model's performance?</p>
+    <div class="quiz-options">
+      <label><input type="radio" name="q3" value="a"> A. Random guessing</label>
+      <label><input type="radio" name="q3" value="b"> B. Cross-validation</label>
+      <label><input type="radio" name="q3" value="c"> C. Ignoring the data</label>
+      <label><input type="radio" name="q3" value="d"> D. Always predicting the same outcome</label>
+    </div>
+  </div>
+
+  <button id="submit-button" onclick="revealAnswers()">Submit Answers</button>
+
+  <div id="answer-key">
+    <h3>Answer Key:</h3>
+    <div class = "answer-key-content">
+    <p><strong>Question 1:</strong> B. Data Collection</p>
+    <p><strong>Question 2:</strong> B. To improve model performance by transforming raw data.</p>
+    <p><strong>Question 3:</strong> B. Cross-validation</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer-key").style.display = "block";
+  document.getElementById("submit-button").style.display = "none";
+}
+</script>
+
+</body>
+</html>

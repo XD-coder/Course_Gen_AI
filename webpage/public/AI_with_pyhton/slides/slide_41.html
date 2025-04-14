@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 41: Matplotlib - Customizing Plots</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ddd;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.quiz-section {
+  margin-top: 30px;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #3e8e41;
+}
+
+.answer-key {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    display: none; /* Initially hidden */
+}
+
+.answer-key h3 {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.answer-key ol {
+    padding-left: 20px;
+}
+
+.answer-key li {
+    margin-bottom: 8px;
+}
+
+#answerKey {
+    display: none;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+  <h1>Slide 41: Matplotlib - Customizing Plots</h1>
+
+  <h2>Instructions:</h2>
+  <p>Learn how to customize your Matplotlib plots with titles, labels, legends, and more to create informative and visually appealing graphs.</p>
+
+  <p><b>Customizing Plots</b></p>
+  <p>Matplotlib provides extensive options for customizing the appearance of your plots. Key aspects include:</p>
+  <ul>
+      <li><b>Titles:</b> Add titles to plots for context.</li>
+      <li><b>Labels:</b> Label axes to indicate the data being represented.</li>
+      <li><b>Legends:</b> Include legends to distinguish different data series.</li>
+  </ul>
+
+  <p><b>Example Code:</b></p>
+  <pre>
+  <code>
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 1, 3, 5]
+
+plt.plot(x, y, label='My Data')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Sample Plot')
+plt.legend()
+plt.show()
+  </code>
+  </pre>
+
+  <div class="quiz-section">
+    <h2>Quiz Time!</h2>
+
+    <div class="question">
+      1. Which Matplotlib function is used to set the title of a plot?
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1a" name="q1" value="a">
+      <label for="q1a">a) plt.xlabel()</label><br>
+      <input type="radio" id="q1b" name="q1" value="b">
+      <label for="q1b">b) plt.title()</label><br>
+      <input type="radio" id="q1c" name="q1" value="c">
+      <label for="q1c">c) plt.legend()</label>
+    </div>
+
+    <div class="question">
+      2. How do you add a label to the Y-axis in Matplotlib?
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2a" name="q2" value="a">
+      <label for="q2a">a) plt.title('Y-axis Label')</label><br>
+      <input type="radio" id="q2b" name="q2" value="b">
+      <label for="q2b">b) plt.ylabel('Y-axis Label')</label><br>
+      <input type="radio" id="q2c" name="q2" value="c">
+      <label for="q2c">c) plt.legend('Y-axis Label')</label>
+    </div>
+
+    <div class="question">
+        3.  What is the purpose of the `plt.legend()` function?
+    </div>
+    <div class="answer">
+        <input type="radio" id="q3a" name="q3" value="a">
+        <label for="q3a">a) To set the title of the plot.</label><br>
+        <input type="radio" id="q3b" name="q3" value="b">
+        <label for="q3b">b) To add a legend to the plot, explaining the different data series.</label><br>
+        <input type="radio" id="q3c" name="q3" value="c">
+        <label for="q3c">c) To label the x-axis.</label>
+    </div>
+    <button class="submit-button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+  </div>
+
+  <div class="answer-key" id="answerKey">
+    <h3>Answer Key:</h3>
+    <ol>
+      <li>b) plt.title()</li>
+      <li>b) plt.ylabel('Y-axis Label')</li>
+      <li>b) To add a legend to the plot, explaining the different data series.</li>
+    </ol>
+  </div>
+
+</div>
+
+<script>
+    function revealAnswers() {
+        document.getElementById('answerKey').style.display = 'block';
+    }
+</script>
+</body>
+</html>

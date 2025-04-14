@@ -1,23 +1,21 @@
 import logging
-import os # Added for environment variable access
-from google import genai # Assuming genai is installed
+import os
+from google import genai
 
-# --- Configuration --
-# !!! Load API Key Securely (e.g., from environment variable) !!!
-# Replace with your actual key loading method
-api_key = os.getenv("GEMINI_API_KEY") # Fallback or direct key
+# Configuration 
+api_key = os.getenv("GEMINI_API_KEY")
 
 if api_key == "YOUR_API_KEY_HERE":
     logging.warning("Using a placeholder API key. Set the GEMINI_API_KEY environment variable.")
 logging.basicConfig(level=logging.INFO)
 logging.info("Initializing Gemini client...")
-# --- Gemini API Client Setup ---
+
+# Gemini API Client Setup
 try:
     client = genai.Client(api_key=api_key)
 except Exception as e:
     logging.error(f"Failed to initialize Gemini client: {e}", exc_info=True)
-    # Depending on your application, you might want to exit or handle this differently
-    client = None # Ensure client is None if initialization fails
+    client = None 
 
 
 def gen_text_from_gemini(prompt_list):
@@ -69,13 +67,15 @@ def genInfo(filename, course_name):
         logging.info(f"Content generated for info slide ")
         # Remove markdown code blocks if they exist in the response
         if response.startswith("```") and response.endswith("```"):
-            # If it's specifically HTML with language marker
             if response.startswith("```html"):
                 response = response[7:-3].strip()
             else:
                 response = response[3:-3].strip()
         logging.info(f"Response cleaned for info slide ")
 
+    #save the response to a file
+    os.makedirs(f"./{course_name}/slides", exist_ok=True) # check if the dir exists or not , if not create it
+    filename = f"./{course_name}/slides/info.html"
 
 #start of function
 def genHTML(filename, course_name):
@@ -93,7 +93,7 @@ def genHTML(filename, course_name):
         if line:
             slide_content = line.strip()
             logging.info(f"Generating content for slide {line_no + 1}")
-            prompt = f"make a html program for a slide for a course on {course_name} with content ,if a slide contains a quiz or a test , include the questions and add a button to reveal all answers at the end when user submits their response, only return the html program , and no pre or post text .({slide_content})"
+            prompt = f"make a html program for a slide for a course on {course_name} with content ,if a slide contains a quiz or a test , include the questions and add a button to reveal all answers at the end when user submits their response, if the slide is supposed to have a image , instead of using a image , make css styles , and DONT use any iamges, only return the html program , and no pre or post text .({slide_content})"
             response = gen_text_from_gemini(prompt)
             logging.info(f"Response received for slide {line_no + 1}: {response}")
             if response:

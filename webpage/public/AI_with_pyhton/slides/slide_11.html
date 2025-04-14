@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 11: Conditional Statements</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+h1 {
+  color: #333;
+}
+p {
+  margin-bottom: 15px;
+}
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+  overflow-x: auto; /* Handle long lines */
+}
+.quiz-container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 20px;
+}
+.question {
+  margin-bottom: 10px;
+}
+.answer {
+  margin-bottom: 5px;
+}
+#answers-container {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+.incorrect-answer {
+  color: red;
+}
+
+#submit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 11: Conditional Statements: if, elif, else</h1>
+
+<p>Conditional statements are fundamental in programming. They allow you to execute different blocks of code based on whether a certain condition is true or false.</p>
+
+<h2><code>if</code> Statement</h2>
+<p>The <code>if</code> statement executes a block of code only if a specified condition is true.</p>
+<pre>
+if condition:
+    # Code to execute if the condition is true
+</pre>
+
+<h2><code>elif</code> Statement</h2>
+<p>The <code>elif</code> (else if) statement allows you to check multiple conditions in sequence. It's executed only if the previous <code>if</code> or <code>elif</code> condition was false.</p>
+<pre>
+if condition1:
+    # Code to execute if condition1 is true
+elif condition2:
+    # Code to execute if condition2 is true and condition1 is false
+</pre>
+
+<h2><code>else</code> Statement</h2>
+<p>The <code>else</code> statement provides a default block of code to execute if none of the preceding <code>if</code> or <code>elif</code> conditions are true.</p>
+<pre>
+if condition1:
+    # Code to execute if condition1 is true
+elif condition2:
+    # Code to execute if condition2 is true and condition1 is false
+else:
+    # Code to execute if none of the above conditions are true
+</pre>
+
+<h2>Proper Indentation</h2>
+<p>In Python, indentation is crucial. It defines the block of code that belongs to each <code>if</code>, <code>elif</code>, or <code>else</code> statement. Use 4 spaces for each level of indentation.</p>
+
+<pre>
+x = 10
+if x > 5:
+    print("x is greater than 5") # Indented code block
+else:
+    print("x is not greater than 5") # Indented code block
+</pre>
+
+<div class="quiz-container">
+  <h2>Quiz: Conditional Statements</h2>
+
+  <div class="question">
+    <p>1. What keyword is used to check multiple conditions in sequence?</p>
+    <div class="answer">
+      <input type="radio" id="q1a" name="q1" value="if">
+      <label for="q1a">if</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1b" name="q1" value="elif">
+      <label for="q1b">elif</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1c" name="q1" value="else">
+      <label for="q1c">else</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>2. What happens if none of the conditions in an <code>if</code>...<code>elif</code> chain are true?</p>
+    <div class="answer">
+      <input type="radio" id="q2a" name="q2" value="Error">
+      <label for="q2a">An error occurs</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2b" name="q2" value="The else block executes">
+      <label for="q2b">The <code>else</code> block executes (if present)</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2c" name="q2" value="Nothing happens">
+      <label for="q2c">Nothing happens</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>3. How many spaces should be used for each indentation level in Python?</p>
+    <div class="answer">
+      <input type="radio" id="q3a" name="q3" value="2">
+      <label for="q3a">2</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q3b" name="q3" value="4">
+      <label for="q3b">4</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q3c" name="q3" value="8">
+      <label for="q3c">8</label>
+    </div>
+  </div>
+
+    <button id="submit-button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+
+  <div id="answers-container">
+    <h2>Answers:</h2>
+    <div class="answer" id="answer1">
+      Question 1: <span class="correct-answer">elif</span>
+    </div>
+    <div class="answer" id="answer2">
+      Question 2: <span class="correct-answer">The <code>else</code> block executes (if present)</span>
+    </div>
+    <div class="answer" id="answer3">
+      Question 3: <span class="correct-answer">4</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById('answers-container').style.display = 'block';
+
+  // Get user answers
+  const q1Answer = document.querySelector('input[name="q1"]:checked');
+  const q2Answer = document.querySelector('input[name="q2"]:checked');
+  const q3Answer = document.querySelector('input[name="q3"]:checked');
+
+  // Check and Mark answers
+    if (q1Answer) {
+        const userAnswer1 = q1Answer.value;
+        const correctAnswer1 = "elif";
+        if (userAnswer1 !== correctAnswer1) {
+            document.getElementById('answer1').innerHTML = "Question 1: <span class='incorrect-answer'>Your answer: " + userAnswer1 + "</span>. Correct answer: <span class='correct-answer'>elif</span>";
+        }
+    } else {
+            document.getElementById('answer1').innerHTML = "Question 1: <span class='incorrect-answer'>No answer provided.</span>. Correct answer: <span class='correct-answer'>elif</span>";
+    }
+
+    if (q2Answer) {
+        const userAnswer2 = q2Answer.value;
+        const correctAnswer2 = "The else block executes";
+        if (userAnswer2 !== correctAnswer2) {
+            document.getElementById('answer2').innerHTML = "Question 2: <span class='incorrect-answer'>Your answer: " + userAnswer2 + "</span>. Correct answer: <span class='correct-answer'>The <code>else</code> block executes (if present)</span>";
+        }
+    } else {
+            document.getElementById('answer2').innerHTML = "Question 2: <span class='incorrect-answer'>No answer provided.</span>. Correct answer: <span class='correct-answer'>The <code>else</code> block executes (if present)</span>";
+    }
+
+     if (q3Answer) {
+        const userAnswer3 = q3Answer.value;
+        const correctAnswer3 = "4";
+        if (userAnswer3 !== correctAnswer3) {
+            document.getElementById('answer3').innerHTML = "Question 3: <span class='incorrect-answer'>Your answer: " + userAnswer3 + "</span>. Correct answer: <span class='correct-answer'>4</span>";
+        }
+    } else {
+            document.getElementById('answer3').innerHTML = "Question 3: <span class='incorrect-answer'>No answer provided.</span>. Correct answer: <span class='correct-answer'>4</span>";
+    }
+    // Disable the submit button
+    document.getElementById('submit-button').disabled = true;
+}
+</script>
+
+</body>
+</html>

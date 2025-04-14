@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 48: Exercise - Matplotlib Plotting</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.slide-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.answer {
+  margin-top: 5px;
+  display: none; /* Initially hidden */
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reveal-answers-button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: none; /*Initially hidden*/
+}
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 48: Exercise - Matplotlib Plotting</h1>
+  <h2>Instructions:</h2>
+  <p>Create different types of plots using Matplotlib. Complete the following short quiz to test your understanding.</p>
+
+  <div class="question">
+    <strong>Question 1:</strong> Which Matplotlib function is used to create a simple line plot?
+    <br>
+    <input type="radio" id="q1a" name="q1" value="plot()"> <label for="q1a">plot()</label><br>
+    <input type="radio" id="q1b" name="q1" value="scatter()"> <label for="q1b">scatter()</label><br>
+    <input type="radio" id="q1c" name="q1" value="bar()"> <label for="q1c">bar()</label>
+    <div class="answer" id="answer1"><strong>Correct Answer:</strong> plot()</div>
+  </div>
+
+  <div class="question">
+    <strong>Question 2:</strong> How do you create a scatter plot in Matplotlib?
+    <br>
+    <input type="radio" id="q2a" name="q2" value="plt.line()"> <label for="q2a">plt.line()</label><br>
+    <input type="radio" id="q2b" name="q2" value="plt.scatter()"> <label for="q2b">plt.scatter()</label><br>
+    <input type="radio" id="q2c" name="q2" value="plt.plot(kind='scatter')"> <label for="q2c">plt.plot(kind='scatter')</label>
+    <div class="answer" id="answer2"><strong>Correct Answer:</strong> plt.scatter()</div>
+  </div>
+
+  <div class="question">
+    <strong>Question 3:</strong> Which type of plot is suitable for comparing categories of data?
+    <br>
+    <input type="radio" id="q3a" name="q3" value="Line Plot"> <label for="q3a">Line Plot</label><br>
+    <input type="radio" id="q3b" name="q3" value="Scatter Plot"> <label for="q3b">Scatter Plot</label><br>
+    <input type="radio" id="q3c" name="q3" value="Bar Chart"> <label for="q3c">Bar Chart</label>
+    <div class="answer" id="answer3"><strong>Correct Answer:</strong> Bar Chart</div>
+  </div>
+
+  <button class="submit-button" onclick="handleSubmit()">Submit Answers</button>
+  <button class="reveal-answers-button" onclick="revealAnswers()" style="display:none;">Reveal Answers</button>
+
+</div>
+
+<script>
+function handleSubmit() {
+    //basic validation, replace with something more robust
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    let q3 = document.querySelector('input[name="q3"]:checked');
+
+    if (!q1 || !q2 || !q3) {
+      alert("Please answer all questions.");
+      return;
+    }
+
+    document.querySelector('.reveal-answers-button').style.display = 'block';
+    alert("Answers Submitted!"); // Simple feedback, can be improved.
+}
+
+function revealAnswers() {
+  document.getElementById("answer1").style.display = "block";
+  document.getElementById("answer2").style.display = "block";
+  document.getElementById("answer3").style.display = "block";
+}
+</script>
+
+</body>
+</html>

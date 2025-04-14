@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 72: Linear Regression in Scikit-learn</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.quiz {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+#answer-container {
+  margin-top: 20px;
+  display: none; /* Initially hide the answers */
+}
+
+#answer-container h3 {
+  margin-bottom: 10px;
+}
+
+#answer-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#answer-container li {
+  margin-bottom: 5px;
+}
+
+#answer-container li strong {
+  font-weight: bold;
+}
+
+.correct-answer {
+  color: green;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 72: Implementation in Scikit-learn</h1>
+
+  <h2>Training and Evaluating a Linear Regression Model</h2>
+
+  <h3>Instructions: Steps to train a linear regression model</h3>
+
+  <ul>
+    <li><strong>1. Import necessary libraries:</strong> <code>sklearn.linear_model</code>, <code>sklearn.model_selection</code>, etc.</li>
+    <li><strong>2. Prepare your data:</strong> Load data into NumPy arrays or Pandas DataFrames. Ensure your data is preprocessed (e.g., scaled, cleaned).</li>
+    <li><strong>3. Split your data:</strong>  Use <code>train_test_split</code> to divide your data into training and testing sets.</li>
+    <li><strong>4. Create a linear regression model:</strong> Instantiate the <code>LinearRegression</code> class.</li>
+    <li><strong>5. Train the model:</strong> Fit the model to your training data using <code>model.fit(X_train, y_train)</code>.</li>
+    <li><strong>6. Make predictions:</strong> Use the trained model to make predictions on the test data: <code>y_pred = model.predict(X_test)</code>.</li>
+    <li><strong>7. Evaluate the model:</strong> Calculate metrics like Mean Squared Error (MSE), R-squared, etc. using <code>sklearn.metrics</code>.</li>
+  </ul>
+
+  <div class="quiz">
+    <h2>Quick Quiz</h2>
+
+    <div class="question">
+      <p><strong>Question 1:</strong> Which Scikit-learn module is used to create a linear regression model?</p>
+      <label><input type="radio" name="q1" value="a"> a) sklearn.svm</label><br>
+      <label><input type="radio" name="q1" value="b"> b) sklearn.linear_model</label><br>
+      <label><input type="radio" name="q1" value="c"> c) sklearn.tree</label><br>
+      <label><input type="radio" name="q1" value="d"> d) sklearn.neighbors</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2:</strong> Which method is used to train the linear regression model?</p>
+      <label><input type="radio" name="q2" value="a"> a) predict()</label><br>
+      <label><input type="radio" name="q2" value="b"> b) transform()</label><br>
+      <label><input type="radio" name="q2" value="c"> c) fit()</label><br>
+      <label><input type="radio" name="q2" value="d"> d) score()</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3:</strong> Which function is commonly used to split the dataset into training and testing sets?</p>
+      <label><input type="radio" name="q3" value="a"> a) train_validate_split</label><br>
+      <label><input type="radio" name="q3" value="b"> b) train_test_split</label><br>
+      <label><input type="radio" name="q3" value="c"> c) data_split</label><br>
+      <label><input type="radio" name="q3" value="d"> d) split_data</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+
+    <div id="answer-container">
+      <h3>Answer Key:</h3>
+      <ul>
+        <li><strong>Question 1:</strong> <span class="correct-answer">b) sklearn.linear_model</span></li>
+        <li><strong>Question 2:</strong> <span class="correct-answer">c) fit()</span></li>
+        <li><strong>Question 3:</strong> <span class="correct-answer">b) train_test_split</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('submit-button').addEventListener('click', function() {
+    document.getElementById('answer-container').style.display = 'block';
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 62: Feature Engineering</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.quiz {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.answers {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+  display: none; /* Initially hide the answers */
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Feature Engineering</h1>
+  <p><strong>Instructions:</strong> Explain creating new features from existing ones to improve model performance.</p>
+
+  <h2>What is Feature Engineering?</h2>
+  <p>Feature engineering is the process of using domain knowledge to create new features from existing raw data. These new features can help machine learning models to learn patterns and make more accurate predictions.</p>
+
+  <h2>Why is Feature Engineering Important?</h2>
+  <ul>
+    <li><strong>Improved Model Performance:</strong> Well-engineered features can significantly improve the accuracy and generalization ability of machine learning models.</li>
+    <li><strong>Better Data Representation:</strong> Feature engineering allows you to represent the underlying data in a way that is more suitable for the chosen model.</li>
+    <li><strong>Insights:</strong> The process of feature engineering can uncover valuable insights about the data and the problem you are trying to solve.</li>
+  </ul>
+
+  <h2>Common Feature Engineering Techniques</h2>
+  <ul>
+    <li><strong>Polynomial Features:</strong> Creating new features by raising existing features to a power (e.g., x<sup>2</sup>, x<sup>3</sup>).</li>
+    <li><strong>Interaction Features:</strong> Combining two or more existing features to create new features (e.g., x1 * x2).</li>
+    <li><strong>Binning/Discretization:</strong> Dividing continuous features into discrete bins.</li>
+    <li><strong>One-Hot Encoding:</strong> Converting categorical features into numerical features.</li>
+    <li><strong>Scaling and Normalization:</strong> Transforming numerical features to have a similar range of values.</li>
+    <li><strong>Date/Time Features:</strong> Extracting useful information from date and time data (e.g., day of week, month, year).</li>
+    <li><strong>Domain-Specific Features:</strong> Creating features based on your understanding of the problem domain.</li>
+  </ul>
+
+  <div class="quiz">
+    <h2>Quiz: Feature Engineering</h2>
+
+    <div class="question">
+      <p><strong>Question 1:</strong> Which of the following is NOT a typical feature engineering technique?</p>
+      <label><input type="radio" name="q1" value="a"> a) Polynomial Features</label>
+      <label><input type="radio" name="q1" value="b"> b) Data Collection</label>
+      <label><input type="radio" name="q1" value="c"> c) One-Hot Encoding</label>
+      <label><input type="radio" name="q1" value="d"> d) Binning</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2:</strong> What is the primary goal of feature engineering?</p>
+      <label><input type="radio" name="q2" value="a"> a) To reduce the size of the dataset.</label>
+      <label><input type="radio" name="q2" value="b"> b) To improve model performance.</label>
+      <label><input type="radio" name="q2" value="c"> c) To simplify the data analysis process.</label>
+      <label><input type="radio" name="q2" value="d"> d) To make the data more visually appealing.</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3:</strong> Creating a new feature by multiplying two existing features is known as:</p>
+      <label><input type="radio" name="q3" value="a"> a) Polynomial Feature</label>
+      <label><input type="radio" name="q3" value="b"> b) Interaction Feature</label>
+      <label><input type="radio" name="q3" value="c"> c) Binning</label>
+      <label><input type="radio" name="q3" value="d"> d) Scaling</label>
+    </div>
+
+    <button onclick="showAnswers()">Submit & Show Answers</button>
+
+    <div class="answers" id="answers">
+      <h2>Answers</h2>
+      <div class="answer"><strong>Question 1:</strong> b) Data Collection</div>
+      <div class="answer"><strong>Question 2:</strong> b) To improve model performance.</div>
+      <div class="answer"><strong>Question 3:</strong> b) Interaction Feature</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

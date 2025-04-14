@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 63: Introduction to Scikit-learn - Data Preprocessing</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+}
+.quiz-question {
+  margin-bottom: 15px;
+}
+.answer {
+  margin-left: 20px;
+}
+#results {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+#revealButton {
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 63: Introduction to Scikit-learn</h1>
+  <h2>Basic Data Preprocessing Tools</h2>
+  <p><b>Instructions:</b> Using Scikit-learn's preprocessing module.</p>
+
+  <div class="quiz-section">
+    <h3>Quiz: Test Your Understanding</h3>
+
+    <div class="quiz-question">
+      <p><b>Question 1:</b> Which Scikit-learn class is used for standardizing features by removing the mean and scaling to unit variance?</p>
+      <input type="radio" id="q1a" name="q1" value="StandardScaler">
+      <label for="q1a" class="answer">StandardScaler</label><br>
+      <input type="radio" id="q1b" name="q1" value="MinMaxScaler">
+      <label for="q1b" class="answer">MinMaxScaler</label><br>
+      <input type="radio" id="q1c" name="q1" value="Normalizer">
+      <label for="q1c" class="answer">Normalizer</label><br>
+    </div>
+
+    <div class="quiz-question">
+      <p><b>Question 2:</b>  Which preprocessing technique is most suitable when you want to scale features to a specific range (e.g., 0 to 1)?</p>
+      <input type="radio" id="q2a" name="q2" value="StandardScaler">
+      <label for="q2a" class="answer">StandardScaler</label><br>
+      <input type="radio" id="q2b" name="q2" value="MinMaxScaler">
+      <label for="q2b" class="answer">MinMaxScaler</label><br>
+      <input type="radio" id="q2c" name="q2" value="RobustScaler">
+      <label for="q2c" class="answer">RobustScaler</label><br>
+    </div>
+
+    <div class="quiz-question">
+      <p><b>Question 3:</b> What is the purpose of the <code>fit_transform</code> method in Scikit-learn's preprocessing classes?</p>
+      <input type="radio" id="q3a" name="q3" value="Fits the data and then transforms it">
+      <label for="q3a" class="answer">Fits the data and then transforms it</label><br>
+      <input type="radio" id="q3b" name="q3" value="Only transforms the data">
+      <label for="q3b" class="answer">Only transforms the data</label><br>
+      <input type="radio" id="q3c" name="q3" value="Only fits the data">
+      <label for="q3c" class="answer">Only fits the data</label><br>
+    </div>
+
+    <button id="submitButton">Submit</button>
+    <button id="revealButton" style="display:none;">Reveal Answers</button>
+  </div>
+
+  <div id="results">
+    <h3>Answers:</h3>
+    <p><b>Question 1:</b> <span id="answer1"></span> StandardScaler</p>
+    <p><b>Question 2:</b> <span id="answer2"></span> MinMaxScaler</p>
+    <p><b>Question 3:</b> <span id="answer3"></span> Fits the data and then transforms it</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('submitButton').addEventListener('click', function() {
+    document.getElementById('revealButton').style.display = "inline";
+    document.getElementById('submitButton').style.display = "none";
+});
+document.getElementById('revealButton').addEventListener('click', function() {
+  document.getElementById('results').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

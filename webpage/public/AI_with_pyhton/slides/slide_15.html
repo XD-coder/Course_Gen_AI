@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python: Data Structures - Lists</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+  overflow: auto;
+}
+
+.quiz {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answers {
+  margin-left: 20px;
+}
+
+.answer {
+  margin-bottom: 5px;
+}
+
+#results {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Data Structures: Lists</h1>
+
+  <h2>What are Lists?</h2>
+  <p>Lists are ordered, mutable (changeable) collections of items.  They are one of the most fundamental data structures in Python.</p>
+
+  <h2>Key Concepts:</h2>
+  <ul>
+    <li><b>Ordered:</b> Elements maintain their order of insertion.</li>
+    <li><b>Mutable:</b> You can add, remove, or modify elements after the list is created.</li>
+    <li><b>Heterogeneous:</b> Lists can contain elements of different data types (e.g., integers, strings, booleans).</li>
+    <li><b>Allow Duplicates:</b> Lists can contain multiple occurrences of the same element.</li>
+  </ul>
+
+  <h2>Indexing</h2>
+  <p>Access elements in a list using their index (position). Indexing starts at 0.</p>
+  <pre>
+    my_list = ["apple", "banana", "cherry"]
+    print(my_list[0])  # Output: apple
+    print(my_list[1])  # Output: banana
+    print(my_list[2])  # Output: cherry
+  </pre>
+
+  <p>Negative indexing can be used to access elements from the end of the list.</p>
+  <pre>
+    print(my_list[-1]) # Output: cherry (last element)
+    print(my_list[-2]) # Output: banana (second to last element)
+  </pre>
+
+  <h2>Slicing</h2>
+  <p>Extract a sublist from a list using slicing.</p>
+  <pre>
+    my_list = ["apple", "banana", "cherry", "date", "fig"]
+    print(my_list[1:4])  # Output: ['banana', 'cherry', 'date'] (elements from index 1 to 3)
+    print(my_list[:3])   # Output: ['apple', 'banana', 'cherry'] (elements from index 0 to 2)
+    print(my_list[2:])   # Output: ['cherry', 'date', 'fig'] (elements from index 2 to the end)
+    print(my_list[:])    # Output: ['apple', 'banana', 'cherry', 'date', 'fig'] (a copy of the entire list)
+  </pre>
+   <p>Slicing with a step</p>
+    <pre>
+        print(my_list[::2])   #Output: ['apple', 'cherry', 'fig']
+    </pre>
+
+  <h2>Common List Methods</h2>
+  <ul>
+    <li><code>append(item)</code>: Adds an item to the end of the list.</li>
+    <li><code>insert(index, item)</code>: Inserts an item at a specific index.</li>
+    <li><code>remove(item)</code>: Removes the first occurrence of an item.</li>
+    <li><code>pop(index)</code>: Removes and returns the item at a specific index (or the last item if no index is specified).</li>
+    <li><code>index(item)</code>: Returns the index of the first occurrence of an item.</li>
+    <li><code>count(item)</code>: Returns the number of times an item appears in the list.</li>
+    <li><code>sort()</code>: Sorts the list in ascending order (in-place).</li>
+    <li><code>reverse()</code>: Reverses the order of the list (in-place).</li>
+    <li><code>len(list)</code>: Returns the length of the list.</li>
+  </ul>
+
+  <div class="quiz">
+    <h2>Quiz: Lists</h2>
+
+    <div class="question">
+      <p>1. What is the index of "banana" in the following list? <code>my_list = ["apple", "banana", "cherry"]</code></p>
+      <div class="answers">
+        <input type="radio" id="q1a" name="q1" value="0">
+        <label for="q1a">0</label><br>
+        <input type="radio" id="q1b" name="q1" value="1">
+        <label for="q1b">1</label><br>
+        <input type="radio" id="q1c" name="q1" value="2">
+        <label for="q1c">2</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. What will be the output of <code>my_list[1:3]</code> if <code>my_list = ["apple", "banana", "cherry", "date"]</code>?</p>
+      <div class="answers">
+        <input type="radio" id="q2a" name="q2" value='["apple", "banana"]'>
+        <label for="q2a"><code>["apple", "banana"]</code></label><br>
+        <input type="radio" id="q2b" name="q2" value='["banana", "cherry"]'>
+        <label for="q2b"><code>["banana", "cherry"]</code></label><br>
+        <input type="radio" id="q2c" name="q2" value='["cherry", "date"]'>
+        <label for="q2c"><code>["cherry", "date"]</code></label>
+      </div>
+    </div>
+
+     <div class="question">
+      <p>3. Which method adds an element to the end of a list?</p>
+      <div class="answers">
+        <input type="radio" id="q3a" name="q3" value='insert()'>
+        <label for="q3a"><code>insert()</code></label><br>
+        <input type="radio" id="q3b" name="q3" value='add()'>
+        <label for="q3b"><code>add()</code></label><br>
+        <input type="radio" id="q3c" name="q3" value='append()'>
+        <label for="q3c"><code>append()</code></label>
+      </div>
+    </div>
+
+    <button onclick="showAnswers()">Submit & Reveal Answers</button>
+
+    <div id="results">
+      <h2>Answers:</h2>
+      <p>1. The index of "banana" is: <span id="answer1"></span></p>
+      <p>2. The output of <code>my_list[1:3]</code> is: <span id="answer2"></span></p>
+      <p>3. The method to add an element at end is: <span id="answer3"></span></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showAnswers() {
+    document.getElementById("results").style.display = "block";
+
+    // Determine the selected answer for Question 1
+    let q1Answer = "";
+    const q1RadioButtons = document.getElementsByName("q1");
+    for (let i = 0; i < q1RadioButtons.length; i++) {
+      if (q1RadioButtons[i].checked) {
+        q1Answer = q1RadioButtons[i].value;
+        break;
+      }
+    }
+    document.getElementById("answer1").textContent = "1 (Correct Answer)";
+
+    // Determine the selected answer for Question 2
+    let q2Answer = "";
+    const q2RadioButtons = document.getElementsByName("q2");
+    for (let i = 0; i < q2RadioButtons.length; i++) {
+      if (q2RadioButtons[i].checked) {
+        q2Answer = q2RadioButtons[i].value;
+        break;
+      }
+    }
+    document.getElementById("answer2").textContent = "['banana', 'cherry'] (Correct Answer)";
+
+     // Determine the selected answer for Question 3
+    let q3Answer = "";
+    const q3RadioButtons = document.getElementsByName("q3");
+    for (let i = 0; i < q3RadioButtons.length; i++) {
+      if (q3RadioButtons[i].checked) {
+        q3Answer = q3RadioButtons[i].value;
+        break;
+      }
+    }
+    document.getElementById("answer3").textContent = "append() (Correct Answer)";
+
+}
+</script>
+
+</body>
+</html>

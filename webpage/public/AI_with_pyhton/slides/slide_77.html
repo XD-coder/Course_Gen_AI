@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz 3: Linear Regression</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.answer {
+    margin-top: 5px;
+    display: none; /* Initially hide answers */
+}
+
+#submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#reveal-answers-button {
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+
+#result-message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Quiz 3: Linear Regression Concepts and Implementation</h1>
+
+<p><strong>Instructions:</strong> Please answer the following questions about linear regression.</p>
+
+<div class="question">
+    <p><strong>Question 1:</strong> What is the primary goal of linear regression?</p>
+    <input type="radio" id="q1a" name="q1" value="a">
+    <label for="q1a">To predict a continuous target variable based on one or more independent variables.</label><br>
+    <input type="radio" id="q1b" name="q1" value="b">
+    <label for="q1b">To classify data into different categories.</label><br>
+    <input type="radio" id="q1c" name="q1" value="c">
+    <label for="q1c">To find the optimal clustering of data points.</label><br>
+    <input type="radio" id="q1d" name="q1" value="d">
+    <label for="q1d">To reduce the dimensionality of the data.</label>
+    <div class="answer" id="answer1"><strong>Answer:</strong> a. To predict a continuous target variable based on one or more independent variables.</div>
+</div>
+
+<div class="question">
+    <p><strong>Question 2:</strong> Which of the following methods is commonly used to find the best-fit line in linear regression?</p>
+    <input type="radio" id="q2a" name="q2" value="a">
+    <label for="q2a">Gradient Descent</label><br>
+    <input type="radio" id="q2b" name="q2" value="b">
+    <label for="q2b">Principal Component Analysis</label><br>
+    <input type="radio" id="q2c" name="q2" value="c">
+    <label for="q2c">K-Means Clustering</label><br>
+    <input type="radio" id="q2d" name="q2" value="d">
+    <label for="q2d">Support Vector Machines</label>
+    <div class="answer" id="answer2"><strong>Answer:</strong> a. Gradient Descent</div>
+</div>
+
+<div class="question">
+    <p><strong>Question 3:</strong> What does the 'slope' represent in a simple linear regression model?</p>
+    <input type="radio" id="q3a" name="q3" value="a">
+    <label for="q3a">The average value of the independent variable.</label><br>
+    <input type="radio" id="q3b" name="q3" value="b">
+    <label for="q3b">The change in the dependent variable for a one-unit change in the independent variable.</label><br>
+    <input type="radio" id="q3c" name="q3" value="c">
+    <label for="q3c">The standard deviation of the dependent variable.</label><br>
+    <input type="radio" id="q3d" name="q3" value="d">
+    <label for="q3d">The point where the regression line intersects the x-axis.</label>
+    <div class="answer" id="answer3"><strong>Answer:</strong> b. The change in the dependent variable for a one-unit change in the independent variable.</div>
+</div>
+
+<div class="question">
+    <p><strong>Question 4:</strong> Which of the following Python libraries is most commonly used for implementing linear regression?</p>
+    <input type="radio" id="q4a" name="q4" value="a">
+    <label for="q4a">TensorFlow</label><br>
+    <input type="radio" id="q4b" name="q4" value="b">
+    <label for="q4b">PyTorch</label><br>
+    <input type="radio" id="q4c" name="q4" value="c">
+    <label for="q4c">Scikit-learn</label><br>
+    <input type="radio" id="q4d" name="q4" value="d">
+    <label for="q4d">Keras</label>
+    <div class="answer" id="answer4"><strong>Answer:</strong> c. Scikit-learn</div>
+</div>
+
+<div class="question">
+    <p><strong>Question 5:</strong> What is R-squared in linear regression?</p>
+    <input type="radio" id="q5a" name="q5" value="a">
+    <label for="q5a">A measure of the model's complexity.</label><br>
+    <input type="radio" id="q5b" name="q5" value="b">
+    <label for="q5b">A measure of the model's training time.</label><br>
+    <input type="radio" id="q5c" name="q5" value="c">
+    <label for="q5c">A measure of the goodness of fit of the model to the data.</label><br>
+    <input type="radio" id="q5d" name="q5" value="d">
+    <label for="q5d">A measure of the model's ability to handle outliers.</label>
+    <div class="answer" id="answer5"><strong>Answer:</strong> c. A measure of the goodness of fit of the model to the data.</div>
+</div>
+
+<button id="submit-button" onclick="handleSubmit()">Submit Answers</button>
+<button id="reveal-answers-button" onclick="revealAnswers()">Reveal Answers</button>
+
+<div id="result-message"></div>
+
+<script>
+function handleSubmit() {
+    document.getElementById('submit-button').style.display = 'none';
+    document.getElementById('reveal-answers-button').style.display = 'inline-block';
+
+    let score = 0;
+    const correctAnswers = ['a', 'a', 'b', 'c', 'c'];  // Array of correct answers
+
+    for (let i = 1; i <= 5; i++) {
+        const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedAnswer && selectedAnswer.value === correctAnswers[i-1]) {
+            score++;
+        }
+
+    }
+
+    document.getElementById('result-message').innerText = `You scored ${score} out of 5.`;
+}
+
+
+function revealAnswers() {
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById('answer' + i).style.display = 'block';
+    }
+    document.getElementById('reveal-answers-button').style.display = 'none';
+}
+
+</script>
+
+</body>
+</html>

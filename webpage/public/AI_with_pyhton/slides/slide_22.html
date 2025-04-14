@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 22</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.quiz-question {
+  margin-bottom: 15px;
+}
+
+.quiz-options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#answer-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#answer-button:hover {
+  background-color: #3e8e41;
+}
+
+.answers-revealed {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.correct-answer {
+    font-weight: bold;
+    color: green;
+}
+
+.wrong-answer {
+  color:red;
+}
+
+.resource-link {
+  margin-top: 20px;
+}
+
+.resource-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.resource-link a:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 22: Functions Quiz</h1>
+
+  <div class="quiz-question">
+    <h3>Question 1: What is the purpose of a function in Python?</h3>
+    <div class="quiz-options">
+      <label><input type="radio" name="q1" value="a"> a) To store data in a variable.</label>
+      <label><input type="radio" name="q1" value="b"> b) To group a set of statements together to perform a specific task.</label>
+      <label><input type="radio" name="q1" value="c"> c) To display output to the console.</label>
+      <label><input type="radio" name="q1" value="d"> d) To define a new data type.</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <h3>Question 2: Which keyword is used to define a function in Python?</h3>
+    <div class="quiz-options">
+      <label><input type="radio" name="q2" value="a"> a) class</label>
+      <label><input type="radio" name="q2" value="b"> b) def</label>
+      <label><input type="radio" name="q2" value="c"> c) function</label>
+      <label><input type="radio" name="q2" value="d"> d) method</label>
+    </div>
+  </div>
+
+  <div class="quiz-question">
+    <h3>Question 3: What is the return value of a function that does not explicitly return anything?</h3>
+    <div class="quiz-options">
+      <label><input type="radio" name="q3" value="a"> a) 0</label>
+      <label><input type="radio" name="q3" value="b"> b) An empty string</label>
+      <label><input type="radio" name="q3" value="c"> c) None</label>
+      <label><input type="radio" name="q3" value="d"> d) Error</label>
+    </div>
+  </div>
+
+  <button id="answer-button" onclick="revealAnswers()">Reveal Answers</button>
+
+  <div id="answers" class="answers-revealed" style="display: none;">
+    <h3>Answers:</h3>
+    <p><b>Question 1:</b> <span class="correct-answer">b) To group a set of statements together to perform a specific task.</span></p>
+    <p><b>Question 2:</b> <span class="correct-answer">b) def</span></p>
+    <p><b>Question 3:</b> <span class="correct-answer">c) None</span></p>
+  </div>
+
+  <div class="resource-link">
+    <p><b>Resources: Real Python - Functions</b></p>
+    <a href="https://realpython.com/defining-your-own-python-function/" target="_blank">Real Python Tutorial: Functions</a>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

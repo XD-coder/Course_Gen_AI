@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 26: Exercise</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide-content {
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="number"] {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#answer-container {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+#answer-container h3 {
+  margin-bottom: 10px;
+}
+
+.answer {
+    margin-bottom: 5px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide-content">
+  <h1>Slide 26: Exercise: Factorial Calculation Function</h1>
+  <p><b>Instructions:</b> Write a function to calculate the factorial of a number.</p>
+
+  <h2>Let's test your understanding!</h2>
+
+  <div class="question">
+    <p><b>Question 1:</b> What is the factorial of 5? (Enter the numeric value)</p>
+    <input type="number" id="q1-answer">
+  </div>
+
+  <div class="question">
+    <p><b>Question 2:</b>  If the input to your factorial function is a negative number, what should the function ideally return or do?</p>
+      <textarea id="q2-answer" rows="4" cols="50"></textarea>
+  </div>
+</div>
+
+<button onclick="revealAnswers()">Submit and Reveal Answers</button>
+
+
+<div id="answer-container">
+  <h3>Answers:</h3>
+  <div class="answer"><b>Answer 1:</b> 120</div>
+  <div class="answer"><b>Answer 2:</b> Ideally, the function should return an error message or raise an exception because the factorial of a negative number is not defined.  A common practice is to return -1 or raise a ValueError.</div>
+
+</div>
+
+
+<script>
+function revealAnswers() {
+  document.getElementById('answer-container').style.display = 'block';
+
+  // Add user response comparison (optional)
+  const q1UserAnswer = document.getElementById('q1-answer').value;
+  const q2UserAnswer = document.getElementById('q2-answer').value;
+
+
+}
+</script>
+
+</body>
+</html>

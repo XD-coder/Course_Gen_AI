@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 65: Interactive Exercises: Data Scaling and Normalization</title>
+<style>
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+.question {
+  margin-bottom: 20px;
+}
+.answer {
+  margin-top: 10px;
+  display: none; /* Hidden by default */
+}
+#answer-key {
+  margin-top: 30px;
+  display: none; /* Hidden by default */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+#answer-key h3 {
+  margin-top: 0;
+}
+input[type="radio"] {
+  margin-right: 5px;
+}
+#submit-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Slide 65: Interactive Exercises: Data Scaling and Normalization</h2>
+
+<p><b>Instructions:</b> Exercise - Scale and normalize the data using different methods.</p>
+
+<div class="question">
+  <p><b>Question 1:</b> Which of the following scaling methods is most sensitive to outliers?</p>
+  <label><input type="radio" name="q1" value="minmax">Min-Max Scaling</label><br>
+  <label><input type="radio" name="q1" value="standard">Standard Scaling (Z-score)</label><br>
+  <label><input type="radio" name="q1" value="robust">Robust Scaling</label><br>
+  <div class="answer" data-question="q1" data-correct="minmax"><b>Answer:</b> Min-Max Scaling</div>
+</div>
+
+<div class="question">
+  <p><b>Question 2:</b> Which scaling method centers the data around 0 and scales it to unit variance?</p>
+  <label><input type="radio" name="q2" value="minmax">Min-Max Scaling</label><br>
+  <label><input type="radio" name="q2" value="standard">Standard Scaling (Z-score)</label><br>
+  <label><input type="radio" name="q2" value="robust">Robust Scaling</label><br>
+  <div class="answer" data-question="q2" data-correct="standard"><b>Answer:</b> Standard Scaling (Z-score)</div>
+</div>
+
+<div class="question">
+  <p><b>Question 3:</b> You have a dataset with significant outliers. Which scaling method would be most appropriate?</p>
+  <label><input type="radio" name="q3" value="minmax">Min-Max Scaling</label><br>
+  <label><input type="radio" name="q3" value="standard">Standard Scaling (Z-score)</label><br>
+  <label><input type="radio" name="q3" value="robust">Robust Scaling</label><br>
+  <div class="answer" data-question="q3" data-correct="robust"><b>Answer:</b> Robust Scaling</div>
+</div>
+
+<button id="submit-button">Submit Answers</button>
+
+<div id="answer-key">
+  <h3>Answer Key</h3>
+  <p>See the answers revealed above within each question.</p>
+</div>
+
+<script>
+document.getElementById("submit-button").addEventListener("click", function() {
+  let answers = document.querySelectorAll(".answer");
+  answers.forEach(answer => {
+    answer.style.display = "block";
+  });
+  document.getElementById("answer-key").style.display = "block";
+  document.getElementById("submit-button").disabled = true; // Disable the button after submission
+});
+</script>
+
+</body>
+</html>

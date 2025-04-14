@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 46: Exercise - NumPy Array Manipulation</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.answer {
+  display: none; /* Initially hide answers */
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 46: Exercise - NumPy Array Manipulation</h1>
+
+  <h2>Instructions:</h2>
+  <p>In this exercise, you will create and manipulate a NumPy array.  Follow the steps below:</p>
+
+  <ol>
+    <li>Import the NumPy library.</li>
+    <li>Create a NumPy array named <code>my_array</code> containing the integers from 1 to 10.</li>
+    <li>Reshape <code>my_array</code> into a 2x5 matrix.</li>
+    <li>Calculate the sum of each row in the reshaped array and store the result in a new array named <code>row_sums</code>.</li>
+    <li>Print the original array, the reshaped array, and the <code>row_sums</code> array.</li>
+  </ol>
+
+  <div class="question">
+    <h3>Quiz: What will be the shape of <code>my_array</code> after reshaping?</h3>
+    <input type="radio" id="q1_a" name="q1" value="a"> <label for="q1_a">a) (10,)</label><br>
+    <input type="radio" id="q1_b" name="q1" value="b"> <label for="q1_b">b) (2, 5)</label><br>
+    <input type="radio" id="q1_c" name="q1" value="c"> <label for="q1_c">c) (5, 2)</label><br>
+    <input type="radio" id="q1_d" name="q1" value="d"> <label for="q1_d">d) (1, 10)</label>
+    <div class="answer" id="answer1"><b>Correct Answer:</b> b) (2, 5)</div>
+  </div>
+
+  <div class="question">
+    <h3>Quiz: What function is used to calculate the sum of elements along a specified axis in NumPy?</h3>
+    <input type="radio" id="q2_a" name="q2" value="a"> <label for="q2_a">a) <code>np.mean()</code></label><br>
+    <input type="radio" id="q2_b" name="q2" value="b"> <label for="q2_b">b) <code>np.sum()</code></label><br>
+    <input type="radio" id="q2_c" name="q2" value="c"> <label for="q2_c">c) <code>np.add()</code></label><br>
+    <input type="radio" id="q2_d" name="q2" value="d"> <label for="q2_d">d) <code>np.total()</code></label>
+    <div class="answer" id="answer2"><b>Correct Answer:</b> b) <code>np.sum()</code></div>
+  </div>
+
+  <div class="question">
+      <h3>Quiz: Which of the following creates an array with values ranging from 1 to 10 (inclusive)</h3>
+      <input type="radio" id="q3_a" name="q3" value="a"> <label for="q3_a">a) <code>np.array([1,2,3,4,5,6,7,8,9])</code></label><br>
+      <input type="radio" id="q3_b" name="q3" value="b"> <label for="q3_b">b) <code>np.arange(1, 10)</code></label><br>
+      <input type="radio" id="q3_c" name="q3" value="c"> <label for="q3_c">c) <code>np.arange(1, 11)</code></label><br>
+      <input type="radio" id="q3_d" name="q3" value="d"> <label for="q3_d">d) <code>np.linspace(1, 10, 10)</code></label>
+      <div class="answer" id="answer3"><b>Correct Answer:</b> c) <code>np.arange(1, 11)</code></div>
+  </div>
+
+  <div class="button-container">
+    <button onclick="revealAnswers()">Submit & Reveal Answers</button>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer1").style.display = "block";
+  document.getElementById("answer2").style.display = "block";
+  document.getElementById("answer3").style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 57: Data Cleaning</title>
+<style>
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.slide {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.question {
+    margin-bottom: 10px;
+}
+.answer {
+    margin-bottom: 5px;
+}
+#answers {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 57: Data Cleaning: Handling Missing Values</h1>
+  <p><b>Instructions:</b> Explain methods for dealing with missing data.</p>
+
+  <p>Missing data is a common problem in real-world datasets. It's crucial to handle missing values appropriately to avoid biases and inaccuracies in your analysis and models.</p>
+
+  <h2>Methods for Handling Missing Values:</h2>
+  <ul>
+    <li><b>Deletion:</b>
+      <ul>
+        <li><b>Complete Case Analysis (Listwise Deletion):</b> Remove rows with any missing values.  Simple, but can lead to significant data loss and bias if data is not missing completely at random.</li>
+        <li><b>Pairwise Deletion:</b>  Analyze data only with available values for specific variables.  Can be less biased than complete case analysis, but may lead to inconsistencies if different variables are used in different analyses.</li>
+      </ul>
+    </li>
+    <li><b>Imputation:</b> Replace missing values with estimated values.
+      <ul>
+        <li><b>Mean/Median/Mode Imputation:</b> Replace missing values with the mean, median, or mode of the variable.  Simple but can distort the distribution of the data and underestimate variance.</li>
+        <li><b>Constant Value Imputation:</b> Replace missing values with a specific constant (e.g., 0, -1).  Should be used cautiously and with domain knowledge.</li>
+        <li><b>Regression Imputation:</b> Use a regression model to predict missing values based on other variables. Can provide more accurate imputations than simple methods.</li>
+        <li><b>Multiple Imputation:</b> Create multiple imputed datasets and combine the results. Accounts for the uncertainty associated with imputation and can provide more robust results.</li>
+        <li><b>K-Nearest Neighbors (KNN) Imputation:</b> Impute based on the values of similar data points.</li>
+      </ul>
+    </li>
+    <li><b>Using Algorithms that Handle Missing Data:</b> Some machine learning algorithms (e.g., some tree-based methods) can handle missing values directly.</li>
+  </ul>
+
+  <h2>Quiz:</h2>
+
+  <div class="question">
+    <p><b>Question 1:</b> Which of the following methods is most likely to introduce bias if data is not missing completely at random?</p>
+    <div class="answer">
+      <input type="radio" id="q1a" name="q1" value="a">
+      <label for="q1a">A) Mean Imputation</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1b" name="q1" value="b">
+      <label for="q1b">B) Listwise Deletion</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1c" name="q1" value="c">
+      <label for="q1c">C) Regression Imputation</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q1d" name="q1" value="d">
+      <label for="q1d">D) Multiple Imputation</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><b>Question 2:</b>  What is a major drawback of using mean imputation for handling missing values?</p>
+    <div class="answer">
+      <input type="radio" id="q2a" name="q2" value="a">
+      <label for="q2a">A) It always provides the most accurate estimates.</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2b" name="q2" value="b">
+      <label for="q2b">B) It can distort the distribution of the data.</label>
+    </div>
+    <div class="answer">
+      <input type="radio" id="q2c" name="q2" value="c">
+      <label for="q2c">C) It requires complex statistical models.</label>
+    </div>
+     <div class="answer">
+      <input type="radio" id="q2d" name="q2" value="d">
+      <label for="q2d">D) It always removes rows with missing data.</label>
+    </div>
+  </div>
+
+  <button onclick="showAnswers()">Submit & Show Answers</button>
+
+  <div id="answers">
+    <h2>Answer Key:</h2>
+    <p><b>Question 1:</b> B) Listwise Deletion</p>
+    <p><b>Question 2:</b> B) It can distort the distribution of the data.</p>
+  </div>
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers").style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 17: Data Structures: Dictionaries</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+.slide {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.quiz {
+  margin-top: 20px;
+}
+.question {
+  margin-bottom: 10px;
+}
+.answer {
+  margin-bottom: 5px;
+}
+#answers {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+#submitButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h2>Slide 17: Data Structures: Dictionaries</h2>
+  <h3>Dictionaries in Python</h3>
+  <p>
+    Dictionaries are a fundamental data structure in Python that allow you to store data in key-value pairs. Think of them like a real-world dictionary where you look up a word (the key) to find its definition (the value).
+  </p>
+  <ul>
+    <li><b>Key-Value Pairs:</b>  A dictionary consists of keys and their corresponding values.</li>
+    <li><b>Keys:</b>  Keys must be unique and immutable (e.g., strings, numbers, tuples).</li>
+    <li><b>Values:</b> Values can be of any data type (strings, numbers, lists, other dictionaries, etc.).</li>
+  </ul>
+
+  <h3>Accessing Values</h3>
+  <p>
+    You access values in a dictionary using their corresponding keys within square brackets. For example:
+  </p>
+  <pre>
+    <code>
+      my_dict = {"name": "Alice", "age": 30, "city": "New York"}
+      print(my_dict["name"])  # Output: Alice
+    </code>
+  </pre>
+</div>
+
+<div class="quiz">
+  <h3>Quiz: Dictionaries</h3>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Which of the following is true about Python dictionary keys?</p>
+      <div class="answer">
+        <input type="radio" id="q1a" name="q1" value="a">
+        <label for="q1a">Keys must be unique and mutable.</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q1b" name="q1" value="b">
+        <label for="q1b">Keys must be unique and immutable.</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q1c" name="q1" value="c">
+        <label for="q1c">Keys can be duplicated and must be mutable.</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. How do you access the value associated with the key "city" in the dictionary <code>my_dict = {"name": "Bob", "city": "London"}</code>?</p>
+      <div class="answer">
+        <input type="radio" id="q2a" name="q2" value="a">
+        <label for="q2a">my_dict.city</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q2b" name="q2" value="b">
+        <label for="q2b">my_dict["city"]</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q2c" name="q2" value="c">
+        <label for="q2c">my_dict(city)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3.  What happens if you try to access a key that doesn't exist in a dictionary?</p>
+      <div class="answer">
+        <input type="radio" id="q3a" name="q3" value="a">
+        <label for="q3a">It returns None.</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q3b" name="q3" value="b">
+        <label for="q3b">It raises a KeyError.</label>
+      </div>
+      <div class="answer">
+        <input type="radio" id="q3c" name="q3" value="c">
+        <label for="q3c">It creates the key with a default value.</label>
+      </div>
+    </div>
+        <button type="button" id="submitButton" onclick="showAnswers()">Submit &amp; Show Answers</button>
+  </form>
+
+  <div id="answers">
+    <h3>Answer Key:</h3>
+    <p>1. b) Keys must be unique and immutable.</p>
+    <p>2. b) my_dict["city"]</p>
+    <p>3. b) It raises a KeyError.</p>
+  </div>
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById("answers").style.display = "block";
+  document.getElementById("submitButton").style.display = 'none';
+}
+</script>
+
+</body>
+</html>

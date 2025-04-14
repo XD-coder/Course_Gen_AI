@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 84: Project 3 - Binary Classification</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.quiz-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+.answer {
+    margin-bottom: 5px;
+}
+
+.answer input[type="radio"] {
+    margin-right: 5px;
+}
+
+#results {
+    margin-top: 20px;
+    font-weight: bold;
+    display: none;
+}
+
+#reveal-answers {
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+</style>
+</head>
+<body>
+
+<h1>Slide 84: Project 3 - Building a Binary Classification Model</h1>
+<h2>(e.g., Predicting Customer Churn)</h2>
+
+<h2>Instructions: Steps to build a binary classification model</h2>
+
+<ul>
+    <li><strong>1. Data Preparation:</strong>
+        <ul>
+            <li>Load and explore your dataset (e.g., customer churn data).</li>
+            <li>Handle missing values (imputation or removal).</li>
+            <li>Encode categorical features (e.g., one-hot encoding).</li>
+            <li>Split the data into training and testing sets (e.g., 80/20 split).</li>
+            <li>Scale numerical features (e.g., using StandardScaler).</li>
+        </ul>
+    </li>
+    <li><strong>2. Model Selection:</strong>
+        <ul>
+            <li>Choose a suitable binary classification algorithm (e.g., Logistic Regression, Support Vector Machine, Random Forest).</li>
+        </ul>
+    </li>
+    <li><strong>3. Model Training:</strong>
+        <ul>
+            <li>Instantiate and train the chosen model using the training data.</li>
+            <li>Tune hyperparameters using cross-validation (e.g., GridSearchCV).</li>
+        </ul>
+    </li>
+    <li><strong>4. Model Evaluation:</strong>
+        <ul>
+            <li>Evaluate the model on the testing data using appropriate metrics (e.g., accuracy, precision, recall, F1-score, AUC-ROC).</li>
+            <li>Plot the ROC curve and calculate the AUC score.</li>
+        </ul>
+    </li>
+    <li><strong>5. Model Interpretation:</strong>
+        <ul>
+            <li>Interpret the model's coefficients or feature importance to understand the factors driving customer churn.</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="quiz-container">
+    <h2>Quiz Time!</h2>
+    <form id="quiz-form">
+        <div class="question">
+            <p>1. Which of the following is NOT a common preprocessing step for binary classification?</p>
+            <div class="answer">
+                <input type="radio" id="q1a" name="q1" value="a">
+                <label for="q1a">Handling missing values</label>
+            </div>
+            <div class="answer">
+                <input type="radio" id="q1b" name="q1" value="b">
+                <label for="q1b">Feature scaling</label>
+            </div>
+            <div class="answer">
+                <input type="radio" id="q1c" name="q1" value="c">
+                <label for="q1c">Target encoding</label>
+            </div>
+            <div class="answer">
+                <input type="radio" id="q1d" name="q1" value="d">
+                <label for="q1d">Polynomial Feature expansion</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Which evaluation metric is generally most suitable when classes are imbalanced?</p>
+            <div class="answer">
+                <input type="radio" id="q2a" name="q2" value="a">
+                <label for="q2a">Accuracy</label>
+            </div>
+            <div class="answer">
+                <input type="radio" id="q2b" name="q2" value="b">
+                <label for="q2b">Precision</label>
+            </div>
+             <div class="answer">
+                <input type="radio" id="q2c" name="q2" value="c">
+                <label for="q2c">F1-score</label>
+            </div>
+            <div class="answer">
+                <input type="radio" id="q2d" name="q2" value="d">
+                <label for="q2d">Recall</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="results">Your score: <span id="score"></span></div>
+    <div id="reveal-answers">
+        <h2>Answer Key:</h2>
+        <p>1. <strong>D)</strong> Polynomial Feature expansion</p>
+        <p>2. <strong>C)</strong> F1-score</p>
+    </div>
+
+</div>
+
+<script>
+function submitQuiz() {
+    let score = 0;
+    const q1Answer = document.querySelector('input[name="q1"]:checked');
+    const q2Answer = document.querySelector('input[name="q2"]:checked');
+
+    if (q1Answer && q1Answer.value === "d") {
+        score++;
+    }
+
+    if (q2Answer && q2Answer.value === "c") {
+        score++;
+    }
+
+    document.getElementById('score').textContent = score + " / 2";
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('reveal-answers').style.display = 'block'; // Show the answers
+
+}
+</script>
+
+</body>
+</html>

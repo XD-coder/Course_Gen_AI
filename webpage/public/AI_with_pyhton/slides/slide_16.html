@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python: Data Structures - Tuples</title>
+<style>
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+.quiz-container {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.answer {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
+  background-color: #f9f9f9;
+  display: none; /* Initially hidden */
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect {
+  color: red;
+}
+
+#answers-button {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Data Structures: Tuples</h1>
+
+  <h2>What are Tuples?</h2>
+  <p>
+    Tuples are ordered, immutable sequences of Python objects.  They are similar to lists but with a key difference:  <strong>Tuples cannot be modified after they are created.</strong>
+  </p>
+
+  <h2>Immutability</h2>
+  <p>
+    Immutability means that once a tuple is created, you cannot change its elements (you can't add, remove, or modify).  This makes tuples safer to use when you want to ensure that data remains constant.
+  </p>
+
+  <h2>When to Use Tuples</h2>
+  <ul>
+    <li>When you want to ensure data integrity and prevent accidental modifications.</li>
+    <li>As keys in dictionaries (lists cannot be dictionary keys because they are mutable).</li>
+    <li>For returning multiple values from a function.</li>
+    <li>When performance is critical.  Tuples are generally faster than lists due to their immutability.</li>
+    <li>Representing fixed collections of items (e.g., coordinates).</li>
+  </ul>
+
+  <div class="quiz-container">
+    <h2>Quiz: Tuples</h2>
+
+    <div class="question">
+      <p>1. Which of the following statements about tuples is FALSE?</p>
+      <input type="radio" id="q1a" name="q1" value="a">
+      <label for="q1a">a) Tuples are immutable.</label><br>
+      <input type="radio" id="q1b" name="q1" value="b">
+      <label for="q1b">b) Tuples are ordered sequences.</label><br>
+      <input type="radio" id="q1c" name="q1" value="c">
+      <label for="q1c">c) Tuples can be modified after creation.</label><br>
+      <input type="radio" id="q1d" name="q1" value="d">
+      <label for="q1d">d) Tuples can be used as dictionary keys.</label>
+    </div>
+
+    <div class="question">
+      <p>2.  Which of the following is the correct way to create an empty tuple?</p>
+      <input type="radio" id="q2a" name="q2" value="a">
+      <label for="q2a">a) tuple = []</label><br>
+      <input type="radio" id="q2b" name="q2" value="b">
+      <label for="q2b">b) tuple = {}</label><br>
+      <input type="radio" id="q2c" name="q2" value="c">
+      <label for="q2c">c) tuple = ()</label><br>
+      <input type="radio" id="q2d" name="q2" value="d">
+      <label for="q2d">d) tuple = new tuple()</label>
+    </div>
+
+    <div class="question">
+      <p>3. What will be the output of the following code: <code>my_tuple = (1, 2, 3); print(my_tuple[1])</code>?</p>
+      <input type="radio" id="q3a" name="q3" value="a">
+      <label for="q3a">a) 1</label><br>
+      <input type="radio" id="q3b" name="q3" value="b">
+      <label for="q3b">b) 2</label><br>
+      <input type="radio" id="q3c" name="q3" value="c">
+      <label for="q3c">c) 3</label><br>
+      <input type="radio" id="q3d" name="q3" value="d">
+      <label for="q3d">d) Error</label>
+    </div>
+
+    <button id="submit-button">Submit</button>
+    <button id="answers-button" style="display: none;">Show Answers</button>
+
+    <div class="answer" id="answer1">
+      <p><strong>Question 1:</strong> c) Tuples can be modified after creation. <span class="correct"> (Correct)</span></p>
+    </div>
+
+    <div class="answer" id="answer2">
+      <p><strong>Question 2:</strong> c) tuple = () <span class="correct"> (Correct)</span></p>
+    </div>
+
+    <div class="answer" id="answer3">
+      <p><strong>Question 3:</strong> b) 2 <span class="correct"> (Correct)</span></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.getElementById('submit-button').addEventListener('click', function() {
+  document.getElementById('answers-button').style.display = 'block';
+  this.style.display = 'none'; // Hide the submit button
+});
+
+document.getElementById('answers-button').addEventListener('click', function() {
+  document.getElementById('answer1').style.display = 'block';
+  document.getElementById('answer2').style.display = 'block';
+  document.getElementById('answer3').style.display = 'block';
+  this.style.display = 'none';
+});
+</script>
+
+</body>
+</html>

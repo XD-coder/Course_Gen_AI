@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 37: Pandas: Data Loading and Basic Manipulation</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+code {
+  background-color: #f4f4f4;
+  padding: 2px 5px;
+  border: 1px solid #ddd;
+  font-family: monospace;
+}
+
+.quiz-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+.answer-section {
+    margin-bottom: 15px;
+}
+
+#results {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.answer-key {
+  display: none; /* Initially hide the answer key */
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  background-color: #eee;
+}
+
+#answer-key-button {
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 37: Pandas: Data Loading and Basic Manipulation</h1>
+
+  <h2>Instructions:</h2>
+  <p>Explain how to load data from CSV files and perform basic data manipulation using Pandas.</p>
+
+  <h2>Data Loading from CSV</h2>
+  <p>Pandas provides the <code>read_csv()</code> function to easily load data from CSV files into a DataFrame.</p>
+  <pre><code>import pandas as pd
+
+# Load data from a CSV file
+df = pd.read_csv('data.csv')
+
+# Print the first 5 rows of the DataFrame
+print(df.head())
+</code></pre>
+
+  <h2>Basic Data Manipulation</h2>
+  <p>Here are some common data manipulation tasks:</p>
+  <ul>
+    <li><strong>Selecting Columns:</strong></li>
+    <pre><code># Select a single column
+    column1 = df['column_name']
+
+    # Select multiple columns
+    subset = df[['column1', 'column2']]
+    </code></pre>
+    <li><strong>Filtering Rows:</strong></li>
+    <pre><code># Filter rows based on a condition
+    filtered_df = df[df['column_name'] > 10]
+    </code></pre>
+    <li><strong>Adding New Columns:</strong></li>
+    <pre><code># Add a new column
+    df['new_column'] = df['column1'] + df['column2']
+    </code></pre>
+    <li><strong>Dropping Columns:</strong></li>
+    <pre><code># Drop a column
+    df = df.drop('column_name', axis=1)  # axis=1 for columns
+    </code></pre>
+  </ul>
+
+    <div class="quiz-container">
+        <h2>Quick Quiz</h2>
+
+        <div class="question">
+            <p>1. Which Pandas function is used to load data from a CSV file?</p>
+            <div class="answer-section">
+                <input type="radio" id="q1a" name="q1" value="a"> <label for="q1a">a) load_csv()</label><br>
+                <input type="radio" id="q1b" name="q1" value="b"> <label for="q1b">b) read_csv()</label><br>
+                <input type="radio" id="q1c" name="q1" value="c"> <label for="q1c">c) import_csv()</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What does <code>df.head()</code> do?</p>
+            <div class="answer-section">
+                <input type="radio" id="q2a" name="q2" value="a"> <label for="q2a">a) Prints the last 5 rows of the DataFrame.</label><br>
+                <input type="radio" id="q2b" name="q2" value="b"> <label for="q2b">b) Prints the first 5 rows of the DataFrame.</label><br>
+                <input type="radio" id="q2c" name="q2" value="c"> <label for="q2c">c) Prints the entire DataFrame.</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. How do you drop a column named 'Age' from a DataFrame named 'df'?</p>
+            <div class="answer-section">
+                <input type="radio" id="q3a" name="q3" value="a"> <label for="q3a">a) df.drop('Age', axis=0)</label><br>
+                <input type="radio" id="q3b" name="q3" value="b"> <label for="q3b">b) df.delete('Age')</label><br>
+                <input type="radio" id="q3c" name="q3" value="c"> <label for="q3c">c) df.drop('Age', axis=1)</label>
+            </div>
+        </div>
+        
+        <button id="submit-button">Submit</button>
+        <div id="results"></div>
+        <button id="answer-key-button" style="display:none;">Show Answer Key</button>
+        <div id="answer-key" class="answer-key">
+            <h3>Answer Key:</h3>
+            <ol>
+                <li>1. b) read_csv()</li>
+                <li>2. b) Prints the first 5 rows of the DataFrame.</li>
+                <li>3. c) df.drop('Age', axis=1)</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.getElementById('submit-button').addEventListener('click', function() {
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let q3Answer = document.querySelector('input[name="q3"]:checked');
+
+    let score = 0;
+    let q1Correct = false;
+    let q2Correct = false;
+    let q3Correct = false;
+
+    if (q1Answer && q1Answer.value === 'b') {
+        score++;
+        q1Correct = true;
+    }
+
+    if (q2Answer && q2Answer.value === 'b') {
+        score++;
+        q2Correct = true;
+    }
+
+    if (q3Answer && q3Answer.value === 'c') {
+        score++;
+        q3Correct = true;
+    }
+
+    let resultsText = "Your Score: " + score + " / 3<br>";
+
+    resultsText += "Question 1: " + (q1Correct ? "<span class='correct'>Correct</span>" : "<span class='incorrect'>Incorrect</span>") + "<br>";
+    resultsText += "Question 2: " + (q2Correct ? "<span class='correct'>Correct</span>" : "<span class='incorrect'>Incorrect</span>") + "<br>";
+    resultsText += "Question 3: " + (q3Correct ? "<span class='correct'>Correct</span>" : "<span class='incorrect'>Incorrect</span>");
+
+
+    document.getElementById('results').innerHTML = resultsText;
+    document.getElementById('answer-key-button').style.display = 'block'; // Show the answer key button
+});
+
+document.getElementById('answer-key-button').addEventListener('click', function() {
+  document.getElementById('answer-key').style.display = 'block'; // Show the answer key
+  document.getElementById('answer-key-button').style.display = 'none'; // Hide the button after click
+});
+</script>
+
+</body>
+</html>

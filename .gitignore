@@ -158,5 +158,7 @@ yarn-error.log*
 .env.production.local
 *.txt
 
+!requirements.txt
+
 # next.js public folder
 /my-app/public/*

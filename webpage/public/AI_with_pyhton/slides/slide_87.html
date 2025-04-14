@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide 87: SVM Implementation in Scikit-learn</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+.slide {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px #888888;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.quiz {
+    margin-top: 20px;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+.answers {
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>Slide 87: Implementation in Scikit-learn</h1>
+  <h2>Training and Evaluating SVM Models</h2>
+  <p><strong>Instructions:</strong> Training and evaluating SVM models in Scikit-learn.</p>
+
+  <p>Scikit-learn provides a simple and efficient way to implement SVM models. The <code>sklearn.svm</code> module contains classes for different SVM algorithms, such as <code>SVC</code> for classification and <code>SVR</code> for regression.</p>
+
+  <p>Here's a basic example of training and evaluating an SVM classifier:</p>
+
+  <pre>
+<code>
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+
+# Load the iris dataset
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Create an SVM classifier
+svm_model = SVC(kernel='linear', C=1)  # You can adjust the kernel and C parameter
+
+# Train the model
+svm_model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = svm_model.predict(X_test)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
+</code>
+  </pre>
+
+  <p>Key points:</p>
+  <ul>
+    <li>Import necessary modules from <code>sklearn</code>.</li>
+    <li>Load your dataset and split it into training and testing sets using <code>train_test_split</code>.</li>
+    <li>Create an instance of the <code>SVC</code> class, specifying the kernel (e.g., 'linear', 'rbf') and other hyperparameters.</li>
+    <li>Train the model using <code>fit(X_train, y_train)</code>.</li>
+    <li>Make predictions on the test set using <code>predict(X_test)</code>.</li>
+    <li>Evaluate the model's performance using metrics like accuracy, precision, recall, etc.</li>
+  </ul>
+
+  <div class="quiz">
+    <h2>Quiz</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Which module in scikit-learn is used for SVM implementation?</p>
+        <input type="radio" id="q1a" name="q1" value="sklearn.linear_model">
+        <label for="q1a">sklearn.linear_model</label><br>
+        <input type="radio" id="q1b" name="q1" value="sklearn.svm">
+        <label for="q1b">sklearn.svm</label><br>
+        <input type="radio" id="q1c" name="q1" value="sklearn.tree">
+        <label for="q1c">sklearn.tree</label>
+      </div>
+
+      <div class="question">
+        <p>2. Which kernel is NOT commonly used in SVM?</p>
+        <input type="radio" id="q2a" name="q2" value="linear">
+        <label for="q2a">Linear</label><br>
+        <input type="radio" id="q2b" name="q2" value="rbf">
+        <label for="q2b">RBF</label><br>
+        <input type="radio" id="q2c" name="q2" value="polynomial">
+        <label for="q2c">Polynomial</label><br>
+        <input type="radio" id="q2d" name="q2" value="sigmoid">
+        <label for="q2d">Sigmoid</label> <br>
+        <input type="radio" id="q2e" name="q2" value="exponential">
+        <label for="q2e">Exponential</label>
+      </div>
+
+      <button type="button" onclick="revealAnswers()">Submit & Reveal Answers</button>
+    </form>
+
+    <div class="answers" id="answerSection">
+      <h2>Answers:</h2>
+      <p>1. <span id="answer1"></span></p>
+      <p>2. <span id="answer2"></span></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+    let answer1Text = document.getElementById("answer1");
+    let answer2Text = document.getElementById("answer2");
+
+    if (q1Answer) {
+        if (q1Answer.value === "sklearn.svm") {
+            answer1Text.innerHTML = "Question 1: You answered: sklearn.svm - <span class='correct'>Correct!</span>";
+        } else {
+            answer1Text.innerHTML = "Question 1: You answered: " + q1Answer.value + " - <span class='incorrect'>Incorrect. The correct answer is sklearn.svm.</span>";
+        }
+    } else {
+        answer1Text.innerHTML = "Question 1: You did not answer this question. The correct answer is sklearn.svm.";
+    }
+
+    if (q2Answer) {
+        if (q2Answer.value === "exponential") {
+            answer2Text.innerHTML = "Question 2: You answered: exponential - <span class='correct'>Correct!</span>";
+        } else {
+            answer2Text.innerHTML = "Question 2: You answered: " + q2Answer.value + " - <span class='incorrect'>Incorrect. The correct answer is exponential.</span>";
+        }
+    } else {
+        answer2Text.innerHTML = "Question 2: You did not answer this question. The correct answer is exponential.";
+    }
+
+
+    document.getElementById("answerSection").style.display = "block";
+}
+</script>
+
+</body>
+</html>

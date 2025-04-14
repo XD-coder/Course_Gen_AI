@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI with Python - Slide 13: Break and Continue Statements</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+.slide {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  color: #555;
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+}
+
+.quiz {
+  margin-top: 30px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    border-radius: 5px;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <h1>AI with Python - Slide 13: Break and Continue Statements</h1>
+
+  <h2>Instructions:</h2>
+  <p>This slide explains how to use <code>break</code> and <code>continue</code> statements within loops in Python. These statements provide control over the flow of execution within loops.</p>
+
+  <h2>Break Statement</h2>
+  <p>The <code>break</code> statement is used to exit a loop prematurely. When <code>break</code> is encountered, the loop terminates immediately, and the program continues with the next statement after the loop.</p>
+
+  <pre><code>
+for i in range(10):
+  if i == 5:
+    break  # Exit the loop when i is 5
+  print(i)
+  </code></pre>
+
+  <h2>Continue Statement</h2>
+  <p>The <code>continue</code> statement is used to skip the rest of the current iteration of the loop and proceed to the next iteration. When <code>continue</code> is encountered, the remaining code in the current iteration is skipped, and the loop continues with the next value.</p>
+
+  <pre><code>
+for i in range(10):
+  if i % 2 == 0:
+    continue  # Skip even numbers
+  print(i) #Only prints odd numbers
+  </code></pre>
+
+
+  <div class="quiz">
+    <h2>Quiz</h2>
+
+    <div class="question">
+      <p><strong>Question 1:</strong> What is the purpose of the <code>break</code> statement in a loop?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> A. To skip the current iteration.</label>
+        <label><input type="radio" name="q1" value="b"> B. To exit the loop entirely.</label>
+        <label><input type="radio" name="q1" value="c"> C. To restart the loop.</label>
+        <label><input type="radio" name="q1" value="d"> D. To pause the loop.</label>
+      </div>
+      <div id="answer1" class="answer">
+         Correct Answer: B. To exit the loop entirely.
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2:</strong> What is the purpose of the <code>continue</code> statement in a loop?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> A. To exit the loop entirely.</label>
+        <label><input type="radio" name="q2" value="b"> B. To restart the loop.</label>
+        <label><input type="radio" name="q2" value="c"> C. To skip the current iteration.</label>
+        <label><input type="radio" name="q2" value="d"> D. To pause the loop.</label>
+      </div>
+      <div id="answer2" class="answer">
+         Correct Answer: C. To skip the current iteration.
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 3:</strong> What will be the output of the following code snippet?</p>
+      <pre><code>
+for i in range(5):
+  if i == 3:
+    break
+  print(i)
+</code></pre>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> A. 0 1 2 3 4</label>
+        <label><input type="radio" name="q3" value="b"> B. 0 1 2</label>
+        <label><input type="radio" name="q3" value="c"> C. 3</label>
+        <label><input type="radio" name="q3" value="d"> D. 0 1 2 3</label>
+      </div>
+      <div id="answer3" class="answer">
+        Correct Answer: B. 0 1 2
+      </div>
+    </div>
+
+    <button onclick="revealAnswers()">Reveal Answers</button>
+  </div>
+</div>
+
+<script>
+function revealAnswers() {
+  document.getElementById("answer1").style.display = "block";
+  document.getElementById("answer2").style.display = "block";
+  document.getElementById("answer3").style.display = "block";
+}
+</script>
+
+</body>
+</html>
