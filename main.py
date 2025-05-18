@@ -1,15 +1,33 @@
 import logging
-import test
+import html_gen
 import string
 import unicodedata
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from google import genai
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 # --- Configuration ---
 logging.basicConfig(level=logging.INFO)
 app = FastAPI() 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or ["http://localhost:3000"] for stricter config
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# set incode database for courses
+courses = ({
+    "course_name": "course_name",
+    "course_duration": "course_duration",
+    "course_level": "course_level",
+    "course_slides": [],
+})
 
 # --- Models ---
 class CourseRequest(BaseModel):
@@ -41,6 +59,7 @@ def initialize_gemini_client():
 
 
 client = initialize_gemini_client()
+
 
 # --- Helper Functions ---
 def sanitize_filename(filename):
@@ -165,8 +184,10 @@ async def generate(item: CourseRequest, save_content: bool = True):
         raise HTTPException(status_code=500, detail="Failed to save course plan file.")
 
     logging.info(f"Generating HTML for: {safe_course_name} with file name {file_name_plan}")
-    test.genHTML(file_name_plan, safe_course_name)
-
+    slides = html_gen.genHTML(file_name_plan, safe_course_name)
+    if not slides:
+        raise HTTPException(status_code=500, detail="Failed to generate HTML slides.")
+    
     # move the course folder to ./my-app/public
     os.makedirs("./my-app/public", exist_ok=True)
     os.rename(f"./{course_name}/", f"./webpage/course_data/{course_name}/")
